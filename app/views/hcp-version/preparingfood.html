@@ -1,0 +1,134 @@
+{% extends "layouts/old-layouts/layout-key-details-assessment.html" %}
+
+
+{% block pageTitle %}
+  Preparing food
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="assessment-status.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">Preparing food</h1>
+
+                </div>
+          </div>
+
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+            <form action="assessment-status" method="post">
+
+              {{ govukTextarea({
+                name: "preparingfoodNotes",
+                id: "preparingfoodNotes",
+                rows: "8",
+                classes: "govuk-!-margin-bottom-9",
+                label: {
+                  text: "Notes on preparing food",
+                  classes: "govuk-label--m",
+                  isPageHeading: false
+                },
+                value: data['preparingfoodNotes']
+              }) }}
+
+              <h2 class="govuk-heading-m">Linked documents</h2>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    <a href="physiotherapist-letter-linked.html" target="_blank">Physiotherapist letter</a>
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    This document contains information relating to the claimant's difficulties in moving around.
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    <a href="gp-letter-linked.html" target="_blank">GP letter</a>
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    This document details the claimant's chronic physical condition and the underlying illness, including treatment plan and timescales.
+                  </dd>
+                </div>
+              </dl>
+
+              {{ govukRadios({
+                      idPrefix: "preparingfoodSelect",
+                      name: "preparingfoodSelect",
+                      fieldset: {
+                        classes: "govuk-!-margin-bottom-9",
+                        legend: {
+                          text: "How well can the claimant cook food?",
+                          isPageHeading: false,
+                          classes: "govuk-fieldset__legend--m"
+                        }
+                      },
+                      items: [
+                        {
+                          value: "Cannot prepare and cook food",
+                          text: "Cannot prepare and cook food"
+                        },
+                        {
+                          value: "Needs supervision or assistance to either prepare or cook a simple meal",
+                          text: "Needs supervision or assistance to either prepare or cook a simple meal"
+                        },
+                        {
+                          value: "Needs prompting to be able to either prepare or cook a simple meal",
+                          text: "Needs prompting to be able to either prepare or cook a simple meal"
+                        },
+                        {
+                          value: "Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave",
+                          text: "Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave"
+                        },
+                        {
+                          value: "Needs to use an aid or appliance to be able to either prepare or cook a simple meal",
+                          text: "Needs to use an aid or appliance to be able to either prepare or cook a simple meal"
+                        },
+                        {
+                          value: "Can prepare and cook a simple meal unaided",
+                          text: "Can prepare and cook a simple meal unaided"
+                        }
+                      ]
+                    }) }}
+
+                    {{ govukTextarea({
+                      name: "preparingfoodReason",
+                      id: "preparingfoodReason",
+                      label: {
+                        text: "What is the reason for this answer?",
+                        classes: "govuk-label--m",
+                        isPageHeading: false
+                      },
+                      value: data['preparingfoodReason']
+                    }) }}
+
+                    {{ govukButton({
+                      text: "Save"
+                    }) }}
+                </ul>
+
+
+
+            </form>
+
+
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+
+
+            </div>
+
+        </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layouts/old-layouts/layout-key-details.html" %}
+{% block pageTitle %}
+  Document review
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="pip2-new.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="pip2-new" method="post">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Change document type
+              </h1>
+            </legend>
+
+            <label class="govuk-label" for="document-type">
+              Select document type
+            </label>
+
+            <select class="govuk-select govuk-!-width-one-half" id="document-type" name="document-type">
+              <option value="consultant-letter">Consultant letter</option>
+              <option value="further-evidence" selected>Further evidence</option>
+              <option value="gp-letter">GP letter</option>
+              <option value="nhs-hospital-letter">NHS hospital report</option>
+              <option value="physiotherapist-letter">Physiotherapist letter</option>
+            </select>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save changes</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

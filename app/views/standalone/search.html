@@ -1,0 +1,34 @@
+{% extends "layouts/old-layouts/layout.html" %}
+
+
+{% block pageTitle %}
+Search for claimant documents
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Search for claimant documents</h1>
+
+      <form class="form" action="document-list" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="nino-name">
+            Search by National Insurance Number or full name
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="nino-name" name="nino-name" type="text"></div>
+
+        <button class="govuk-button" data-module="govuk-button">Search</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

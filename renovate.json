@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "gitlab>dwp/engineering/renovate//shared-configs/common-ci-auto-merge"
+  ],
+  "packageRules": [
+    {
+      "groupName": "churn-updates",
+      "addLabels": ["Automatic Merge"],
+      "matchUpdateTypes": ["digest", "minor", "patch"],
+      "automerge": true,
+      "automergeType": "branch",
+      "platformAutomerge": true,
+      "gitLabIgnoreApprovals": true,
+      "commitMessageAction": "",
+      "commitMessageExtra": ""
+    }
+  ]
+}

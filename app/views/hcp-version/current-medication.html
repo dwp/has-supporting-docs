@@ -1,0 +1,61 @@
+{% extends "layouts/old-layouts/layout-key-details-assessment.html" %}
+
+
+{% block pageTitle %}
+  Preparing food
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="assessment-status.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+            <form action="assessment-status" method="post">
+
+                    {{ govukTextarea({
+                        name: "currentmedication",
+                        id: "currentmedication",
+                        rows: "12",
+                        label: {
+                          text: "Current medication or treatment",
+                          classes: "govuk-label--xl",
+                          isPageHeading: true
+                        },
+                        value: data['currentmedication']
+                      }) }}
+
+                      <h2 class="govuk-heading-m">Linked documents</h2>
+
+                      <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            <a href="prescription-linked.html" target="_blank">Medical prescription</a>
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            This document contains the claimant's most recent medical prescription.
+                          </dd>
+                        </div>
+                      </dl>
+
+                      {{ govukButton({
+                        text: "Save"
+                      }) }}
+
+                
+
+            </form>
+
+
+          
+
+
+            </div>
+        </div>
+
+
+{% endblock %}

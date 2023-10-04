@@ -1,0 +1,50 @@
+{#
+    For guidance on how to use layouts see:
+    https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+    #}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+{% from "timeline/macro.njk" import dwpTimeline %}
+{% from "internal-service-footer/macro.njk" import dwpFooter %}
+{% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
+
+
+
+     
+{% block header %}
+
+  <header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="full-width-container">
+      <a href="#" class="govuk-header__link govuk-header__link--service-name dwp-header__container--service-name">
+          Health Assessment Service
+      </a>
+  </div>
+  </header>
+ 
+    
+    {% endblock %}
+
+
+    {% block footer %}
+    {{ dwpFooter({
+        meta: {
+            items: [
+              {
+                href: "/manage-prototype",
+                text: "Manage your prototype"
+              },
+              {
+                href: "/manage-prototype/clear-data",
+                text: "Clear data"
+              }
+            ]
+          }
+        }) }} 
+
+        {% endblock %}
+  </div>
+        

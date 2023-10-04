@@ -1,0 +1,204 @@
+{% extends "layouts/old-layouts/layout-key-details.html" %}
+{% block pageTitle %}
+  Document review
+{% endblock %}
+
+{% block beforeContent %}
+<a href="document-list-new1.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Document review</h1>
+
+      <strong class="govuk-tag govuk-tag--yellow">
+        New document
+      </strong>
+      <span class="govuk-body-s">This is a new document and needs to be reviewed.</span>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+      <iframe class="document" src="/public/pdfs/JaneDoe_PIP2Questionnaire_120921.pdf" title="PIP2 document"></iframe>
+    </div>
+  </div>  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Document type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Further evidence
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date DWP received
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  21 April 2021
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Benefit type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  PIP
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">
+              Additional details
+          </h2>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Document label
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Document labels can be helpful if the document type is inaccurate
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Add<span class="govuk-visually-hidden"> document label</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of document
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  The date of the document can be used to understand how old the document is
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Add<span class="govuk-visually-hidden"> date of document</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+    </div>
+
+  </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <form action="confirmation-2" method="post" novalidate>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <div class="govuk-form-group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Has this document been reviewed?
+            </h2>
+          </legend>
+
+          <div class="govuk-hint">
+            Leaving this unchecked marks this as a new document.
+          </div>
+        
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="reviewed" name="reviewed" value="reviewed" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="reviewed">
+                This document has been reviewed
+              </label>
+            </div>
+          </div>
+    
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Add this document to a claim
+              </h2>
+            </legend>
+          
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="pip" name="claim" type="checkbox" value="PIP">
+                <label class="govuk-label govuk-checkboxes__label" for="pip">
+                  <strong>PIP claim</strong> 12 Sep 2021
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="uc" name="claim" type="checkbox" value="UC">
+                <label class="govuk-label govuk-checkboxes__label" for="uc">
+                  <strong>UC claim</strong> 23 Jun 2021
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+
+        </div>
+      
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="add-comments">Comment on this document</label>
+          </h2>
+
+          <div id="add-comments-hint" class="govuk-hint">
+           Use this space to make observations about this document.
+          </div>
+          <textarea class="govuk-textarea" id="add-comments" name="add-comments" rows="5" aria-describedby="add-comments-hint"></textarea>
+        
+        </div> 
+        
+      </div>
+
+      <div class="govuk-grid-column-full">
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save changes
+            </button>
+        
+            <a class="govuk-link" href="document-list-new1.html">Cancel</a>
+          </div>
+
+        </form>
+
+      </div>
+     </div>
+    
+
+</div>  
+
+
+{% endblock %}

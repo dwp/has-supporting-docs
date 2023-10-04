@@ -1,0 +1,41 @@
+{% extends "layouts/old-layouts/layout.html" %}
+
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>This prototype has been created to demonstrate designs for a service that enables claimant documents to be shared through the health assessment process.</p>
+      <p>Use this service to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>view documents stored in the Document Repository Service</li>
+        <li>edit document details</li>
+        <li>comment on documents</li>
+        <li>add documents to claims/referrals</li>
+        <li>link documents to assessment activities</li>
+      </ul>
+
+      <a href="referral-information.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}

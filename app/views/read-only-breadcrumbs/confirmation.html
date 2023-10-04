@@ -1,0 +1,36 @@
+{% extends "layouts/old-layouts/layout.html" %}
+
+
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">Physiotherapist letter</h1>
+        <div class="govuk-panel__body">
+          <strong>You added this document to a claim</strong><br>on 15 July 2021
+        </div>
+      </div>
+    </div>
+  </div>    
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">Choose your next step</h2>
+      <p><a href="document-list-added.html">View all documents for this claimant</a></p>
+      <p><a href="referral-information-with-docs.html">Return to the Claimant details page</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

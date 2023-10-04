@@ -1,0 +1,206 @@
+{% extends "layouts/old-layouts/layout-key-details-assessment.html" %}
+
+
+{% block pageTitle %}
+  Claimant details
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="#" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Claimant details</h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Preferred name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sam
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            07799 000000
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Postcode
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XX21 3XX
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            SRTI
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Referral details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Referral date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2 February 2021
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Referral type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            New referral
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Benefit type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            PIP
+          </dd>
+        </div>
+      </dl>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Referral actions
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="assessment-type.html" aria-describedby="start-assessment">
+                <button class="govuk-button" data-module="govuk-button">
+                  Start assessment
+                </button>
+              </a>
+            </li>
+            <li>
+              <a href="update-status" aria-describedby="update-status">
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Update status
+                </button>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m">Claimant documents</h2>
+      <p>The following documents have been reviewed by a case manager and added to this referral.</p>
+      
+      <table class="govuk-table" data-module="moj-sortable-table">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+      
+            <th scope="col" class="govuk-table__header" aria-sort="ascending">Document type</th>
+      
+            <th scope="col" class="govuk-table__header" aria-sort="descending">Date received</th>
+
+            <th scope="col" class="govuk-table__header" aria-sort="none">Date of document</th>
+      
+          </tr>
+        </thead>
+      
+        <tbody class="govuk-table__body">
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="physiotherapist-letter-added-to-claim.html">Physiotherapist letter</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="12/05/21">12 May 2021</td>
+      
+            <td class="govuk-table__cell">12 Nov 2020</td>
+      
+          </tr>
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="gp-letter-added-to-claim.html">GP letter</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 Apr 2021</td>
+      
+            <td class="govuk-table__cell">5 Jan 2021</td>
+   
+          </tr>
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">NHS hospital report</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 Apr 2021</td>
+      
+            <td class="govuk-table__cell">19 Mar 2021</td>
+    
+          </tr>
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">GP letter</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 April 2021</td>
+      
+            <td class="govuk-table__cell">17 Feb 2021</td>
+ 
+          </tr>
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Medical prescription</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 April 2021</td>
+      
+            <td class="govuk-table__cell">20 May 2021</td>
+    
+          </tr>
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">PIP2 questionnaire</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 April 2021</td>
+      
+            <td class="govuk-table__cell">29 May 2021</td>
+   
+          </tr>
+      
+        </tbody>
+      </table>
+
+      <p><a href="document-list-reviewed.html" target="_blank">View all documents for this claimant (opens in a new window or tab)</a></p>
+    </div>
+  </div>  
+
+{% endblock %}

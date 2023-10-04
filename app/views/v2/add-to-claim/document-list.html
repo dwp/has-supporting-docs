@@ -1,0 +1,163 @@
+{% extends "layouts/old-layouts/layout-key-details.html" %}
+{% block pageTitle %}
+  Claimant documents
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="referral-information.html">Claimant details</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="document-list.html">Claimant documents</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Claimant documents</h2>
+
+      <p class="govuk-body-s">Last updated from DRS at 02:08 on 11 Aug 2021</p>
+      
+      <table class="govuk-table" data-module="moj-sortable-table">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+      
+            <th scope="col" class="govuk-table__header column-width-40" aria-sort="none">Document type</th>
+      
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="descending">Date DWP received</th>
+
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="none">Benefit received for</th>
+
+            <th scope="col" class="govuk-table__header column-width-30" aria-sort="none">Document activity</th>
+      
+          </tr>
+        </thead>
+      
+        <tbody class="govuk-table__body">
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="physiotherapist-letter-new.html">Further evidence</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="12/05/21">12 May 2021</td>
+
+            <td class="govuk-table__cell">PIP</td>
+
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">New document</strong></td>
+      
+          </tr>
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="consultant-letter-downloaded.html">Consultant letter</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 April 2021</td>
+
+            <td class="govuk-table__cell">PIP</td>
+
+            <td class="govuk-table__cell">Downloaded on 5 May 2021</strong></td>
+   
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="gp-letter-downloaded.html">GP letter</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 April 2021</td>
+
+            <td class="govuk-table__cell">PIP</td>
+
+            <td class="govuk-table__cell">Downloaded on 5 May 2021</strong></td>
+   
+          </tr>
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="prescription-downloaded.html">Medical prescription</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 April 2021</td>
+
+            <td class="govuk-table__cell">PIP</td>
+
+            <td class="govuk-table__cell">Downloaded on 5 May 2021</strong></td>
+    
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="hospital-report-opened.html">NHS hospital report</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 April 2021</td>
+
+            <td class="govuk-table__cell">PIP</td>
+
+            <td class="govuk-table__cell">Last opened on 5 May 2021</strong></td>
+   
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="hospital-letter-opened.html">NHS hospital letter</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 April 2021</td>
+
+            <td class="govuk-table__cell">UC</td>
+
+            <td class="govuk-table__cell">Last opened on 19 Nov 2020</strong></td>
+   
+          </tr>
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="pip2-opened.html">PIP2 questionnaire</a></td>
+      
+            <td class="govuk-table__cell" data-sort-value="21/04/21">21 April 2021</td>
+
+            <td class="govuk-table__cell">PIP</td>
+
+            <td class="govuk-table__cell">Last opened on 5 May 2021</strong></td>
+   
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <nav class="moj-pagination" id="pagination-label">
+
+        <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+      
+        <ul class="moj-pagination__list">
+          <li class="moj-pagination__item  moj-pagination__item--prev">
+            <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+          </li>
+      
+          <li class="moj-pagination__item moj-pagination__item--active">1</li>
+      
+          <li class="moj-pagination__item  moj-pagination__item--next">
+            <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+          </li>
+        </ul>
+        <p class="moj-pagination__results">Showing <b>1</b> to <b>7</b> of <b>7</b> documents</p>
+      </nav>
+
+    </div>
+  </div>
+      
+
+
+{% endblock %}

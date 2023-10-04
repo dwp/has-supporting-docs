@@ -1,0 +1,151 @@
+{% extends "layouts/old-layouts/layout-key-details-assessment.html" %}
+
+
+{% block pageTitle %}
+  Preparing food
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="assessment-status.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">Washing and bathing</h1>
+
+                </div>
+          </div>
+
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+            <form action="assessment-status" method="post">
+
+              {{ govukTextarea({
+                name: "washingbathingNotes",
+                id: "washingbathingNotes",
+                rows: "8",
+                classes: "govuk-!-margin-bottom-9",
+                label: {
+                  text: "Notes on washing and bathing",
+                  classes: "govuk-label--m",
+                  isPageHeading: false
+                },
+                value: data['washingbathingNotes']
+              }) }}
+
+              <h2 class="govuk-heading-m">Linked documents</h2>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    <a href="physiotherapist-letter-linked.html" target="_blank">Physiotherapist letter</a>
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    This document contains information relating to the claimant's difficulties in moving around.
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    <a href="gp-letter-linked.html" target="_blank">GP letter</a>
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    This document details the claimant's chronic physical condition and the underlying illness, including treatment plan and timescales.
+                  </dd>
+                </div>
+              </dl>
+
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                      Which of these describes how well the claimant can wash and bathe?
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="washingbathingSelect-7" name="washingbathingSelect" type="radio" value="Cannot wash and bathe at all and needs another person to wash their entire body">
+                      <label class="govuk-label govuk-radios__label" for="washingbathingSelect-7">
+                        Cannot wash and bathe at all and needs another person to wash their entire body
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="washingbathingSelect-6" name="washingbathingSelect" type="radio" value="Needs assistance to be able to wash their body between the shoulders and waist">
+                      <label class="govuk-label govuk-radios__label" for="washingbathingSelect-6">
+                        Needs assistance to be able to wash their body between the shoulders and waist
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="washingbathingSelect-5" name="washingbathingSelect" type="radio" value="Needs assistance to be able to get in or out of a bath or shower">
+                      <label class="govuk-label govuk-radios__label" for="washingbathingSelect-5">
+                        Needs assistance to be able to get in or out of a bath or shower
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="washingbathingSelect-4" name="washingbathingSelect" type="radio" value="Needs assistance to be able to wash either their hair or body below the waist">
+                      <label class="govuk-label govuk-radios__label" for="washingbathingSelect-4">
+                        Needs assistance to be able to wash either their hair or body below the waist
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="washingbathingSelect-3" name="washingbathingSelect" type="radio" value="Needs supervision or prompting to be able to wash or bathe">
+                      <label class="govuk-label govuk-radios__label" for="washingbathingSelect-3">
+                        Needs supervision or prompting to be able to wash or bathe
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="washingbathingSelect-2" name="washingbathingSelect" type="radio" value="Needs to use an aid or appliance to be able to wash or bathe">
+                      <label class="govuk-label govuk-radios__label" for="washingbathingSelect-2">
+                        Needs to use an aid or appliance to be able to wash or bathe
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="washingbathingSelect" name="washingbathingSelect" type="radio" value="Can wash and bathe unaided">
+                      <label class="govuk-label govuk-radios__label" for="washingbathingSelect">
+                        Can wash and bathe unaided
+                      </label>
+                    </div>
+                  </div>
+
+                </fieldset>
+              </div>
+
+
+                    {{ govukTextarea({
+                      name: "washingbathingReason",
+                      id: "washingbathingReason",
+                      label: {
+                        text: "What is the reason for this answer?",
+                        classes: "govuk-label--m",
+                        isPageHeading: false
+                      },
+                      value: data['washingbathingReason']
+                    }) }}
+
+                    {{ govukButton({
+                      text: "Save"
+                    }) }}
+                </ul>
+
+
+
+            </form>
+
+
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+
+            </div>
+
+        </div>
+
+{% endblock %}

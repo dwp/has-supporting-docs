@@ -1,0 +1,410 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Claimant documents
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="claimant-details.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Claimant documents</h2>
+
+      <p class="govuk-body-s" id="last-updated">Last updated from DRS at 02:08 on 16 Sep 2021</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-3">
+        Show only these documents
+      </h2>
+
+      <div class="govuk-button-group">
+
+        <form action="claimant-documents-buttons-reviewed2" method="post" novalidate>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          New documents
+        </button>
+        
+      
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          PIP claim 20 Sep 2021
+        </button>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          UC claim 15 June 2021
+        </button>
+      </form>
+      </div>
+      
+      <table class="govuk-table" data-module="moj-sortable-table" aria-describedby="last-updated">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+      
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Document type</th>
+
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Document label</th>
+      
+            <th scope="col" class="govuk-table__header column-width-10" aria-sort="none">Benefit type</th>
+
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="none">Date of document</th>
+
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="descending">Date DWP received</th>            
+
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">Latest document activity</th>
+      
+          </tr>
+        </thead>
+      
+        <tbody class="govuk-table__body">
+      
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="further-evidence-one-button-complete.html">Further evidence</a></td>
+
+            <td class="govuk-table__cell">Hospital appointment</td>
+    
+            <td class="govuk-table__cell">PIP</td>
+  
+            <td class="govuk-table__cell" data-sort-value="12/05/21">15 May 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 Jan 2022</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2021</a></td>
+
+          </tr>
+    
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Further evidence</a></td>
+
+            <td class="govuk-table__cell">PIP2 questionnaire</td>
+    
+            <td class="govuk-table__cell">UC</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">4 Mar 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+ 
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">GP letter</a></td>
+
+            <td class="govuk-table__cell"></td>
+      
+            <td class="govuk-table__cell">UC</td>
+
+            <td class="govuk-table__cell" data-sort-value="21/04/21">28 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2021</a> and 1 other claim(s)</td>
+ 
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">NHS hospital report</a></td>
+
+            <td class="govuk-table__cell"></td>
+    
+            <td class="govuk-table__cell">UC</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">15 Mar 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2021</a></td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Outcome letter</a></td>
+
+            <td class="govuk-table__cell"></td>
+ 
+            <td class="govuk-table__cell">PIP</td>
+     
+            <td class="govuk-table__cell" data-sort-value="21/04/21">6 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Feb 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">UC claim 15 Jun 2021</a></td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Previous assessment report</a></td>
+
+            <td class="govuk-table__cell"></td>
+  
+            <td class="govuk-table__cell">PIP</td>
+    
+            <td class="govuk-table__cell" data-sort-value="21/04/21">6 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Feb 2021</td>
+
+            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Further evidence</a></td>
+
+            <td class="govuk-table__cell">PIP2 questionnaire</td>
+    
+            <td class="govuk-table__cell">UC</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">4 Mar 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+ 
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">GP letter</a></td>
+
+            <td class="govuk-table__cell"></td>
+      
+            <td class="govuk-table__cell">UC</td>
+
+            <td class="govuk-table__cell" data-sort-value="21/04/21">28 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2021</a> and 1 other claim(s)</td>
+ 
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">NHS hospital report</a></td>
+
+            <td class="govuk-table__cell"></td>
+    
+            <td class="govuk-table__cell">UC</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">15 Mar 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2021</a></td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Outcome letter</a></td>
+
+            <td class="govuk-table__cell"></td>
+ 
+            <td class="govuk-table__cell">PIP</td>
+     
+            <td class="govuk-table__cell" data-sort-value="21/04/21">6 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Feb 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">UC claim 15 Jun 2021</a></td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Previous assessment report</a></td>
+
+            <td class="govuk-table__cell"></td>
+  
+            <td class="govuk-table__cell">PIP</td>
+    
+            <td class="govuk-table__cell" data-sort-value="21/04/21">6 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Feb 2021</td>
+
+            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Further evidence</a></td>
+
+            <td class="govuk-table__cell">PIP2 questionnaire</td>
+    
+            <td class="govuk-table__cell">UC</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">4 Mar 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+ 
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">GP letter</a></td>
+
+            <td class="govuk-table__cell"></td>
+      
+            <td class="govuk-table__cell">UC</td>
+
+            <td class="govuk-table__cell" data-sort-value="21/04/21">28 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2021</a> and 1 other claim(s)</td>
+ 
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">NHS hospital report</a></td>
+
+            <td class="govuk-table__cell"></td>
+    
+            <td class="govuk-table__cell">UC</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">15 Mar 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2021</a></td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Outcome letter</a></td>
+
+            <td class="govuk-table__cell"></td>
+ 
+            <td class="govuk-table__cell">PIP</td>
+     
+            <td class="govuk-table__cell" data-sort-value="21/04/21">6 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Feb 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">UC claim 15 Jun 2021</a></td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Previous assessment report</a></td>
+
+            <td class="govuk-table__cell"></td>
+  
+            <td class="govuk-table__cell">PIP</td>
+    
+            <td class="govuk-table__cell" data-sort-value="21/04/21">6 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Feb 2021</td>
+
+            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Further evidence</a></td>
+
+            <td class="govuk-table__cell">PIP2 questionnaire</td>
+    
+            <td class="govuk-table__cell">UC</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">4 Mar 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+ 
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">GP letter</a></td>
+
+            <td class="govuk-table__cell"></td>
+      
+            <td class="govuk-table__cell">UC</td>
+
+            <td class="govuk-table__cell" data-sort-value="21/04/21">28 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2021</a> and 1 other claim(s)</td>
+ 
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">NHS hospital report</a></td>
+
+            <td class="govuk-table__cell"></td>
+    
+            <td class="govuk-table__cell">UC</td>
+  
+            <td class="govuk-table__cell" data-sort-value="21/04/21">15 Mar 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 May 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">PIP claim 20 Sep 2021</a></td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Outcome letter</a></td>
+
+            <td class="govuk-table__cell"></td>
+ 
+            <td class="govuk-table__cell">PIP</td>
+     
+            <td class="govuk-table__cell" data-sort-value="21/04/21">6 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Feb 2021</td>
+
+            <td class="govuk-table__cell">Added to <a href="referral-information-with-docs.html" class="govuk-link">UC claim 15 Jun 2021</a></td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+      
+            <td class="govuk-table__cell"><a href="#">Previous assessment report</a></td>
+
+            <td class="govuk-table__cell"></td>
+  
+            <td class="govuk-table__cell">PIP</td>
+    
+            <td class="govuk-table__cell" data-sort-value="21/04/21">6 Feb 2021</td>
+
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Feb 2021</td>
+
+            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+
+          </tr>
+      
+        </tbody>
+      </table>
+
+    </div>
+  </div>  
+
+
+{% endblock %}

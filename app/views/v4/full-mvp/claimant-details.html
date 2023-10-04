@@ -1,0 +1,105 @@
+{% extends "layouts/old-layouts/layout-key-details.html" %}
+
+
+
+{% block pageTitle %}
+  Claimant details
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Preferred name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            07799 000000
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            SRTI
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Referral details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Referral date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2 February 2021
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Referral type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            New referral
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Benefit type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            PIP
+          </dd>
+        </div>
+      </dl>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          What you can do next
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list">
+            <li>
+              <a href="#" class="govuk-link">Update status</a>
+            </li>
+            <li>
+              <a href="claimant-documents-buttons.html" class="govuk-link">View claimant documents</a>
+            </li>
+            <li>
+              <a href="#" class="govuk-link">Move to another caseload</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+
+{% endblock %}

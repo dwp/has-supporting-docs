@@ -1,0 +1,42 @@
+{% extends "layouts/old-layouts/layout.html" %}
+
+
+{% block pageTitle %}
+  Sorry, there is a problem – Health Assessment Service
+{% endblock %}
+
+{% block beforeContent %}
+<a href="claimant-documents.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Sorry, there is a problem</h1>
+    <p class="govuk-body">The document failed to load from DRS. This could be a temporary problem and may be resolved soon. Please try again.</p>
+    <p class="govuk-body">If the problem persists, report this to technical support by visiting <a class="govuk-link" href="https://dwp.service-now.com/itsupport/" target="_blank">DWP Place (opens in new tab)</a>. You will then need to follow these steps:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Select the ‘Report an incident’ option to open a new message</li>
+      <li>Take a screenshot of this webpage and attach it to the message</li>
+      <li>Include the incident code below</li>
+    </ul>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Incident code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxxxxxxxx
+        </dd>
+      </div>
+    </dl>
+
+    <p>This will help us to improve the service.</p>
+    <p>Go back to <a class="govuk-link" href="claimant-details.html">HAS Homepage</a>.</p>
+
+  </div>
+</div>
+
+{% endblock %}

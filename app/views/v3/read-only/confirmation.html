@@ -1,0 +1,34 @@
+{% extends "layouts/old-layouts/layout-key-details.html" %}
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+
+{% block beforeContent %}
+<a href="envelope-new.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">Further evidence</h1>
+        <div class="govuk-panel__body">
+          <strong>You reviewed this document on 12 October 2021
+        </div>
+      </div>
+    </div>
+  </div>    
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">Choose your next step</h2>
+      <p><a href="document-list-new1.html">View all documents for this claimant</a></p>
+      <p><a href="referral-information-with-docs.html">Return to the claimant details page</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

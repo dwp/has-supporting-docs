@@ -1,0 +1,206 @@
+{% extends "layouts/old-layouts/layout-key-details.html" %}
+{% block pageTitle %}
+  Document review
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Document review</h1>
+      <div class="govuk-phase-banner govuk-!-margin-bottom-4">
+        <p class="govuk-phase-banner__content govuk-!-margin-bottom-2">
+          <strong class="govuk-tag govuk-tag--yellow">
+            New document
+          </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new document and needs to be reviewed.
+          </span>
+        </p>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+      <iframe class="document" src="/public/pdfs/PhysiotherapyRecommendations.pdf"></iframe>
+    </div>
+  </div>  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <ol class="app-step-nav__steps govuk-body govuk-!-margin-bottom-7">
+        <li class="app-step-nav__step" id="check-document-details">
+          <div class="app-step-nav__header" data-position="1">
+            <h2 class="app-step-nav__title govuk-body govuk-!-margin-bottom-2">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 1
+                  </span>
+                </span>
+              </span>
+                Check document details
+            </h2>
+
+            <div class="govuk-notification-banner govuk-notification-banner--success govuk-!-margin-bottom-2" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+              <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                  Success
+                </h2>
+              </div>
+              <div class="govuk-notification-banner__content">
+                <h3 class="govuk-notification-banner__heading">
+                  You changed the document type
+                </h3>
+              </div>
+            </div>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Document type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Physiotherapist letter
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="document-type.html">
+                    Change<span class="govuk-visually-hidden"> document type</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of document
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Not set
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="date-created.html">
+                    Change<span class="govuk-visually-hidden"> document date</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date received
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  21 April 2021
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Benefit received for
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  PIP
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Harmful information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Not harmful
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step" id="comment-on-this-document">
+          <div class="app-step-nav__header" data-position="2">
+            <h2 class="app-step-nav__title govuk-body govuk-!-margin-bottom-2">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 2
+                  </span>
+                </span>
+              </span>
+                Comment on this document
+            </h2>
+
+            <div class="govuk-form-group">
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+          
+          </div>
+        </li>
+
+        <li class="app-step-nav__step" id="add-this-document-to-a-claim">
+          <div class="app-step-nav__header" data-position="3">
+            <h2 class="app-step-nav__title govuk-body govuk-!-margin-bottom-2">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 3
+                  </span>
+                </span>
+              </span>
+                Add this document to a claim
+              </span>
+            </h2>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="PIP" name="claim" type="checkbox" value="PIP">
+                    <label class="govuk-label govuk-checkboxes__label" for="PIP">
+                      <strong>PIP claim</strong> 12 April 2021
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="UC" name="claim" type="checkbox" value="UC">
+                    <label class="govuk-label govuk-checkboxes__label" for="UC">
+                      <strong>UC claim</strong> 30 April 2021
+                    </label>
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
+
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-button-group">
+        <a href="confirmation.html" aria-describedby="confirmation">
+          <button class="govuk-button" data-module="govuk-button">
+            Save changes
+          </button>
+        </a>  
+        <a href="document-list.html" aria-describedby="confirmation">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Not useful
+          </button>
+        </a>  
+      </div>
+    </div>
+  </div>
+</div>  
+
+
+{% endblock %}

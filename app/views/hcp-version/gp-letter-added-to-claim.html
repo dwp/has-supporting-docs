@@ -1,0 +1,477 @@
+{% extends "layouts/old-layouts/layout-key-details-assessment.html" %}
+
+
+{% block pageTitle %}
+  Document review
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="referral-info-start-assessment.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Document review</h1>
+      <div class="govuk-phase-banner govuk-!-margin-bottom-4">
+        <p class="govuk-phase-banner__content govuk-!-margin-bottom-2">
+          <strong class="govuk-tag govuk-tag--blue">
+            Added to claim
+          </strong>
+          <span class="govuk-phase-banner__text">
+            This document was added to <a href="referral-info-start-assessment.html">PIP claim - 12 April 2021</a> by Case Manager 1 on 15 July 2021.
+          </span>
+        </p>
+
+        <details class="govuk-details govuk-!-margin-bottom-1" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              View document edit history
+            </span>
+          </summary>
+          <div class="moj-timeline govuk-!-margin-top-4">
+
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Document status changed</h2>
+          
+                <p class="moj-timeline__byline">by Case Manager 1</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-14T14:01:00.000Z">5 May 2021 at 2:37pm</time>
+              </p>
+          
+              <div class="moj-timeline__description">
+                <p>From <strong>New document</strong> to <strong>Added to claim</strong></p>
+              </div>
+          
+            </div>
+
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Added to claim</h2>
+          
+                <p class="moj-timeline__byline">by Case Manager 1</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-14T14:01:00.000Z">5 May 2021 at 2:37pm</time>
+              </p>
+          
+              <div class="moj-timeline__description">
+                <p>Added to <strong>PIP claim 12 April 2021</strong></p>
+              </div>
+          
+            </div>
+
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Comment added</h2>
+          
+                <p class="moj-timeline__byline">by Case manager 1</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-14T14:01:00.000Z">14 May 2021 at 2:37pm</time>
+              </p>
+          
+              <div class="moj-timeline__description">
+                <div class="govuk-inset-text">
+                  This document contains information relating to the claimants difficulties in moving around.
+                </div>
+              </div>
+          
+            </div>
+
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Document created date changed</h2>
+          
+                <p class="moj-timeline__byline">by Case Manager 1</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-14T14:01:00.000Z">5 May 2021 at 2:23pm</time>
+              </p>
+          
+              <div class="moj-timeline__description">
+                <p>To <strong>21 November 2020</strong></p>
+              </div>
+          
+            </div>
+
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Document type changed</h2>
+          
+                <p class="moj-timeline__byline">by Case Manager 1</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-14T14:01:00.000Z">5 May 2021 at 2:01pm</time>
+              </p>
+          
+              <div class="moj-timeline__description">
+                <p>From <strong>Further evidence</strong> to <strong>Physiotherapist letter</strong></p>
+              </div>
+          
+            </div>
+
+          </div>
+        </details>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <iframe class="document" src="/public/pdfs/ConsultantLetter.pdf"></iframe>
+    </div>
+  </div>  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <ol class="app-step-nav__steps govuk-body govuk-!-margin-bottom-7">
+        <li class="app-step-nav__step" id="check-document-details">
+          <div class="app-step-nav__header" data-position="1">
+            <h2 class="app-step-nav__title govuk-body govuk-!-margin-bottom-2">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 1
+                  </span>
+                </span>
+              </span>
+                Check document details
+            </h2>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Document type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  GP letter
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="document-type.html">
+                    Change<span class="govuk-visually-hidden"> document type</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of document 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  5 Jan 2021
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="date-created.html">
+                    Change<span class="govuk-visually-hidden"> date of document</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date received
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  21 April 2021
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Benefit type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  PIP
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Harmful information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Not harmful
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step" id="comment-on-this-document">
+          <div class="app-step-nav__header" data-position="2">
+            <h2 class="app-step-nav__title govuk-body govuk-!-margin-bottom-2">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 2
+                  </span>
+                </span>
+              </span>
+                Comment on this document
+            </h2>
+
+            <div class="govuk-form-group">
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Case manager 1<br><span class="govuk-caption-m">15 July 2021</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  This document details the claimant's chronic physical condition and the underlying illness, including treatment plan and timescales.
+                </dd>
+              </div>
+            </dl>
+          
+          </div>
+        </li>
+
+        <li class="app-step-nav__step" id="add-this-document-to-a-claim">
+          <div class="app-step-nav__header" data-position="3">
+            <h2 class="app-step-nav__title govuk-body govuk-!-margin-bottom-2">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 3
+                  </span>
+                </span>
+              </span>
+                Add this document to a claim
+              </span>
+            </h2>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="PIP" name="claim" type="checkbox" value="PIP" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="PIP">
+                      <strong>PIP claim</strong> 12 April 2021
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="UC" name="claim" type="checkbox" value="UC">
+                    <label class="govuk-label govuk-checkboxes__label" for="UC">
+                      <strong>UC claim</strong> 30 April 2021
+                    </label>
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
+
+          </div>
+        </li>
+
+        <li class="app-step-nav__step" id="link-this-document-to-assessment-activities">
+          <div class="app-step-nav__header" data-position="4">
+            <h2 class="app-step-nav__title govuk-body govuk-!-margin-bottom-2">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 4
+                  </span>
+                </span>
+              </span>
+                Link this document to assessment activities
+              </span>
+            </h2>
+
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      PIP claim 12 April 2021
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                  
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    
+                    <h3>History</h3>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        History of condition
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Current medication or treatment
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Social and occupational history
+                      </label>
+                    </div>
+
+                    <h3>Day to day life</h3>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Preparing food
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Taking nutrition
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Managing therapy
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Washing and bathing
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Managing toilet needs
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Dressing and undressing
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Communicating verbally
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Reading and understanding signs, symbols and words
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Engaging face to face
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Budgeting
+                      </label>
+                    </div>
+
+                    <h3>Mobility</h3>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Planning and following journeys
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                      <label class="govuk-label govuk-checkboxes__label" for="countries">
+                        Moving around
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      UC claim 30 April 2021
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                  <p class='govuk-body'>Assessment activites will appear here once the document has been added to a claim.</p>
+                </div>
+              </div>
+              
+            </div>
+
+          </div>
+        </li>
+
+        <li class="app-step-nav__step" id="set-document-status">
+          <div class="app-step-nav__header" data-position="5">
+            <h2 class="app-step-nav__title govuk-body govuk-!-margin-bottom-2">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 5
+                  </span>
+                </span>
+              </span>
+                Set the status of this document
+              </span>
+            </h2>
+
+            <div class="govuk-form-group">
+              <select class="govuk-select govuk-!-width-one-half" id="sort" name="sort">
+                <option value="new">New document</option>
+                <option value="not-added">Not added to claim</option>
+                <option value="added" selected>Added to claim</option>
+                <option value="prepared">Linked to assessment</option>
+              </select>
+            </div>
+
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <a href="confirmation-2.html" aria-describedby="confirmation">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </a>  
+    </div>
+  </div>
+</div>  
+
+
+{% endblock %}

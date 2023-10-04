@@ -1,0 +1,46 @@
+{% extends "layouts/old-layouts/layout-key-details-assessment.html" %}
+
+
+{% block pageTitle %}
+  Preparing food
+{% endblock %}
+
+
+{% block beforeContent %}
+<a href="assessment-status.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+            <form action="assessment-status" method="post">
+
+              {{ govukTextarea({
+                name: "evidenceused",
+                id: "evidenceused",
+                rows: "12",
+                label: {
+                  text: "Evidence",
+                  classes: "govuk-label--xl",
+                  isPageHeading: true
+                },
+                value: data['evidenceused']
+              }) }}
+
+                      {{ govukButton({
+                        text: "Save"
+                      }) }}
+
+            </form>
+
+
+
+              
+
+            </div>
+        </div>
+
+
+{% endblock %}

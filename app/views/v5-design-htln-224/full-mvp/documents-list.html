@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+
+<div class="govuk-width-container">
+
+
+<a href="claimant-details.html" class="govuk-back-link">Back</a>
+
+<main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+ 
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Claimant documents</h2>
+
+ 
+  
+
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button.html" class="govuk-link">new</a>.
+      </p>
+
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button-complete-popup.html" class="govuk-link">complete pop up</a>.
+      </p>
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button-complete.html" class="govuk-link">complete</a>.
+      </p>
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button-date-error.html" class="govuk-link">date error</a>.
+      </p>
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button-error.html" class="govuk-link">error</a>.
+      </p>
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button-error1.html" class="govuk-link">error1</a>.
+      </p>
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button-label-removed.html" class="govuk-link">label removed</a>.
+      </p>
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button-multiple.html" class="govuk-link">multiple</a>.
+      </p>
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button-open.html" class="govuk-link">open</a>.
+      </p>
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-one-button-reviewed.html" class="govuk-link">reviewed</a>.
+      </p>
+      <p class="govuk-body">
+        Jump to <a href="further-evidence-radios.html" class="govuk-link">radios</a>.
+      </p>
+    
+
+    </div>
+  </div>  
+</main>
+</div>
+
+
+
+{% endblock %}

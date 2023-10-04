@@ -1,0 +1,235 @@
+{% extends "layouts/old-layouts/layout-key-details.html" %}
+{% block pageTitle %}
+  Document review
+{% endblock %}
+
+{% block beforeContent %}
+<a href="document-list-new1.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Document review</h1>
+
+    <strong class="govuk-tag govuk-tag--blue">
+      Reviewed
+    </strong>
+    <span class="govuk-body-s">This document was reviewed on 15 Oct 2021.</span>
+
+    <details class="govuk-details govuk-!-margin-bottom-1 govuk-!-margin-top-4" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View document activity
+        </span>
+      </summary>
+      <div class="moj-timeline govuk-!-margin-top-4">
+
+        <div class="moj-timeline__item">
+      
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Marked as reviewed</h2>
+      
+            <p class="moj-timeline__byline">by Gabriel Brennan</p>
+      
+          </div>
+      
+          <p class="moj-timeline__date">
+            <time datetime="2019-06-14T14:01:00.000Z">21 Aug 2021 at 1:36pm</time>
+          </p>
+      
+          <div class="moj-timeline__description">
+            <p>Status changed from <strong>New document</strong> to <strong>Reviewed</strong></p>
+          </div>
+      
+        </div>
+
+      </div>
+    </details>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  </div>
+</div>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+      <iframe class="document" src="/public/pdfs/JaneDoe_PIP2Questionnaire_120921.pdf" title="PIP2 document"></iframe>
+    </div>
+  </div>  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Document type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Further evidence
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date DWP received
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  21 April 2021
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Benefit type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  PIP
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Document label
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  PIP questionnaire
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="document-label.html">
+                    Change<span class="govuk-visually-hidden"> document label</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of document
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  19 October 2020
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="date-created.html">
+                    Change<span class="govuk-visually-hidden"> document date</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-2">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Comments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="document-label.html" class="govuk-link">Add</a>
+            </dd>
+          </div>
+        </dl>
+
+        <p>Add a comment if it helps to describe the contents of the document.</p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case manager 1<br><span class="govuk-caption-m">15 July 2021</span>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              This document contains information relating to the claimants difficulties in moving around.
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Add this document to a claim
+              </h2>
+            </legend>
+          
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="pip" name="claim" type="checkbox" value="PIP">
+                <label class="govuk-label govuk-checkboxes__label" for="pip">
+                  <strong>PIP claim</strong> 12 Sep 2021
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="uc" name="claim" type="checkbox" value="UC">
+                <label class="govuk-label govuk-checkboxes__label" for="uc">
+                  <strong>UC claim</strong> 23 Jun 2021
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+
+        </div>
+
+    </div>
+
+  </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <form action="confirmation-2" method="post" novalidate>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <div class="govuk-form-group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Has this document been reviewed?
+            </h2>
+          </legend>
+
+          <div class="govuk-hint">
+            Leaving this unchecked marks this as a new document.
+          </div>
+        
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="reviewed" name="reviewed" value="reviewed" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="reviewed">
+                This document has been reviewed
+              </label>
+            </div>
+          </div>
+    
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Save changes
+            </button>
+        
+            <a class="govuk-link" href="document-list-new1.html">Cancel</a>
+          </div>
+
+        </form>
+
+      </div>
+     </div>
+    
+
+</div>  
+
+
+{% endblock %}

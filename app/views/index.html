@@ -1,6 +1,7 @@
 
 {% extends "layouts/old-layouts/layout.html" %}
 
+
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
@@ -17,189 +18,42 @@
       <p>Use this service to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>view documents stored in the Document Repository Service</li>
-        <li>Manage document lists</li>
         <li>edit document details</li>
         <li>comment on documents</li>
-        <li>Mark document if important</li>
+        <li>add documents to claims/referrals</li>
+        <li>link documents to assessment activities</li>
       </ul>
 
-   
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
       <h2 class="govuk-heading-l">Current release of supporting documents</h2>
-
-
-      <h3 class="govuk-heading-s">Version 9 prototype </h3>
-        
-        <p>New admin journey for NCAT users, to update 'date of documents' and 'document name' more efficiently. Also first release of new HCP screens, including list view and document view.</p>
-       
-      <p><a href="/v11x-htln-744-new-admin&hcpView">Current production version</a></p>
-      <br>
-      
-      <p>Warning screens</p>
-      <p><a href="/v11x-htln-547/document-no-activity">No document activity screen</a></p>
-        
-      <p><a href="/v11x-htln-744-new-admin&hcpView/document-list-dereg.html">Warning message when de-registered interest</a></p>
-
-      <p><a href="/v11x-htln-744-new-admin&hcpView/document-Advisory.html">Advisory screen, if user has not got permissions to access supporting documents</a></p>
-      
-      
-  
-    
-
+      <p>(Sept 23 by Team Lemon dove)</p>
+        <p><a href="/v5-design-htln-224/full-mvp.html">Version 5</a></p>
        
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-        <h2 class="govuk-heading-l">New deliverables</h2> 
+        <h2 class="govuk-heading-l">New deliverables</h2>
 
 
-        <h3 class="govuk-heading-m">User research 7th Nov </h3>
-
-        <h3 class="govuk-heading-s">Prompts and supporting docs</h3>
-
-        <!-- <p><a href="/v10-htln-491-mvp">HCP improvements prototype</a></p> -->
-        <!-- <p><a href="/v10-htln-503-mvp-v2">Archive/hide docs</a></p> -->
-       
-        <p><a href="/v11x-htln-974-HCPReviewPrompts">Prompts single page journey</a></p>
-       
-
-<br>
-      
-
-
-
-
-        <h3 class="govuk-heading-m">Tested improvements to supporting docs </h3>
-
-       
-
-        <h3 class="govuk-heading-s">Mark document as important </h3>
-
-        <!-- <p><a href="/v10-htln-491-mvp">HCP improvements prototype</a></p> -->
-        <!-- <p><a href="/v10-htln-503-mvp-v2">Archive/hide docs</a></p> -->
-        <p>It has been identified HCPs need to remember which documents are useful or need to reference. This feature allow them to do this with supporting documents itself</p>
-
-        <p><a href="/v10x-htln-491-mvp-leftNav">'Mark document as important' feature</a></p>
-       
-        
-        <h3 class="govuk-heading-s">Mark document as irrelevant </h3>
-        <p>There can be alot of duplicate or non-medical documents within supporting documents, this feature allows the admin user or HCP to achive these documents away.</p>
-        <p><a href="/v11x-htln-547">'Mark document as irrelevant' feature</a></p>
-       
-       
-        <h3 class="govuk-heading-m">Other ideas for improvements to supporting docs </h3>
-
-        <h3 class="govuk-heading-s">Future ideas with using tags</h3>
-        <p>Using the tags for other features, could help speed up HCP work, as they will know what information is in a document before opening it. For example Harmful information or if a comment has been added. The prototype is just ideas and has not been tested, however some of these features have been identified as a need.</p>
-
-       
-        <p><a href="/v11x-htln-547-reviewed">Reviewed documents (not inscope)</a></p>
+        <h3 class="govuk-heading-m">De-registering interest</h3>
+        <p>(Sept 23 by Team Lemon dove)</p>
   
     
-        <h3 class="govuk-heading-s">Accessibility - using screen reader label to each document in list</h3>
-        <p>Its common to have documents with the same name, such as whitemail unstructured documents, GP letters or muliple forms like PIP2s. This piece of work is to help HCPs keep track of which documents they have viewed, inaddition ensuring it is accessible with all technologies, including screen readers.</p>
-
-       
-        <p><a href="/v12-htln-1108-accesLabelsOnly">Date only</a></p>
-        <p><a href="/v12-htln-1108-accesLabelswithNumber">Date and number</a></p>
-        <p><a href="/v12-htln-1108-accesNumberOnly">Number only</a></p>
-        
-
-        
-
-        
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-             Jira tickets
-            </span>
-          </summary>    
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-486">HTLN-486</a>, Add document activity timeline to the latest design</li>
-          <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-487">HTLN-486</a>, Add comments field to the edit documents and document view page</li>
-          <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-491">HTLN-491</a>, Finalise Prototype for MVP</li>   
-          <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-570">HTLN-570</a>, No document activity screen</li>   
-       
-
-        </ul>
-      
-        </details>
-
-
-        <h3 class="govuk-heading-s">Past research</h3>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-             Prototypes that were tested
-            </span>
-          </summary>    
+        <p><a href="/v7-htln-293">Warning message when de-registered interest</a></p>
   
-        <p><a href="/v8-htln-363">Round 1 - Claimant documents design with HCPs</a></p>
-        <p><a href="/v9-htln-416">Round 2 - Claimant documents design with NCAT</a></p>
-        <p><a href="/v10-htln-431">Round 3 - Revised design of Claimant documents for HCPs</a></p>
-        <p><a href="/v10-htln-431-NCAT">Round 3 - Revised design of Claimant documents for NCAT</a></p>
-        <p><a href="/v10-htln-431-NCAT-v2">Round 3 - Revised design of Claimant documents for NCAT - Alternative v2</a></p>
-        <p><a href="/v11x-htln-547">Round 4 - Irrelevant documents with view page (April 24)</a></p>
-        <p><a href="/v11x-htln-547-editPage">Round 4- Irrelevant documents with an edit page (not tested)</a></p>
-      
+  <br>
+ 
         <ul class="govuk-list govuk-list--bullet">
-          <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-224">HTLN-363</a>, Round 1 - Claimant documents improvements</li>
-          <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-416">HTLN-416</a>, Round 2 - Create claimant document prototype for NCAT</li>
-          <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-416">HTLN-431</a>, Round 3 - Revised claimant document prototype for HCPs and NCAT users</li>
-        </ul>
-      </details>
-
-     
-
-      
-
-        <!-- <h3 class="govuk-heading-m">Prototype enhancements</h3>
-        <p>Due to the complexity of the prototype in previous testing, this version has been created to try and simplify the process of putting the prototype together for further testing</p>
-        <p><a href="/version-x">Version X</a></p> -->
-       
-        <h3 class="govuk-heading-m">Starling</h3>
-        <p>Joined up piece of work to support Starling in user research.</p>
-
-        <p><a href="/vStarling-award/document-list">Award Starling prototype</a></p>
-        <p><a href="/vStarling-nil/document-list">Nil Starling prototype</a></p>
-       
-       
-       
-
-     
-      
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-    <h2 class="govuk-heading-l">Completed deliverables</h2>
-
-    <h3 class="govuk-heading-m">Version 8 - Changes include opening pdf link on the document view page.</h3>
-
-    <p class="govuk-body"><a href="/v7a-htln-557" class="govuk-link">View version 7 prototype</a></p>
-    <p>(March 24 by Team Lemon dove)</p>
-    
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-557">HTLN-557</a> Add 'Open pdf link' to legacy design</li>
-      </ul>
+          <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-293">HTLN-293</a>, Design work for de-registering interest</li>
+          </ul>
+  
+  <BR>
 
 
 
-    <h3 class="govuk-heading-m">Version 7 - De-registering interest</h3>
-    <p>(Oct 23 by Team Lemon dove)</p>
-
-    <p><a href="/v7-htln-293">Warning message when de-registered interest</a></p>
-
-<br>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="https://dwpdigital.atlassian.net/browse/HTLN-293">HTLN-293</a>, Design work for de-registering interest</li>
-      </ul>
-
-
-   
 
 
 
-      <h3 class="govuk-heading-m">Version 6 - iframe improvements</h3>
+      <h3 class="govuk-heading-m">iframe improvements</h3>
       <p>(Sept 23 by Team Lemon dove)</p>
 
   
@@ -231,7 +85,7 @@
 
 <BR>
 
-      <h3 class="govuk-heading-m">Version 5 - Design alignment across HAS</h3>
+      <h3 class="govuk-heading-m">Design alignment across HAS</h3>
       <p>(June 23 by Team Lemon dove)</p>
       <p><a href="/v5-design-htln-224/full-mvp">Claimant documents design</a></p>
 

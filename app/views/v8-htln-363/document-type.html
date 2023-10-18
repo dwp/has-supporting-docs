@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Document review
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="pip2-new.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="further-evidence-original-label" method="post">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Add a document label
+              </h1>
+            </legend>
+
+            <label class="govuk-label" for="document-type">
+              Choose a label that accurately describes this document
+            </label>
+
+            <select class="govuk-select govuk-!-width-one-half" id="sort" name="sort">
+              <option value="blank"></option>
+              <option value="cardiology">Cardiology letter</option>
+              <option value="care-home">Care home letter</option>
+              <option value="carer">Carer letter</option>
+              <option value="consultant">Consultant letter</option>
+              <option value="dermatology">Dermatology report</option>
+              <option value="dwp">DWP document</option>
+              <option value="gp">GP letter</option>
+              <option value="haematology">Haematology report</option>
+              <option value="home-office">Home Office letter</option>
+              <option value="nephrology">Nephrology report</option>
+              <option value="neurology">Neurology report</option>
+              <option value="nhs-hospital">NHS hospital report</option>
+              <option value="nurse">Nurse letter</option>
+              <option value="oncology">Oncology report</option>
+              <option value="orthopaedic">Orthopaedic report</option>
+              <option value="pharmacy">Pharmacy letter</option>
+              <option value="physiotherapy">Physiotherapy report</option>
+              <option value="radiology">Radiology report</option>
+            </select>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save changes</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

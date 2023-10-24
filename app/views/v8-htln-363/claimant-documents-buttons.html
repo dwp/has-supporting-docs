@@ -47,13 +47,13 @@
             },
             items: [
             {
-              id: "esa",
-              value: "esa",
+              id: "pip",
+              value: "pip",
               text: "PIP 23 June 2020 (8)"
               },
             {
-            id: "esa",
-            value: "esa",
+            id: "uc",
+            value: "uc",
             text: "UC 14 October 2023 (8)"
             }
            
@@ -73,23 +73,23 @@
           },
           items: [
           {
-            id: "esa",
-            value: "esa",
-            text: "Important (1)"
+            id: "important",
+            value: "important",
+            html: "Important (<span id='srelCount'>1</span>)"
             },
           {
-          id: "esa",
-          value: "esa",
-          text: "Unread (8)"
-          }
+          id: "unread",
+          value: "unread",
+          html: "Unread (<span id='srelCount'>1</span>)"
+            }
          
           ]
           }) }}
 
   
-         
 
           <button class="govuk-button govuk-button--secondary govuk-!-Marchgin-bottom-8">Apply filters</button>
+        </form>
           <br>
           <ul class="govuk-list">
             <li>
@@ -98,10 +98,10 @@
           </p> -->
           </li>
           <li>
-            <a href="#" class="govuk-link">Clear all filters</a>
+            <a href="claimant-documents-buttons" class="govuk-link">Clear all filters</a>
           </li>
           </ul>
-        </form>
+      
   
   
   
@@ -169,7 +169,7 @@
       
         <tbody class="govuk-table__body">
       
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row important unread pip notuc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-pip2.html">PIP 2 questionnaire</a></td>
     
@@ -183,7 +183,7 @@
 
           </tr>
     
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important unread notpip uc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-AP1.html">AP Assessment report</a></td>
 
@@ -200,7 +200,7 @@
  
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important unread notpip uc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-AP2.html">AP Assessment report</a></td>
 
@@ -216,7 +216,7 @@
  
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important unread notpip uc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-AR1.html">Award review AR1</a></td>
 
@@ -232,13 +232,13 @@
 
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important unread pip notuc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-AR2.html">Award review AR1</a></td>
 
        
  
-            <td class="govuk-table__cell">PIP</td>
+            <td class="govuk-table__cell ">PIP</td>
      
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
@@ -248,7 +248,7 @@
 
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important unread pip notuc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-ARcoverletter.html">Award review AR1 covering letter</a></td>
 
@@ -264,7 +264,7 @@
 
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important unread notpip uc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-ESA50.html">ESA50</a></td>
 
@@ -280,7 +280,7 @@
  
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important unread notpip uc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-ESA85.html">ESA85</a></td>
 
@@ -296,7 +296,7 @@
  
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important unread notpip uc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-FurtherEvidence1.html">Further evidence</a></td>
 
@@ -312,7 +312,7 @@
 
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important read pip notuc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-FurtherEvidence2.html">Further evidence</a></td>
 
@@ -328,7 +328,7 @@
 
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important read pip notuc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-LT54.html">LT54</a></td>
 
@@ -344,7 +344,7 @@
 
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important read notpip uc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-White-unstructured.html">WHITE MAIL UNSTRUCTED</a></td>
 
@@ -360,7 +360,7 @@
  
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row no-important read notpip uc">
       
             <td class="govuk-table__cell"><a href="further-evidence-one-button-White-unstructured2.html">WHITE MAIL UNSTRUCTED</a></td>
 
@@ -389,4 +389,120 @@
 
 
 
+<script>
+
+  function hideAllWithClass(classname) {
+    document.querySelectorAll("." + classname).forEach((element) => {
+      element.style.visibility = 'collapse';
+    });
+  }
+
+  function showAllWithClass(classname) {
+    document.querySelectorAll("." + classname).forEach((element) => {
+      element.style.visibility = 'visible';
+    });
+  }
+
+  document.querySelector("#filters").addEventListener("submit", function (e) {
+
+    e.preventDefault();    //stop form from submitting
+
+    showAllWithClass("unread");
+    showAllWithClass("read");
+    showAllWithClass("pip");
+    showAllWithClass("notpip");
+    showAllWithClass("uc");
+    showAllWithClass("notuc");
+    showAllWithClass("tresco");
+    showAllWithClass("handsworth");
+    showAllWithClass("important");
+    showAllWithClass("no-important");
+    
+
+    let benefitTypes = [];
+    let sites = [];
+
+    if (document.getElementById('important').checked == true) {
+      hideAllWithClass("no-important");
+    }
+
+    if (document.getElementById('unread').checked == true) {
+      hideAllWithClass("read");
+    }
+
+    if (document.getElementById('pip').checked == true) {
+      hideAllWithClass("notpip");
+    }
+
+    if (document.getElementById('uc').checked == true) {
+      hideAllWithClass("notuc");
+    }
+
+    // if (document.getElementById('pip').checked == true || document.getElementById('esa').checked == true || document.getElementById('uc').checked == true) {
+    //   if (document.getElementById('pip').checked == false) {
+    //     hideAllWithClass("pip");
+    //   } else {
+    //     benefitTypes.push("Personal Independence Payment");
+    //   }
+
+    //   if (document.getElementById('esa').checked == false) {
+    //     hideAllWithClass("esa");
+    //   } else {
+    //     benefitTypes.push("Employment Support Allowance");
+    //   }
+
+    //   if (document.getElementById('uc').checked == false) {
+    //     hideAllWithClass("uc");
+    //   } else {
+    //     benefitTypes.push("Universal Credit");
+    //   }
+    // }
+
+    // if (document.getElementById('handsworth').checked == true || document.getElementById('tresco').checked == true) {
+    //   if (document.getElementById('handsworth').checked == false) {
+    //     hideAllWithClass("handsworth");
+    //   } else {
+    //     sites.push("Handsworth");
+    //   }
+
+    //   if (document.getElementById('tresco').checked == false) {
+    //     hideAllWithClass("tresco");
+    //   } else {
+    //     sites.push('Tresco');
+    //   }
+    // }
+
+    // var count = 0;
+    // var elemnts = document
+    //   .querySelectorAll('.govuk-table tr').forEach((element) => {
+    //     if (element.style.visibility === 'visible') {
+    //       count += 1;
+    //     }
+    //   })
+
+    // if (count < 20) {
+    //   document.getElementById('pagination').style.visibility = 'collapse';
+    // } else {
+    //   document.getElementById('pagination').style.visibility = 'visible';
+    // }
+
+    // document.getElementById('paginationTotal').innerText = count;
+
+    // var eol = document.getElementById('srel').checked ? " end of life" : "";
+    // var benefitTypeString = benefitTypes.join(", ");
+    // var sitesString = sites.join(", ");
+    // var ifBenefitType = benefitTypes.length > 0 ? ' for ' : '';
+    // var ifSites = sites.length > 0 ? ' at ' : '';
+
+    //11 HCP review end of life referrals in PIP, ESA, UC at Birmingham Handsworth
+    // var text = count + " report ready " + eol + " referrals " + ifBenefitType + benefitTypeString + ifSites + sitesString;
+    var text = count + " referrals";
+
+    document.getElementById('filter-playback').innerText = text;
+
+    // document.getElementById('srelCount').innertext = document.querySelectorAll('.govuk-table tr.srel').length;
+
+  });
+
+</script>
 {% endblock %}

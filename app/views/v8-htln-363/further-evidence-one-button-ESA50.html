@@ -31,7 +31,9 @@
 
 <div class="govuk-width-container full-width-container1280">
 
-<a href="claimant-documents-buttons-important.html" class="govuk-back-link">Back to claimant documents list</a>
+  <form action="confirmation-one-button" method="post" novalidate>
+
+<a href="claimant-documents-buttons.html" class="govuk-back-link">Back to claimant documents list</a>
 
 <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
  
@@ -45,14 +47,18 @@
 
 
       <!-- <strong class="govuk-tag govuk-tag--blue">Unread</strong> <strong class="govuk-tag govuk-tag--yellow">Important</strong>  -->
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
-            Mark document as important
-          </label> 
-        </div>
-    </div>
+      {{ govukCheckboxes({
+        name: "ESA50",
+        
+        items: [
+          
+          {
+            value: "ESA50a",
+            text: "Mark document as important",
+            checked: (data['ESA50'])
+          }
+        ]
+      }) }}
     </div>
 
         <div class="govuk-grid-column-two-thirds">
@@ -644,7 +650,7 @@
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              <form action="confirmation-one-button" method="post" novalidate>
+              
 
                   <button class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
                     Save all changes

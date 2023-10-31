@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-<a href="further-evidence-one-button-AP1-important.html" class="govuk-back-link">Back</a>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -32,7 +35,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-m">Choose your next step</h2>
-      <p><a href="claimant-documents-buttons-important.html">View all documents for this claimant</a></p>
+      <p><a href="claimant-documents-buttons.html">View all documents for this claimant</a></p>
       <p><a href="#">Return to the claimant details page</a></p>
 
     </div>

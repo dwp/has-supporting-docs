@@ -31,7 +31,9 @@
 
 <div class="govuk-width-container full-width-container1280">
 
-<a href="claimant-documents-buttons-important.html" class="govuk-back-link">Back to claimant documents list</a>
+  <form action="confirmation-one-button" method="post" novalidate>
+
+<a href="claimant-documents-buttons.html" class="govuk-back-link">Back to claimant documents list</a>
 
 <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
  
@@ -54,13 +56,15 @@
         </div>
     </div> -->
 
+    
+
     {{ govukCheckboxes({
       name: "PA4import",
       
       items: [
         
         {
-          value: "PA4import",
+          value: "PA4importa",
           text: "Mark document as important",
           checked: (data['PA4import'])
         }
@@ -663,7 +667,7 @@
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              <form action="confirmation-one-button" method="post" novalidate>
+              
 
                   <button class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
                     Save all changes

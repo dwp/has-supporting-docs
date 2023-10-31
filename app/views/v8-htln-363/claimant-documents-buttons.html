@@ -216,9 +216,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">28 Oct 2015</td>
-
+            {% if data['PA4consult'] %} 
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a></td>
- 
+            {% endif %}
           </tr>
 
           <tr class="govuk-table__row no-important unread pip notuc">
@@ -232,9 +234,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">11 June 2017</td>
-
+             {% if data['AwardReview'] %} 
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a></td>
-
+            {% endif %}
           </tr>
 
           <tr class="govuk-table__row no-important unread pip notuc">
@@ -248,9 +252,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">10 Sept 2021</td>
-
+              {% if data['AwardReview2'] %} 
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to UC claim 15 Jun 2021</a></td>
+            {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to UC claim 15 Jun 2021</a></td>
-
+            {% endif %}
           </tr>
 
           <tr class="govuk-table__row no-important unread pip notuc">
@@ -264,9 +270,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">10 Sept 2021</td>
-
+             {% if data['AwardCover'] %} 
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Reviewed 10 Oct 2021</td>
+            {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Reviewed 10 Oct 2021</td>
-
+            {% endif %}
           </tr>
 
           <tr class="govuk-table__row no-important unread notpip uc">
@@ -280,9 +288,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">22 Apr 2019</td>
-
+              {% if data['ESA50'] %} 
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Reviewed 10 Oct 2021</td>
+            {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Reviewed 10 Oct 2021</td>
- 
+            {% endif %}
           </tr>
 
           <tr class="govuk-table__row no-important unread notpip uc">
@@ -296,9 +306,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">06 May 2018</td>
-
+             {% if data['ESA85'] %} 
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a> and 1 other claim(s)</td>
+            {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a> and 1 other claim(s)</td>
- 
+            {% endif %}
           </tr>
 
           <tr class="govuk-table__row no-important unread notpip uc">
@@ -312,9 +324,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">10 Oct 2011</td>
-
+            {% if data['fe1'] %} 
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a></td>
-
+            {% endif %}
           </tr>
 
           <tr class="govuk-table__row no-important read pip notuc">
@@ -328,8 +342,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">10 Oct 2019</td>
-
-            <td class="govuk-table__cell">Added to UC claim 15 Jun 2021</a></td>
+            {% if data['fe2'] %} 
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to UC claim 15 Jun 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to UC claim 15 Jun 2021</a></td>
+            {% endif %}
 
           </tr>
 
@@ -344,8 +361,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">28 Jan 2022</td>
-
-            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+            {% if data['lt54'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Reviewed 10 Oct 2021</td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Reviewed 10 Oct 202</a></td>
+            {% endif %}
 
           </tr>
 
@@ -360,8 +380,12 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">22 April 2020</td>
+             {% if data['unstwhite'] %}
 
-            <td class="govuk-table__cell">Reviewed 10 Oct 2021</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Reviewed 10 Oct 2021</td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Reviewed 10 Oct 202</a></td>
+            {% endif %}
  
           </tr>
 
@@ -376,8 +400,11 @@
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
 
             <td class="govuk-table__cell" data-sort-value="12/05/21">22 Apr 2020</td>
-
-            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021 and 1 other claim(s)</td>
+             {% if data['unstwhite2'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021 and 1 other claim(s)</td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021 and 1 other claim(s)</a></td>
+            {% endif %}
  
           </tr>
 

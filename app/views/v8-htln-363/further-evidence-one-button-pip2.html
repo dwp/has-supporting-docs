@@ -31,7 +31,7 @@
 
 <div class="govuk-width-container full-width-container1280">
 
-<a href="claimant-documents-buttons-important.html" class="govuk-back-link">Back to claimant documents list</a>
+<a href="claimant-documents-buttons.html" class="govuk-back-link">Back to claimant documents list</a>
 
 <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
  
@@ -39,21 +39,27 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
-
-      <span class="govuk-caption-l">1 of 13 documents (filters applied)</span>
+      <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents (filters applied)</span>
+      <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
       <h1 class="govuk-heading-l">PIP2 Questionnaire  </h1>
 
 
      
       <!-- <strong class="govuk-tag govuk-tag--blue">Unread</strong>  -->
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" checked="checked" name="waste" type="checkbox" value="carcasses">
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
-            Mark document as important 
-          </label> 
-        </div>
-    </div>
+      {{ govukCheckboxes({
+        name: "PIP2doc",
+        
+        items: [
+          {
+            value: "PIP2doca",
+            text: "Mark document as important",
+            checked: (data['PIP2doc'])
+          }
+        ]
+      }) }}
+
+      <input type="hidden" name="PIP2docRead" value="true" />
+
     </div>
 
         <div class="govuk-grid-column-two-thirds">

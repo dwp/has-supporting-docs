@@ -1,540 +1,282 @@
 {% extends "layouts/main.html" %}
 {% set bodyAttributes = { id: "assess" } %}
-
+ 
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
-
-{% block main %}
-
-
-
-{% include "includes/assessment-status-neutral-pip.html" %}
-
-
-<div class="govuk-width-container">
-
-
-<a href="claimant-details.html" class="govuk-back-link">Back</a>
-
-<main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
  
-
-
+{% block main %}
+ 
+{% include "includes/assessment-status-neutral-pip.html" %}
+ 
+<div class="govuk-width-container">
+<a href="claimant-details.html" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-      <h2 class="govuk-heading-m govuk-!-Marchgin-bottom-5">
-        Filters
-      </h2>
+      <h2 class="govuk-heading-m govuk-!-Marchgin-bottom-5">Filters</h2>
       <div id="filter-hint" class="govuk-hint govuk-!-Marchgin-bottom-4">
         Select one or more filters to apply to the list.
       </div>
       <div class="table-filter">
         <form id="filters">
           <!--Filters-->
-
-
           {{ govukCheckboxes({
             idPrefix: "benefitType",
-            name: "benefit-type",
+            name: "benefitType",
             classes: "govuk-checkboxes--small",
             fieldset: {
-            legend: {
-            text: "Referral",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-            }
+              legend: {
+                text: "Referral",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
             },
-            items: [
-            {
-              id: "pip",
-              value: "pip",
-              text: "PIP 23 June 2020 (7)"
-              },
-            {
-            id: "uc",
-            value: "uc",
-            text: "UC 14 October 2021 (6)"
-            }
-           
-            ]
+            values: data.benefitType,
+            items: [{
+              value: "PIP",
+              text: "PIP 23 June 2021 (7)"
+            }, {
+              value: "UC",
+              text: "UC 14 March 2018 (6)"
+            }]
             }) }}
-  
+ 
           {{ govukCheckboxes({
-          idPrefix: "benefitType",
-          name: "benefit-type",
+          idPrefix: "documentLabel",
+          name: "documentLabel",
           classes: "govuk-checkboxes--small",
           fieldset: {
-          legend: {
-          text: "Document types",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--s"
-          }
-          },
-          items: [
-          {
-            id: "important",
-            value: "important",
-            html: "Important (<span id='srelCount'>1</span>)"
-            },
-          {
-          id: "unread",
-          value: "unread",
-          html: "Unread (<span id='srelCount'>8</span>)"
+            legend: {
+              text: "Document types",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
             }
-         
-          ]
+          },
+          values: data.documentLabel,
+          items: [{
+            value: "IMPORTANT",
+            html: "Important (<span id='importantCount'>1</span>)"
+          }, {
+            value: "UNREAD",
+            html: "Unread (<span id='unreadCount'>8</span>)"
+          }]
           }) }}
-
-  
-
-          <button class="govuk-button govuk-button--secondary govuk-!-Marchgin-bottom-8">Apply filters</button>
+ 
+          <input id="totalDocuments" class="docAmountInput" type="hidden" name="totalDocuments" value="" />
+          <input id="selectedDocument" class="docAmountInput" type="hidden" name="selectedDocument" value="" />
+ 
+          <button id="applyFilters" class="govuk-button govuk-button--secondary govuk-!-Marchgin-bottom-8">Apply filters</button>
         </form>
           <br>
           <ul class="govuk-list">
-            <li>
-          <!-- <p class="govuk-body">
-            Apply filters
-          </p> -->
-          </li>
-          <li>
-            <a href="claimant-documents-buttons" class="govuk-link">Clear all filters</a>
-          </li>
+          <li><a id="clearFilters" href="claimant-documents-buttons" class="govuk-link">Clear all filters</a></li>
           </ul>
-      
-  
-  
-  
       </div>
     </div>
-
-
-
-  <!-- <div class="govuk-grid-row"> -->
+ 
     <div class="govuk-grid-column-three-quarters">
-
       <h1 class="govuk-heading-l">Claimant documents</h2>
-
-    
-
       <p class="govuk-body-s" id="last-updated">Last updated from DRS at 02:08 on 16 Sep 2021</p>
-
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-
-
-
-
-      
       <table class="govuk-table" data-module="moj-sortable-table" aria-describedby="last-updated">
-
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-      
             <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">
-            <button type="button" data-index="0">
-              Document
-            </button>
-          </th>
-
-         
-
+              <button type="button" data-index="0">Document</button>
+            </th>
             <th scope="col" class="govuk-table__header column-width-10" aria-sort="none">
-            <button type="button" data-index="2">
-              Benefit type
-            </button>
-          </th>
-
+              <button type="button" data-index="2">Benefit type</button>
+            </th>
             <th scope="col" class="govuk-table__header column-width-15" aria-sort="none">
-            <button type="button" data-index="3">
-              Date of document
-            </button>
-          </th>
-
-            <th scope="col" class="govuk-table__header column-width-15" aria-sort="descending">          
-            <button type="button" data-index="3">
-              Date DWP received
-            </button>
-          </th>
-
+              <button type="button" data-index="3">Date of document</button>
+            </th>
+            <th scope="col" class="govuk-table__header column-width-15" aria-sort="descending">         
+              <button type="button" data-index="3">Date DWP received</button>
+            </th>
             <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">
-            <button type="button" data-index="3">
-              Activity
-            </button>
-          </th>
-
+              <button type="button" data-index="3">Activity</button>
+            </th>
           </tr>
         </thead>
-      
+     
         <tbody class="govuk-table__body">
-      
-          <tr class="govuk-table__row important unread pip notuc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-pip2.html">PIP 2 questionnaire</a></td>
-    
-            <td class="govuk-table__cell">PIP</td>
-  
-            <td class="govuk-table__cell" data-sort-value="12/05/21"></td>
 
-            <td class="govuk-table__cell" data-sort-value="12/05/21">21 Sept 2015</td>
-
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2022 and 1 other claim(s)</td>
-
-          </tr>
-    
-         
-          <tr class="govuk-table__row no-important unread pip notuc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-AP1.html">PA4 report</a></td>
-
-           
-           
-            <td class="govuk-table__cell">PIP</td>
-  
+          <tr class="govuk-table__row filter-table-row">     
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AR2.html">Award review AR1</a></td>       
+            <td class="govuk-table__cell ">PIP</td>    
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 Sept 2021</td>
+              {% if data['AwardReview2'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 23 Jun 2021</a></td>
+            {% elif data['AwardReview2Read'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 23 Jun 2021</a></td>
+            {% endif %}
+          </tr>
 
+          <tr class="govuk-table__row filter-table-row">     
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ARcoverletter.html">Award review AR1 covering letter</a></td>     
+            <td class="govuk-table__cell">PIP</td>  
+            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 Sept 2021</td>
+             {% if data['AwardCover'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Reviewed 10 Oct 2021</td>
+            {% elif data['AwardCoverRead'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Reviewed 10 Oct 2021</td>
+            {% endif %}
+          </tr>
+
+          <tr class="govuk-table__row filter-table-row">    
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-White-unstructured.html">WHITE MAIL UNSTRUCTED</a></td>
+            <td class="govuk-table__cell">UC</td>
+            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 April 2020</td>
+             {% if data['unstwhite'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>
+            {% elif data['unstwhiteRead'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br></a></td>
+            {% endif %}
+          </tr>
+ 
+          <tr class="govuk-table__row filter-table-row">  
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-White-unstructured2.html">WHITE MAIL UNSTRUCTED</a></td>
+            <td class="govuk-table__cell">UC</td>
+            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Apr 2020</td>
+             {% if data['unstwhite2'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 23 June 2021 and 1 other claim(s)</td>
+            {% elif data['unstwhite2Read'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 23 June 2021 and 1 other claim(s)</a></td>
+            {% endif %}
+          </tr>
+
+          <tr class="govuk-table__row filter-table-row">    
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-FurtherEvidence2.html">Further evidence</a></td>
+            <td class="govuk-table__cell">PIP</td>
+            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">10 Oct 2019</td>
+            {% if data['fe2'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 23 Jun 2021</a></td>
+            {% elif data['fe2Read'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 23 Jun 2021</a></td>
+            {% endif %}
+          </tr>
+
+          <tr class="govuk-table__row filter-table-row">    
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ESA85.html">ESA85</a></td>             
+            <td class="govuk-table__cell">UC</td>
+            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">06 May 2018</td>
+             {% if data['ESA85'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>
+            {% elif data['ESA85Read'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br></td>
+            {% endif %}
+          </tr>
+
+          <tr class="govuk-table__row filter-table-row">    
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ESA50.html">ESA50</a></td>  
+            <td class="govuk-table__cell">UC</td>
+            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Apr 2018</td>
+              {% if data['ESA50'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>
+            {% elif data['ESA50Read'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br></td>
+            {% endif %}
+          </tr>
+
+          <tr class="govuk-table__row filter-table-row">
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AP1.html">PA4 report</a></td>
+            <td class="govuk-table__cell">PIP</td>
+            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
             <td class="govuk-table__cell" data-sort-value="12/05/21">28 Nov 2017</td>
-            
-            <td class="govuk-table__cell"> 
-              {% if data['PA4import'] %} 
+            <td class="govuk-table__cell">
+              {% if data['PA4import'] %}
+              <strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 23 June 2021</a></td>
+              {% elif data['PA4importRead'] %}
+              Added to PIP claim 20 Sep 2021</a></td>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 23 June 2021</a></td>
+              {% endif %}
+          </tr>
+
+          <tr class="govuk-table__row filter-table-row">
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AR1.html">Award review AR1</a></td>
+            <td class="govuk-table__cell">PIP</td>
+            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">11 June 2017</td>
+             {% if data['AwardReview'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a></td>
+            {% elif data['AwardReviewRead'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a></td>
+            {% endif %}
+          </tr>
+
+          <tr class="govuk-table__row filter-table-row">
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AP2.html">PA4 report</a></td>
+            <td class="govuk-table__cell">PIP</td>
+            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">28 Oct 2015</td>
+            {% if data['PA4consult'] %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a></td>
+            {% elif data['PA4consultRead'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
+            {% else %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a></td>
+            {% endif %}
+          </tr>
+
+          <tr class="govuk-table__row filter-table-row">
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-pip2.html">PIP 2 questionnaire</a></td>
+            <td class="govuk-table__cell">PIP</td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21"></td>
+            <td class="govuk-table__cell" data-sort-value="12/05/21">21 Sept 2015</td>
+            <td class="govuk-table__cell">
+              {% if data['PIP2doc'] %}
               <strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a></td>
+              {% elif data['PIP2docRead'] %}
+              Added to PIP claim 20 Sep 2021</a></td>
               {% else %}
               <strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a></td>
               {% endif %}
+            </tr>
  
-          </tr>
-
-          <tr class="govuk-table__row no-important unread pip notuc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-AP2.html">PA4 report</a></td>
-
-           
-      
-            <td class="govuk-table__cell">PIP</td>
-
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">28 Oct 2015</td>
-            {% if data['PA4consult'] %} 
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a></td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a></td>
-            {% endif %}
-          </tr>
-
-          <tr class="govuk-table__row no-important unread pip notuc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-AR1.html">Award review AR1</a></td>
-
-           
-    
-            <td class="govuk-table__cell">PIP</td>
-  
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">11 June 2017</td>
-             {% if data['AwardReview'] %} 
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a></td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a></td>
-            {% endif %}
-          </tr>
-
-          <tr class="govuk-table__row no-important unread pip notuc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-AR2.html">Award review AR1</a></td>
-
-       
- 
-            <td class="govuk-table__cell ">PIP</td>
-     
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">10 Sept 2021</td>
-              {% if data['AwardReview2'] %} 
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to UC claim 15 Jun 2021</a></td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to UC claim 15 Jun 2021</a></td>
-            {% endif %}
-          </tr>
-
-          <tr class="govuk-table__row no-important unread pip notuc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-ARcoverletter.html">Award review AR1 covering letter</a></td>
-
-           
-  
-            <td class="govuk-table__cell">PIP</td>
-    
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">10 Sept 2021</td>
-             {% if data['AwardCover'] %} 
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Reviewed 10 Oct 2021</td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Reviewed 10 Oct 2021</td>
-            {% endif %}
-          </tr>
-
-          <tr class="govuk-table__row no-important unread notpip uc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-ESA50.html">ESA50</a></td>
-
-          
-    
+          <tr class="govuk-table__row filter-table-row">     
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-FurtherEvidence1.html">Further evidence</a></td>        
             <td class="govuk-table__cell">UC</td>
-  
             <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Apr 2019</td>
-              {% if data['ESA50'] %} 
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Reviewed 10 Oct 2021</td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Reviewed 10 Oct 2021</td>
-            {% endif %}
-          </tr>
-
-          <tr class="govuk-table__row no-important unread notpip uc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-ESA85.html">ESA85</a></td>
-
-          
-      
-            <td class="govuk-table__cell">UC</td>
-
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">06 May 2018</td>
-             {% if data['ESA85'] %} 
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a> and 1 other claim(s)</td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a> and 1 other claim(s)</td>
-            {% endif %}
-          </tr>
-
-          <tr class="govuk-table__row no-important unread notpip uc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-FurtherEvidence1.html">Further evidence</a></td>
-
-          
-    
-            <td class="govuk-table__cell">UC</td>
-  
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
             <td class="govuk-table__cell" data-sort-value="12/05/21">10 Oct 2011</td>
-            {% if data['fe1'] %} 
+            {% if data['fe1'] %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021</a></td>
+            {% elif data['fe1Read'] %}
+            <td class="govuk-table__cell">Added to PIP claim 20 Sep 2021</a></td>
             {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021</a></td>
             {% endif %}
           </tr>
-
-          <tr class="govuk-table__row no-important read pip notuc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-FurtherEvidence2.html">Further evidence</a></td>
-
-           
  
-            <td class="govuk-table__cell">PIP</td>
-     
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">10 Oct 2019</td>
-            {% if data['fe2'] %} 
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to UC claim 15 Jun 2021</a></td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to UC claim 15 Jun 2021</a></td>
-            {% endif %}
-
-          </tr>
-
-          <tr class="govuk-table__row no-important read notpip uc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-LT54.html">LT54</a></td>
-
-         
-  
-            <td class="govuk-table__cell">UC</td>
-    
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">28 Jan 2022</td>
-            {% if data['lt54'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Reviewed 10 Oct 2021</td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Reviewed 10 Oct 202</a></td>
-            {% endif %}
-
-          </tr>
-
-          <tr class="govuk-table__row no-important read notpip uc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-White-unstructured.html">WHITE MAIL UNSTRUCTED</a></td>
-
-           
-    
-            <td class="govuk-table__cell">UC</td>
-  
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">22 April 2020</td>
-             {% if data['unstwhite'] %}
-
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Reviewed 10 Oct 2021</td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Reviewed 10 Oct 202</a></td>
-            {% endif %}
- 
-          </tr>
-
-          <tr class="govuk-table__row no-important read notpip uc">
-      
-            <td class="govuk-table__cell"><a href="further-evidence-one-button-White-unstructured2.html">WHITE MAIL UNSTRUCTED</a></td>
-
-           
-      
-            <td class="govuk-table__cell">UC</td>
-
-            <td class="govuk-table__cell" data-sort-value="21/04/21"></td>
-
-            <td class="govuk-table__cell" data-sort-value="12/05/21">22 Apr 2020</td>
-             {% if data['unstwhite2'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br>Added to PIP claim 20 Sep 2021 and 1 other claim(s)</td>
-            {% else %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong><br>Added to PIP claim 20 Sep 2021 and 1 other claim(s)</a></td>
-            {% endif %}
- 
-          </tr>
-
-         
-      
         </tbody>
       </table>
-
     </div>
-  
   </div>
 </main>
 </div>
-
-
-
-<script>
-
-  function hideAllWithClass(classname) {
-    document.querySelectorAll("." + classname).forEach((element) => {
-      element.style.visibility = 'collapse';
-    });
-  }
-
-  function showAllWithClass(classname) {
-    document.querySelectorAll("." + classname).forEach((element) => {
-      element.style.visibility = 'visible';
-    });
-  }
-
-  document.querySelector("#filters").addEventListener("submit", function (e) {
-
-    e.preventDefault();    //stop form from submitting
-
-    showAllWithClass("unread");
-    showAllWithClass("read");
-    showAllWithClass("pip");
-    showAllWithClass("notpip");
-    showAllWithClass("uc");
-    showAllWithClass("notuc");
-    showAllWithClass("tresco");
-    showAllWithClass("handsworth");
-    showAllWithClass("important");
-    showAllWithClass("no-important");
-    
-
-    let benefitTypes = [];
-    let sites = [];
-
-    if (document.getElementById('important').checked == true) {
-      hideAllWithClass("no-important");
-    }
-
-    if (document.getElementById('unread').checked == true) {
-      hideAllWithClass("read");
-    }
-
-    if (document.getElementById('pip').checked == true) {
-      hideAllWithClass("notpip");
-    }
-
-    if (document.getElementById('uc').checked == true) {
-      hideAllWithClass("notuc");
-    }
-
-    // if (document.getElementById('pip').checked == true || document.getElementById('esa').checked == true || document.getElementById('uc').checked == true) {
-    //   if (document.getElementById('pip').checked == false) {
-    //     hideAllWithClass("pip");
-    //   } else {
-    //     benefitTypes.push("Personal Independence Payment");
-    //   }
-
-    //   if (document.getElementById('esa').checked == false) {
-    //     hideAllWithClass("esa");
-    //   } else {
-    //     benefitTypes.push("Employment Support Allowance");
-    //   }
-
-    //   if (document.getElementById('uc').checked == false) {
-    //     hideAllWithClass("uc");
-    //   } else {
-    //     benefitTypes.push("Universal Credit");
-    //   }
-    // }
-
-    // if (document.getElementById('handsworth').checked == true || document.getElementById('tresco').checked == true) {
-    //   if (document.getElementById('handsworth').checked == false) {
-    //     hideAllWithClass("handsworth");
-    //   } else {
-    //     sites.push("Handsworth");
-    //   }
-
-    //   if (document.getElementById('tresco').checked == false) {
-    //     hideAllWithClass("tresco");
-    //   } else {
-    //     sites.push('Tresco');
-    //   }
-    // }
-
-    // var count = 0;
-    // var elemnts = document
-    //   .querySelectorAll('.govuk-table tr').forEach((element) => {
-    //     if (element.style.visibility === 'visible') {
-    //       count += 1;
-    //     }
-    //   })
-
-    // if (count < 20) {
-    //   document.getElementById('pagination').style.visibility = 'collapse';
-    // } else {
-    //   document.getElementById('pagination').style.visibility = 'visible';
-    // }
-
-    // document.getElementById('paginationTotal').innerText = count;
-
-    // var eol = document.getElementById('srel').checked ? " end of life" : "";
-    // var benefitTypeString = benefitTypes.join(", ");
-    // var sitesString = sites.join(", ");
-    // var ifBenefitType = benefitTypes.length > 0 ? ' for ' : '';
-    // var ifSites = sites.length > 0 ? ' at ' : '';
-
-    //11 HCP review end of life referrals in PIP, ESA, UC at Birmingham Handsworth
-    // var text = count + " report ready " + eol + " referrals " + ifBenefitType + benefitTypeString + ifSites + sitesString;
-    var text = count + " referrals";
-
-    document.getElementById('filter-playback').innerText = text;
-
-    // document.getElementById('srelCount').innertext = document.querySelectorAll('.govuk-table tr.srel').length;
-
-  });
-
-</script>
 {% endblock %}
+ 

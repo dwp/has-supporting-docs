@@ -41,8 +41,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-
-      <span class="govuk-caption-l">12 of 13 documents (filters applied)</span>
+      <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents (filters applied)</span>
+      <!-- <span class="govuk-caption-l">12 of 13 documents (filters applied)</span> -->
       <h1 class="govuk-heading-l">WHITE MAIL UNSTRUCTURED</h1>
 
       
@@ -59,6 +59,9 @@
           }
         ]
       }) }}
+
+      <input type="hidden" name="unstwhiteRead" value="true" />
+
     </div>
 
         <div class="govuk-grid-column-one-half">

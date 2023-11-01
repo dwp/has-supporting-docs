@@ -41,8 +41,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
-
-      <span class="govuk-caption-l">8 of 13 documents (filters applied)</span>
+      <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents (filters applied)</span>
+      <!-- <span class="govuk-caption-l">8 of 13 documents (filters applied)</span> -->
       <h1 class="govuk-heading-l">ESA85</h1>
 
 
@@ -60,6 +60,9 @@
           }
         ]
       }) }}
+
+      <input type="hidden" name="ESA85Read" value="true" />
+
     </div>
 
         <div class="govuk-grid-column-two-thirds">

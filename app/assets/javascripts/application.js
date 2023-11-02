@@ -116,6 +116,7 @@ async function autosave(el) {
   }
 
   async function updateCurrentDocNumber(e) {
+    e.preventDefault();
     const currentDoc = parseInt(document.getElementById('docAmountSpan').innerText.replace(/ .*/,''));
     console.log(currentDoc);
     await autosave({name: 'selectedDocument', value: e.target.rel === 'prev' ? currentDoc - 1 : currentDoc + 1});

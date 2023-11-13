@@ -1,0 +1,194 @@
+{% extends "layouts/main.html" %} 
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+<div class="govuk-width-container {{ containerClasses }}">
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+      <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            {% if errors %} 
+              {{ govukErrorSummary({
+                titleText: "There is a problem",
+                errorList: errors.errorList
+              }) }}
+            {% endif %}
+
+            <h1 class="govuk-heading-l">HCP review</h1>
+
+            <form action="/first-iteration-IR/htln-179-mvp-third-release/IR-landingPage-playback" method="post">
+
+              {% set storedEntryAmount = 0 %}
+
+              <!-- Info captured by previous HCP review -->
+              {% if data["hcpreviewpip" + storedEntryAmount] %}
+                {% for i in range(0, 10) | reverse %}
+                  {% if data["hcpreviewpip" + i] and not errors["hcpreviewpip" + i] and not errors["ir-outcomes" + i] %}
+                  <!-- Heading for each review -->
+                  <!-- <h2 class="govuk-heading-m">HCP review {{ i + 1 }}</h2> -->
+
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Clinical review and justification</dt>
+                        <dd class="govuk-summary-list__value">{{ data["hcpreviewpip" + i] }}</dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Case type</dt>
+                        <dd class="govuk-summary-list__value">
+                          {% for item in data["hcpreviewflagspip" + i] %}
+                          <p class="govuk-body">{{ item }}</p>
+                          {% endfor %}
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Outcome</dt>
+                        <dd class="govuk-summary-list__value">{{ data["ir-outcomes" + i] }}</dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">HCP name</dt>
+                        <dd class="govuk-summary-list__value">Sandra Bullock</dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Date of review</dt>
+                        <dd class="govuk-summary-list__value">4 April 2023</dd>
+                      </div>
+                    </dl>
+                    {% set storedEntryAmount = storedEntryAmount + 1 %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+
+              {% if (errors or query.viewmode === 'add' or not data["hcpreviewpip0"]) %}
+
+              {{ govukTextarea({
+                  name: "hcpreviewpip" + storedEntryAmount,
+                  id: "hcpreviewpip" + storedEntryAmount,
+                  rows: "12",
+                  label: {
+                    text: "Enter clinical review and justification",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  hint: {
+                    text: "Include whether evidence has been reviewed, the type of FME requested, and what to do if it's not returned."
+                  }
+                }) }}
+
+
+                {{ govukCheckboxes({
+                  name: "hcpreviewflagspip" + storedEntryAmount,
+                  values: data['hcpreviewflagspip' + storedEntryAmount],
+                  fieldset: {
+                    legend: {
+                      text: "Is the case one of the following?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  hint: {
+                    text: "Select all that apply."
+                  },
+                  items: [
+                    {
+                      value: "Complex neurological (WCA only)",
+                      text: "Complex neurological (WCA only)"
+                    },
+                    {
+                      value: "TACT - take additional care (PIP only)",
+                      text: "TACT - take additional care  (PIP only)"
+                    }
+                  ]
+                }) }}
+
+                {% if errors["ir-outcomes" + storedEntryAmount] %}
+                  {% set errorMessage = { text: errors["ir-outcomes" + storedEntryAmount].text } %}
+                {% else %}
+                  {% set errorMessage = null %} 
+                {% endif %}
+
+                {{ govukRadios({
+                  name: "ir-outcomes" + storedEntryAmount,
+                  fieldset: {
+                    legend: {
+                      text: "What is the outcome of this review?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  errorMessage: errorMessage,
+                  items: [
+                    {
+                      value: "Request further medical evidence (FME)",
+                      text: "Request further medical evidence (FME)",
+                      checked: (data['ir-outcomes' + storedEntryAmount] == "fme")
+                    },
+                    {
+                      value: "Paper based review (PBR)",
+                      text: "Paper based review (PBR)",
+                      checked: (data['ir-outcomes' + storedEntryAmount] == "pbr")
+                    },
+                    {
+                      value: "Telephone assessment",
+                      text: "Telephone assessment",
+                      checked: (data['ir-outcomes' + storedEntryAmount] == "telephone")
+                    },
+                    {
+                      value: "Face to face assessment",
+                      text: "Face to face assessment",
+                      checked: (data['ir-outcomes' + storedEntryAmount] == "F2F")
+                    },
+                    {
+                      value: "Special rules for end of life (SREL)",
+                      text: "Special rules for end of life (SREL)",
+                      checked: (data['ir-outcomes' + storedEntryAmount] == "SREL")
+                    }
+                  ]
+                }) }}
+
+                {% set errorMessage = null %}
+
+                {% endif %}
+                <br>
+
+                <div class="govuk-button-group">
+                  {% if data["hcpreviewpip0"] and query.viewmode !== 'add' and not errors %}
+                    {{ govukButton({
+                      name: "submit",
+                      value: "Continue",
+                      text: "Continue"
+                    }) }}
+                    {{ govukButton({
+                      name: "submit",
+                      value: "Add another entry",
+                      text: "Add another entry",
+                      classes: "govuk-button--secondary"
+                    }) }}
+                  {% else %}
+                    {{ govukButton({
+                      name: "submit",
+                      value: "Save and continue2",
+                      text: "Save and continue"
+                    }) }}
+                  {% endif %}
+                </div>
+            </form>
+
+          </div>
+    </div>
+  </main>
+  </div>
+{% endblock %}

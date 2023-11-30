@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Document review
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="further-evidence-one-button-AR2.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="further-evidence-one-button-AR2" method="post">
+
+        <h1 class="govuk-heading-l">
+          Update document details
+        </h1>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="sort">
+             Update document name
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Appeal</option>
+            <option value="updated" selected>Appointment</option>
+            <option value="views">Care plan</option>
+            <option value="comments">Certificate of visual imparement</option>
+            <option value="comments">Childcare information</option>
+            <option value="comments">Data print</option>
+            <option value="comments">Death certificate</option>
+            <option value="comments">Document</option>
+            <option value="comments">Expenses receipt</option>
+            <option value="comments">Gender recognition certificate</option>
+            <option value="comments">General info</option>
+            <option value="comments">Letter</option>
+            <option value="comments">Medical evidence not relevant to the claim</option>
+            <option value="comments">Medicaal history</option>
+            <option value="comments">Medical printout</option>
+
+          </select>
+        </div>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="date-created-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                Update date of this document?
+              </h1>
+            </legend>
+           
+            <div class="govuk-date-input" id="document-created-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-created-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day" name="date-created-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-created-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-month" name="date-created-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-created-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-year" name="date-created-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+            </div>
+        
+          </fieldset>
+        </div>
+              </div>
+          
+        
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save changes</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

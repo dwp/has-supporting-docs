@@ -1,0 +1,246 @@
+{% extends "layouts/main1.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+<section class="dwp-key-details-bar" aria-label="Key details">
+  <div class="dwp-key-details-bar__key-details full-width-container1280">
+  <dl class="dwp-key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dd class="dwp-key-details-bar__primary">Raymond Adamu</dd>
+      <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+      <dd class="dwp-key-details-bar__secondary">RN 65 43 21 X</dd>
+      <!-- <dt class="govuk-visually-hidden">Claim status:</dt>
+      <dd class="govuk-table__cell dwp-key-details-bar__status">
+          <strong class="govuk-tag dwp-key-details-bar__status--dwp-default">
+            Assessment booked
+          </strong>
+      </dd> -->
+  </dl>
+  <dl class="dwp-key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>30 July 1961</dd>
+    
+  </dl>
+  </div>
+  </section> 
+
+<div class="govuk-width-container full-width-container1280">
+
+<a href="claimant-documents-buttons.html" class="govuk-back-link">Back to claimant documents list</a>
+
+<main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+ 
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents (filters applied)</span>
+      <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
+      <h1 class="govuk-heading-l">PIP2 Questionnaire  </h1>
+
+
+     
+      <!-- <strong class="govuk-tag govuk-tag--blue">Unread</strong>  -->
+      {{ govukCheckboxes({
+        name: "PIP2doc",
+        
+        items: [
+          {
+            value: "PIP2doca",
+            text: "Mark document as important",
+            checked: (data['PIP2doc'])
+          }
+        ]
+      }) }}
+
+      <input type="hidden" name="PIP2docRead" value="true" />
+
+    </div>
+
+        <div class="govuk-grid-column-two-thirds">
+         
+          <ul class="govuk-list nav-right">
+            <li>
+            <nav class="govuk-pagination" role="navigation" aria-label="results">
+              <div class="govuk-pagination__prev">
+                <a class="govuk-link govuk-pagination__link" href="further-evidence-one-button-AP2" rel="prev">
+                  <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                  </svg>
+                  <span class="govuk-pagination__link-title">Previous document</span></a>
+              </div>
+             
+              <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="further-evidence-one-button-FurtherEvidence1.html" rel="next"> <span class="govuk-pagination__link-title">Next document</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg></a>
+                 
+              </div>
+            
+            </nav>
+          </li>
+       
+        </ul>
+        </div>
+  </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <br>
+       
+            
+        <p class="govuk-body">
+          <a href="/public/pdfs/UR-file1/PIP2-questionnaire_2015-09-21_98C_Redacted.pdf" class="govuk-link" target="_blank"> Open PDF document in a new tab</a>
+        </p>
+      
+    <br>
+
+
+
+
+    
+      
+     
+      
+      </div>
+      <br>
+      <br>
+
+    </div>
+
+  
+ 
+
+
+
+  <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+      <iframe class="document" src="/public/pdfs/UR-file1/PIP2-questionnaire_2015-09-21_98C_Redacted.pdf" title="PIP2 document"></iframe>
+    </div>
+  </div>  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">Document details </h2>
+
+<br>
+
+    
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Document type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            PIP2 Questionnaire
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Document label
+          </dt>
+          <dd class="govuk-summary-list__value">
+           
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of document
+          </dt>
+          <dd class="govuk-summary-list__value">
+           
+          </dd>
+        </div>
+       
+      
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date DWP received
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10 Jan 2022
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Benefit type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            PIP
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Harmful information
+          </dt>
+          <dd class="govuk-summary-list__value">
+           No
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Comment on this document
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Lorem ipsum
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Add this document to a claim
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>PIP claim</strong> 12 Sep 2021
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Has this document been reviewed?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+
+      </dl>
+
+            <br>
+
+          
+
+            
+        
+            </div>
+          
+
+    </div>
+    
+
+              <form action="confirmation-one-button" method="post" novalidate>
+
+
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+    
+
+
+</main>
+</div>  
+
+
+
+{% endblock %}

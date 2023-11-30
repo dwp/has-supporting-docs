@@ -11,23 +11,42 @@
  
 <div class="govuk-width-container">
   {{ govukBackLink({
-    text: "Back",
+    text: "Back to Document overview",
     href: "javascript:history.back()"
   }) }}
 
-
+<br>
+<br>
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="further-evidence-one-button-AR2" method="post">
+   
 
-        <h1 class="govuk-heading-l">
-          Edit document details
-        </h1>
-
+        <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents (filters applied)</span>
+        <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
+       
+        {% if data['name'] %}
+        <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
+        {% else %}
+        <h1 class="govuk-heading-l">Award review AR1 </h1>
+              {% endif %}
+   </div>
+  </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <iframe class="document" src="/public/pdfs/UR-file1/Award-Review-AR1_2021-09-10_98C_Redacted.pdf" title="PIP2 document"></iframe>
+                </div>
+              
+              </div>
+              <br>
+<br>
+<br>
   
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <form class="form" action="document-details-linear1-ARcover" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="sort">
@@ -335,11 +354,13 @@
 
 
 
-        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+        <button class="govuk-button" data-module="govuk-button">Next document</button>
 
-      </form>
+      <br>
+      <br>
 
-    </div>
+      
+    </form>
   </div>
 
 {% endblock %}

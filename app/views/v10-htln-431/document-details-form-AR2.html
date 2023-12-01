@@ -23,9 +23,12 @@
 
       <form class="form" action="further-evidence-one-button-AR2" method="post">
 
-        <h1 class="govuk-heading-l">
-          Edit document details
-        </h1>
+        {% if data['name'] %}
+        <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
+        {% else %}
+        <h1 class="govuk-heading-l">Award review AR1 </h1>
+              {% endif %}
+   
 
   
 
@@ -339,7 +342,14 @@
 
       </form>
 
+      <br>
+      <br>
+
+        <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <iframe class="document" src="/public/pdfs/UR-file1/Award-Review-AR1_2021-09-10_98C_Redacted.pdf" title="PIP2 document"></iframe>
+      </div>
+    </form>
     </div>
   </div>
-
 {% endblock %}

@@ -139,7 +139,7 @@ async function autosave(el) {
     autosave(element);
   });
 
-  document.querySelectorAll('.selectDocumentLink').forEach((el) => el.addEventListener('click', countDocsForDisplay));
+  document.querySelectorAll('.selectDocumentLink, .linearJourneyLink').forEach((el) => el.addEventListener('click', countDocsForDisplay));
 
   document.querySelectorAll('.govuk-link.govuk-pagination__link').forEach((el) => el.addEventListener('click', updateCurrentDocNumber));
 });

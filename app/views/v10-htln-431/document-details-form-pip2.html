@@ -21,17 +21,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="further-evidence-one-button-AR2" method="post">
+      <form class="form" action="further-evidence-one-button-pip2" method="post">
 
-        <h1 class="govuk-heading-l">
-          Update document details
-        </h1>
+        {% if data['name'] %}
+        <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
+        {% else %}
+        <h1 class="govuk-heading-l">PIP2 Questionnaire</h1>
+              {% endif %}
+   
+
+  
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="sort">
-             Update document name
+             Change document name
           </label>
           <select class="govuk-select" id="name1" name="name1">
+            <option value="Select">Select</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
             <option value="Cardiology document">Cardiology document</option>
@@ -294,7 +300,7 @@
           <fieldset class="govuk-fieldset" role="group" aria-describedby="date-created-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               <h1 class="govuk-fieldset__heading">
-                Update date of this document?
+                Add date of document
               </h1>
             </legend>
            
@@ -304,21 +310,21 @@
                   <label class="govuk-label govuk-date-input__label" for="date-created-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day" name="date-created-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day-PIP2" name="date-created-day-PIP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-month" name="date-created-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-month-PIP2" name="date-created-month-PIP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-year" name="date-created-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-year-PIP2" name="date-created-year-PIP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
             </div>
         
@@ -330,11 +336,20 @@
           </fieldset>
         </div>
 
-        <button class="govuk-button" data-module="govuk-button">Save changes</button>
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
 
+      <br>
+      <br>
+
+        <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <iframe class="document" src="/public/pdfs/UR-file1/PIP2-questionnaire_2015-09-21_98C_Redacted.pdf" title="PIP2 document"></iframe>
+      </div>
+    </form>
     </div>
   </div>
-
 {% endblock %}

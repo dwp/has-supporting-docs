@@ -17,7 +17,7 @@
       <h2 class="govuk-heading-m govuk-!-Marchgin-bottom-5">Manage</h2>
       <ul class="govuk-list">
         <li>
-          <a class="govuk-link" href="document-details-linear-AR2">Update documents details</a>
+          <a class="govuk-link linearJourneyLink" href="document-details-linear-AR2">Update document details</a>
         </li>
       
       </ul>
@@ -58,7 +58,7 @@
           classes: "govuk-checkboxes--small",
           fieldset: {
             legend: {
-              text: "Document types",
+              text: "Document label",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--s"
             }
@@ -93,7 +93,7 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">
-              <button type="button" data-index="0">Document</button>
+              <button type="button" data-index="0">Name</button>
             </th>
             <th scope="col" class="govuk-table__header column-width-10" aria-sort="none">
               <button type="button" data-index="2">Benefit type</button>
@@ -105,7 +105,7 @@
               <button type="button" data-index="3">Date DWP received</button>
             </th>
             <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">
-              <button type="button" data-index="3">Activity</button>
+              <button type="button" data-index="3">Document label</button>
             </th>
           </tr>
         </thead>
@@ -187,7 +187,7 @@
           <tr class="govuk-table__row filter-table-row">    
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-FurtherEvidence2.html">Further evidence</a></td>
             <td class="govuk-table__cell">PIP</td>
-            <td class="govuk-table__cell" data-sort-value="date"></td>
+            <td class="govuk-table__cell" data-sort-value="date">{{ data["date-created-day-fe2"]}} &nbsp;  {{ data["date-created-month-fe2"]}} &nbsp; {{ data["date-created-year-fe2"]}}</td>
             <td class="govuk-table__cell" data-sort-value="8">10 Oct 2019</td>
             {% if data['fe2'] %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
@@ -201,7 +201,7 @@
           <tr class="govuk-table__row filter-table-row">    
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ESA85.html">ESA85</a></td>             
             <td class="govuk-table__cell">UC</td>
-            <td class="govuk-table__cell" data-sort-value="date"></td>
+            <td class="govuk-table__cell" data-sort-value="date">{{ data["date-created-day-ESA85"]}} &nbsp;  {{ data["date-created-month-ESA85"]}} &nbsp; {{ data["date-created-year-ESA85"]}}</td>
             <td class="govuk-table__cell" data-sort-value="7">20 March 2018</td>
              {% if data['ESA85'] %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>
@@ -215,7 +215,7 @@
           <tr class="govuk-table__row filter-table-row">    
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ESA50.html">ESA50</a></td>  
             <td class="govuk-table__cell">UC</td>
-            <td class="govuk-table__cell" data-sort-value="date"></td>
+            <td class="govuk-table__cell" data-sort-value="date">{{ data["date-created-day-ESA50"]}} &nbsp;  {{ data["date-created-month-ESA50"]}} &nbsp; {{ data["date-created-year-ESA50"]}}</td>
             <td class="govuk-table__cell" data-sort-value="6">02 March 2018</td>
               {% if data['ESA50'] %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
@@ -229,7 +229,7 @@
           <tr class="govuk-table__row filter-table-row">
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AP1.html">PA4 report</a></td>
             <td class="govuk-table__cell">PIP</td>
-            <td class="govuk-table__cell" data-sort-value="date"></td>
+            <td class="govuk-table__cell" data-sort-value="date">{{ data["date-created-day-AP1"]}} &nbsp;  {{ data["date-created-month-AP1"]}} &nbsp; {{ data["date-created-year-AP1"]}}</td>
             <td class="govuk-table__cell" data-sort-value="5">22 Aug 2017</td>
             <td class="govuk-table__cell">
               {% if data['PA4import'] %}
@@ -244,7 +244,7 @@
           <tr class="govuk-table__row filter-table-row">
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AR1.html">Award review AR1</a></td>
             <td class="govuk-table__cell">PIP</td>
-            <td class="govuk-table__cell" data-sort-value="date"></td>
+            <td class="govuk-table__cell" data-sort-value="date">{{ data["date-created-day-AR1"]}} &nbsp;  {{ data["date-created-month-AR1"]}} &nbsp; {{ data["date-created-year-AR1"]}}</td>
             <td class="govuk-table__cell" data-sort-value="4">25 May 2017</td>
              {% if data['AwardReview'] %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
@@ -258,7 +258,7 @@
           <tr class="govuk-table__row filter-table-row">
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AP2.html">PA4 report</a></td>
             <td class="govuk-table__cell">PIP</td>
-            <td class="govuk-table__cell" data-sort-value="date"></td>
+            <td class="govuk-table__cell" data-sort-value="date">{{ data["date-created-day-AP2"]}} &nbsp;  {{ data["date-created-month-AP2"]}} &nbsp; {{ data["date-created-year-AP2"]}}</td>
             <td class="govuk-table__cell" data-sort-value="3">28 Oct 2015</td>
             {% if data['PA4consult'] %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
@@ -272,7 +272,7 @@
           <tr class="govuk-table__row filter-table-row">      
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-pip2.html">PIP 2 questionnaire</a></td>
             <td class="govuk-table__cell">PIP</td>
-            <td class="govuk-table__cell" data-sort-value="date"></td>
+            <td class="govuk-table__cell" data-sort-value="date">{{ data["date-created-day-PIP2"]}} &nbsp;  {{ data["date-created-month-PIP2"]}} &nbsp; {{ data["date-created-year-PIP2"]}}</td>
             <td class="govuk-table__cell" data-sort-value="2">28 Aug 2015</td>
             <td class="govuk-table__cell">
               {% if data['PIP2doc'] %}
@@ -287,7 +287,7 @@
             <tr class="govuk-table__row filter-table-row">     
               <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-FurtherEvidence1.html">Further evidence</a></td>        
               <td class="govuk-table__cell">UC</td>
-              <td class="govuk-table__cell" data-sort-value="date"></td>
+              <td class="govuk-table__cell" data-sort-value="date">{{ data["date-created-day-FE1"]}} &nbsp;  {{ data["date-created-month-FE1"]}} &nbsp; {{ data["date-created-year-FE1"]}}</td>
               <td class="govuk-table__cell" data-sort-value="1">8 Sept 11</td>
               {% if data['fe1'] %}
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>

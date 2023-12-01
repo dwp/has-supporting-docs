@@ -16,23 +16,28 @@
   }) }}
 
 
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="further-evidence-one-button-White-unstructured" method="post">
+      <form class="form" action="further-evidence-one-button-FurtherEvidence2" method="post">
 
-        
-      {% if data['name3'] %}
-      <h1 class="govuk-heading-l">{{ data["name3"]}} </h1>
-      {% else %}
-      <h1 class="govuk-heading-l">WHITE MAIL UNSTRUCTURED</h1>
-            {% endif %}
+        {% if data['name'] %}
+        <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
+        {% else %}
+        <h1 class="govuk-heading-l">Further evidence</h1>
+              {% endif %}
+   
+
+  
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="sort">
              Change document name
           </label>
-          <select class="govuk-select" id="name3" name="name3">
+          <select class="govuk-select" id="name1" name="name1">
+            <option value="Select">Select</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
             <option value="Cardiology document">Cardiology document</option>
@@ -305,21 +310,21 @@
                   <label class="govuk-label govuk-date-input__label" for="date-created-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day" name="date-created-day-wu" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day" name="date-created-day-fe2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-monthAR2" name="date-created-month-wu" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-monthAR2" name="date-created-month-fe2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-yearAR2" name="date-created-year-wu" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-yearAR2" name="date-created-year-fe2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
             </div>
         
@@ -331,6 +336,8 @@
           </fieldset>
         </div>
 
+
+
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
@@ -340,10 +347,9 @@
 
         <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <iframe class="document" src="/public/pdfs/UR-file1/WHITE-MAIL-UN-STRUCTURED_2020-04-22_98C (1)_Redacted.pdf" title="PIP2 document"></iframe>
+        <iframe class="document" src="/public/pdfs/UR-file1/Further-Evidence_2019-10-10_98C_Redacted.pdf" title="PIP2 document"></iframe>
       </div>
     </form>
     </div>
   </div>
-
 {% endblock %}

@@ -110,7 +110,7 @@ async function autosave(el) {
     const current = Array.from(document.querySelectorAll('.selectDocumentLink')).filter((x) => isVisible(x)).indexOf(e.target) + 1;
     const total = Array.from(document.querySelectorAll('.filter-table-row')).filter((x) => isVisible(x)).length;
     totalValueInput.value = total;
-    currentValueInput.value = current;
+    currentValueInput.value = current || 1;
     await autosave(totalValueInput);
     await autosave(currentValueInput);
     window.location.href = e.target.href;
@@ -118,10 +118,15 @@ async function autosave(el) {
 
   async function updateCurrentDocNumber(e) {
     e.preventDefault();
+    console.log(e);
     const currentDoc = parseInt(document.getElementById('docAmountSpan').innerText.replace(/ .*/,''));
     console.log(currentDoc);
     await autosave({name: 'selectedDocument', value: e.target.rel === 'prev' ? currentDoc - 1 : currentDoc + 1});
-    window.location.href = e.target.href;
+    if(e.target.href) {
+      window.location.href = e.target.href;
+    } else {
+      document.getElementsByClassName('form')[0].submit();
+    }
   }
 
   countDocumentTypes();
@@ -141,7 +146,7 @@ async function autosave(el) {
 
   document.querySelectorAll('.selectDocumentLink, .linearJourneyLink').forEach((el) => el.addEventListener('click', countDocsForDisplay));
 
-  document.querySelectorAll('.govuk-link.govuk-pagination__link').forEach((el) => el.addEventListener('click', updateCurrentDocNumber));
+  document.querySelectorAll('.govuk-link.govuk-pagination__link, .linear-next-document-button').forEach((el) => el.addEventListener('click', updateCurrentDocNumber));
 });
 
 window.$ = $

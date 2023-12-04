@@ -16,7 +16,8 @@ window.addEventListener( "pageshow", function ( event ) {
 const currentUrl = window.location.href;
 const pathsWithAutoSave = [
   'v8-htln-363',
-  'v9-htln-416'
+  'v9-htln-416',
+  'v10-htln-431'
 ]
 const isAutoSavePath = pathsWithAutoSave.some((el) => currentUrl.includes(el));
 console.log(`Current url is ${currentUrl}. Is Auto save path? ${isAutoSavePath}`);

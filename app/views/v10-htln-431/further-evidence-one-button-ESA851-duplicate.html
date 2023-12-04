@@ -90,7 +90,7 @@
       <aside class="app-related-items" role="complementary">
         <h1 class="govuk-heading-m">Actions  </h1>
         <p class="govuk-body">
-          <a href="document-details-form-ESA85" class="govuk-link" rel="noreferrer noopener"> Edit document details</a>
+          <a href="document-details-form-ESA851-duplicate.html" class="govuk-link" rel="noreferrer noopener"> Edit document details</a>
         </p>
   
         <p class="govuk-body">
@@ -105,19 +105,19 @@
             <!-- <strong class="govuk-tag govuk-tag--blue">Unread</strong>  -->
         
       
-            <input type="hidden" name="ESA85Read" value="true" />
+            <input type="hidden" name="ESA851Read" value="true" />
       
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-half">  
                 {{ govukCheckboxes({
-                  name: "ESA85",
+                  name: "ESA851",
                   
                   items: [
                     
                     {
-                      value: "ESA85a",
+                      value: "ESA851a",
                       text: "Mark document as important",
-                      checked: (data['ESA85'])
+                      checked: (data['ESA851'])
                     }
                   ]
                 }) }}

@@ -16,26 +16,31 @@
   }) }}
 
 
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="document-details-linear-WU2" method="post">
-        
+      <form class="form" action="document-details-linear-ESA50" method="post">
+
         <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents</span>
         <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
        
-        
-      {% if data['name3'] %}
-      <h1 class="govuk-heading-l">{{ data["name3"]}} </h1>
-      {% else %}
-      <h1 class="govuk-heading-l">WHITE MAIL UNSTRUCTURED</h1>
-            {% endif %}
+        {% if data['name'] %}
+        <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
+        {% else %}
+        <h1 class="govuk-heading-l">ESA85</h1>
+              {% endif %}
+   
+
+  
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="sort">
              Change document name
           </label>
-          <select class="govuk-select" id="name3" name="name3">
+          <select class="govuk-select" id="name1" name="name1">
+            <option value="Select">Select</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
             <option value="Cardiology document">Cardiology document</option>
@@ -308,21 +313,21 @@
                   <label class="govuk-label govuk-date-input__label" for="date-created-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day" name="date-created-day-wu" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day" name="date-created-day-ESA851" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-monthAR2" name="date-created-month-wu" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-monthAR2" name="date-created-month-ESA851" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-yearAR2" name="date-created-year-wu" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-yearAR2" name="date-created-year-ESA851" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
             </div>
         
@@ -334,6 +339,8 @@
           </fieldset>
         </div>
 
+
+
         <button class="govuk-button linear-next-document-button" data-module="govuk-button">Save and continue</button>
 
       </form>
@@ -343,10 +350,9 @@
 
         <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <iframe class="document" src="/public/pdfs/UR-file1/WHITE-MAIL-UN-STRUCTURED_2020-04-22_98C (1)_Redacted.pdf" title="PIP2 document"></iframe>
+        <iframe class="document" src="/public/pdfs/UR-file1/ESA85_2021-11-06_98C_Redacted.pdf" title="PIP2 document"></iframe>
       </div>
     </form>
     </div>
   </div>
-
 {% endblock %}

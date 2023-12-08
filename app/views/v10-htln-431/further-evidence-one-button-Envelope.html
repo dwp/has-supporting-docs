@@ -43,23 +43,17 @@
     <div class="govuk-grid-column-two-thirds">
       <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents (filters applied)</span>
       <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
-      
-      {% if data['name4'] %}
-      <h1 class="govuk-heading-l">{{ data["name4"]}} </h1>
-      {% else %}
       <h1 class="govuk-heading-l">WHITE MAIL UNSTRUCTURED</h1>
-            {% endif %}
-      
-      
-  
+   
+
   <dl class="govuk-summary-list govuk-summary-list--no-border">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Date of document
       </dt>
       <dd class="govuk-summary-list__value"> 
-        8 Feb 2019
-        <!-- {{ data["date-created-day-wu2"]}} &nbsp;  {{ data["date-created-month-wu2"]}} &nbsp; {{ data["date-created-year-wu2"]}} -->
+        10 Jan 2018
+        <!-- {{ data["date-created-day-AP1"]}} &nbsp;  {{ data["date-created-month-AP1"]}} &nbsp; {{ data["date-created-year-AP1"]}} -->
       </dd>
       <dd class="govuk-summary-list__actions">
         <!-- <a class="govuk-link" href="#">
@@ -72,7 +66,7 @@
         Date DWP received
       </dt>
       <dd class="govuk-summary-list__value">
-        22 April 2020
+        22 June 2020
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -95,11 +89,11 @@
       <aside class="app-related-items" role="complementary">
         <h1 class="govuk-heading-m">Manage  </h1>
         <p class="govuk-body">
-          <a href="document-details-form-WU2.html" class="govuk-link" rel="noreferrer noopener">Update document details</a>
+          <a href="document-details-form-AP1" class="govuk-link" rel="noreferrer noopener"> Update document details</a>
         </p>
   
         <p class="govuk-body">
-          <a href="/public/pdfs/UR-file1/WHITE-MAIL-UN-STRUCTURED_2020-04-22_98C_Redacted.pdf" class="govuk-link" rel="noreferrer noopener" target="_blank"> Open PDF document in a new tab</a>
+          <a href="/public/pdfs/UR-file1/NHS_envelope.pdf" class="govuk-link" rel="noreferrer noopener" target="_blank"> Open PDF document in a new tab</a>
         </p>
        
     </div>
@@ -110,19 +104,19 @@
             <!-- <strong class="govuk-tag govuk-tag--blue">Unread</strong>  -->
         
       
-            <input type="hidden" name="unstwhite2Read" value="true" />
+            <input type="hidden" name="PA4importRead" value="true" />
       
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-half">  
                 {{ govukCheckboxes({
-                  name: "unstwhite2",
+                  name: "PA4import",
                   
                   items: [
                     
                     {
-                      value: "unstwhite2a",
+                      value: "PA4importa",
                       text: "Mark document as important",
-                      checked: (data['unstwhite2'])
+                      checked: (data['PA4import'])
                     }
                   ]
                 }) }}
@@ -134,7 +128,7 @@
         <li>
         <nav class="govuk-pagination" role="navigation" aria-label="results">
           <div class="govuk-pagination__prev">
-            <a class="govuk-link govuk-pagination__link" href="further-evidence-one-button-White-unstructured" rel="prev">
+            <a class="govuk-link govuk-pagination__link" href="further-evidence-one-button-FurtherEvidence1.html" rel="prev">
               <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
                 <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
               </svg>
@@ -142,7 +136,7 @@
           </div>
          
           <div class="govuk-pagination__next">
-            <a class="govuk-link govuk-pagination__link" href="further-evidence-one-button-FurtherEvidence2" rel="next"> <span class="govuk-pagination__link-title">Next document</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <a class="govuk-link govuk-pagination__link" href="further-evidence-one-button-White-unstructured.html" rel="next"> <span class="govuk-pagination__link-title">Next document</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
                 <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
               </svg></a>
              
@@ -157,7 +151,6 @@
 </div>
 </div>
 
- 
 
 
 
@@ -165,15 +158,13 @@
 
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-full">
-      <iframe class="document" src="/public/pdfs/UR-file1/WHITE-MAIL-UN-STRUCTURED_2020-04-22_98C_Redacted.pdf" title="PIP2 document"></iframe>
+      <iframe class="document" src="/public/pdfs/UR-file1/NHS_envelope.pdf" title="PIP2 document"></iframe>
     </div>
   </div>  
 
-
-
 </main>
-</div>  
+</div>
 
-
+app/assets/pdfs/UR-file1/NHS_envelope.pdf
 
 {% endblock %}

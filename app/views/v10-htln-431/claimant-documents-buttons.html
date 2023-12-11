@@ -125,9 +125,9 @@
               <!-- {{ data["date-created-dayAR2"]}} &nbsp;  {{ data["date-created-monthAR2"]}} &nbsp; {{ data["date-created-yearAR2"]}} -->
             </td>
             <td class="govuk-table__cell" data-sort-value="14">10 Sept 2021</td>
-              {% if data['AwardReview2'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
-            {% elif data['AwardReview2Read'] %}
+              {% if data['AwardReview2'].length %}
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['AwardReview2Read'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
+              {% elif data['AwardReview2Read'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong></td>
@@ -141,9 +141,9 @@
               <!-- {{ data["date-created-dayARcover"]}} &nbsp;  {{ data["date-created-monthARcover"]}} &nbsp; {{ data["date-created-yearARcover"]}} -->
             </td>
             <td class="govuk-table__cell" data-sort-value="13">	10 Sept 2021</td>
-             {% if data['AwardCover'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
-            {% elif data['AwardCoverRead'] %}
+             {% if data['AwardCover'].length %}
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['AwardCoverRead'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
+             {% elif data['AwardCoverRead'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong></td>
@@ -156,8 +156,8 @@
             <td class="govuk-table__cell" data-sort-value="date">3 Sept 2021
               <!-- {{ data["date-created-day-FE1"]}} &nbsp;  {{ data["date-created-month-FE1"]}} &nbsp; {{ data["date-created-year-FE1"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="12">10 Sept 2021</td>
-            {% if data['fe1'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
+            {% if data['fe1'].length %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['fe1Read'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
             {% elif data['fe1Read'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
@@ -176,8 +176,8 @@
             <td class="govuk-table__cell" data-sort-value="date">10 Jan 2018
               <!-- {{ data["date-created-day-wu"]}} &nbsp;  {{ data["date-created-month-wu"]}} &nbsp; {{ data["date-created-year-wu"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="11">22 June 2020</td>
-             {% if data['unstwhite'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>
+             {% if data['unstwhite'].length %}
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['unstwhiteRead'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
             {% elif data['unstwhiteRead'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
@@ -196,8 +196,8 @@
             <td class="govuk-table__cell" data-sort-value="date">8 Feb 2019
               <!-- {{ data["date-created-day-wu"]}} &nbsp;  {{ data["date-created-month-wu"]}} &nbsp; {{ data["date-created-year-wu"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="10">22 Apr 2020</td>
-             {% if data['unstwhite'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>
+             {% if data['unstwhite'].length %}
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['unstwhiteRead'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
             {% elif data['unstwhiteRead'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
@@ -215,8 +215,8 @@
             <td class="govuk-table__cell" data-sort-value="date"> 8 Feb 2019
               <!-- {{ data["date-created-day-wu2"]}} &nbsp;  {{ data["date-created-month-wu2"]}} &nbsp; {{ data["date-created-year-wu2"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="9">22 Apr 2020</td>
-             {% if data['unstwhite2'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
+             {% if data['unstwhite2'].length %}
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['unstwhite2Read'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
             {% elif data['unstwhite2Read'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
@@ -230,8 +230,8 @@
             <td class="govuk-table__cell" data-sort-value="date">10 Oct 2019
               <!-- {{ data["date-created-day-fe2"]}} &nbsp;  {{ data["date-created-month-fe2"]}} &nbsp; {{ data["date-created-year-fe2"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="8">10 Oct 2019</td>
-            {% if data['fe2'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
+            {% if data['fe2'].length %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['fe2Read'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
             {% elif data['fe2Read'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
@@ -246,7 +246,7 @@
               <!-- {{ data["date-created-day-ESA85"]}} &nbsp;  {{ data["date-created-month-ESA85"]}} &nbsp; {{ data["date-created-year-ESA85"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="7">20 March 2018</td>
              {% if data['ESA85'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['ESA85Read'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
             {% elif data['ESA85Read'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
@@ -260,8 +260,8 @@
             <td class="govuk-table__cell" data-sort-value="date">16 March 2018
               <!-- {{ data["date-created-day-ESA85"]}} &nbsp;  {{ data["date-created-month-ESA85"]}} &nbsp; {{ data["date-created-year-ESA85"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="7">20 March 2018</td>
-             {% if data['ESA851'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>
+             {% if data['ESA851'].length %}
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['ESA851Read'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
             {% elif data['ESA851Read'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
@@ -275,9 +275,9 @@
             <td class="govuk-table__cell" data-sort-value="date">02 March 2018
               <!-- {{ data["date-created-day-ESA50"]}} &nbsp;  {{ data["date-created-month-ESA50"]}} &nbsp; {{ data["date-created-year-ESA50"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="6">02 March 2018</td>
-              {% if data['ESA50'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
-            {% elif data['ESA50Read'] %}
+              {% if data['ESA50'].length %}
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['ESA50Read'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
+              {% elif data['ESA50Read'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong></td>
@@ -290,11 +290,10 @@
             <td class="govuk-table__cell" data-sort-value="date">18 Aug 2017
               <!-- {{ data["date-created-day-AP1"]}} &nbsp;  {{ data["date-created-month-AP1"]}} &nbsp; {{ data["date-created-year-AP1"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="5">22 Aug 2017</td>
-            <td class="govuk-table__cell">
-              {% if data['PA4import'] %}
-              <strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
+              {% if data['PA4import'].length %}
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['PA4importRead'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
               {% elif data['PA4importRead'] %}
-              </td>
+              <td class="govuk-table__cell"></td>
               {% else %}
               <strong class="govuk-tag govuk-tag--blue">Unread</strong></td>
               {% endif %}
@@ -306,8 +305,8 @@
             <td class="govuk-table__cell" data-sort-value="date">8 May 2017
               <!-- {{ data["date-created-day-AR1"]}} &nbsp;  {{ data["date-created-month-AR1"]}} &nbsp; {{ data["date-created-year-AR1"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="4">25 May 2017</td>
-             {% if data['AwardReview'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
+             {% if data['AwardReview'].length %}
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['AwardReviewRead'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
             {% elif data['AwardReviewRead'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
@@ -321,8 +320,8 @@
             <td class="govuk-table__cell" data-sort-value="date">26 Oct 2015
               <!-- {{ data["date-created-day-AP2"]}} &nbsp;  {{ data["date-created-month-AP2"]}} &nbsp; {{ data["date-created-year-AP2"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="3">28 Oct 2015</td>
-            {% if data['PA4consult'] %}
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
+            {% if data['PA4consult'].length %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['PA4consultRead'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
             {% elif data['PA4consultRead'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
@@ -337,8 +336,8 @@
               <!-- {{ data["date-created-day-PIP2"]}} &nbsp;  {{ data["date-created-month-PIP2"]}} &nbsp; {{ data["date-created-year-PIP2"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="2">28 Aug 2015</td>
             <td class="govuk-table__cell">
-              {% if data['PIP2doc'] %}
-              <strong class="govuk-tag govuk-tag--yellow">Important</strong></td>
+              {% if data['PIP2doc'].length %}
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['PIP2docRead'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
               {% elif data['PIP2docRead'] %}
               </td>
               {% else %}

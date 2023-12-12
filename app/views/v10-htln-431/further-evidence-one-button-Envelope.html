@@ -104,19 +104,19 @@
             <!-- <strong class="govuk-tag govuk-tag--blue">Unread</strong>  -->
         
       
-            <input type="hidden" name="PA4importRead" value="true" />
+            <input type="hidden" name="EnvelopeImportRead" value="true" />
       
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-half">  
                 {{ govukCheckboxes({
-                  name: "PA4import",
+                  name: "EnvelopeImport",
                   
                   items: [
                     
                     {
-                      value: "PA4importa",
+                      value: "EnvelopeImporta",
                       text: "Mark document as important",
-                      checked: (data['PA4import'].length)
+                      checked: (data['EnvelopeImport'].length)
                     }
                   ]
                 }) }}
@@ -165,6 +165,6 @@
 </main>
 </div>
 
-app/assets/pdfs/UR-file1/NHS_envelope.pdf
+
 
 {% endblock %}

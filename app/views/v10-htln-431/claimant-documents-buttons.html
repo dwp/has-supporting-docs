@@ -176,9 +176,9 @@
             <td class="govuk-table__cell" data-sort-value="date">10 Jan 2018
               <!-- {{ data["date-created-day-wu"]}} &nbsp;  {{ data["date-created-month-wu"]}} &nbsp; {{ data["date-created-year-wu"]}}</td> -->
             <td class="govuk-table__cell" data-sort-value="11">22 June 2020</td>
-             {% if data['unstwhite'].length %}
-             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['unstwhiteRead'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
-            {% elif data['unstwhiteRead'] %}
+             {% if data['EnvelopeImport'].length %}
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not data['EnvelopeImportRead'] %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
+            {% elif data['EnvelopeImportRead'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong></td>

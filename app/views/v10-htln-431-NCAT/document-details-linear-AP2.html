@@ -27,7 +27,7 @@
         <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
 
         {% if data['name'] %}
-        <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
+        <h1 class="govuk-heading-l">{{ data["name"]}} </h1>
         {% else %}
         <h1 class="govuk-heading-l">PA4 report</h1>
               {% endif %}
@@ -39,8 +39,9 @@
           <label class="govuk-label govuk-label--s" for="sort">
              Change document name
           </label>
-          <select class="govuk-select" id="name1" name="name1">
+          <select class="govuk-select" id="nameAP2a" name="nameAP2">
             <option value="Select">Select</option>
+            <option value="Document not relevant">Document not relevant</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
             <option value="Cardiology document">Cardiology document</option>
@@ -313,21 +314,21 @@
                   <label class="govuk-label govuk-date-input__label" for="date-created-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day-AP2" name="date-created-day-AP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day-AP2a" name="date-created-day-AP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-month-AP2" name="date-created-month-AP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-month-AP2a" name="date-created-month-AP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-year-AP2" name="date-created-year-AP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-year-AP2a" name="date-created-year-AP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
             </div>
         

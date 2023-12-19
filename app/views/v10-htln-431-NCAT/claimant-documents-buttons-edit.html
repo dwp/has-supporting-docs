@@ -212,7 +212,7 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">    
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="document-details-linear-ESA50.html">ESA50</a></td>  
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-ESA50.html">ESA50</a></td>  
             <!-- <td class="govuk-table__cell">UC</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-ESA50"]}} &nbsp;  {{ data["date-created-month-ESA50"]}} &nbsp; {{ data["date-created-year-ESA50"]}}</td>
@@ -227,7 +227,11 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="document-details-linear-AP1.html">PA4 report</a></td>
+            {% if data['nameAP1'] %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-AP1.html">{{ data["nameAP1"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-AP1.html">PA4 report</a></td>
+            {% endif %}  
             <!-- <td class="govuk-table__cell">PIP</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-AP1"]}} &nbsp;  {{ data["date-created-month-AP1"]}} &nbsp; {{ data["date-created-year-AP1"]}}</td>
@@ -243,7 +247,7 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="document-details-linear-AR1.html">Award review AR1</a></td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-AR1.html">Award review AR1</a></td>
             <!-- <td class="govuk-table__cell">PIP</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-AR1"]}} &nbsp;  {{ data["date-created-month-AR1"]}} &nbsp; {{ data["date-created-year-AR1"]}}</td>
@@ -258,7 +262,7 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="document-details-linear-AP2.html">PA4 report</a></td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-AP2.html">PA4 report</a></td>
             <!-- <td class="govuk-table__cell">PIP</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-AP2"]}} &nbsp;  {{ data["date-created-month-AP2"]}} &nbsp; {{ data["date-created-year-AP2"]}}</td>
@@ -273,7 +277,7 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">      
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="document-details-linear-pip2.html">PIP 2 questionnaire</a></td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-pip2.html">PIP 2 questionnaire</a></td>
             <!-- <td class="govuk-table__cell">PIP</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-PIP2"]}} &nbsp;  {{ data["date-created-month-PIP2"]}} &nbsp; {{ data["date-created-year-PIP2"]}}</td>

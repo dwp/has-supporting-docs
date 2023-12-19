@@ -15,13 +15,14 @@
     href: "javascript:history.back()"
   }) }}
 
-
+  <br>
+<br>
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="claimant-documents-buttons-edit" method="post">
+      <form class="form" action="further-evidence-one-button-Envelope" method="post">
 
         <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents</span>
         <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
@@ -29,18 +30,15 @@
         {% if data['name'] %}
         <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
         {% else %}
-        <h1 class="govuk-heading-l">PIP2 Questionnaire</h1>
+        <h1 class="govuk-heading-l">WHITE MAIL UNSTRUCTURED </h1>
               {% endif %}
-
-              <input type="hidden" name="PIP2docRead" value="true" />
-   
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="sort">
              Change document name
           </label>
-          <select class="govuk-select" id="name1" name="name1">
-            <option value="Select">Select</option>
+          <select class="govuk-select" id="name5" name="name5">
+            <option value="WHITE MAIL UNSTRUCTURED">Select</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
             <option value="Cardiology document">Cardiology document</option>
@@ -313,21 +311,21 @@
                   <label class="govuk-label govuk-date-input__label" for="date-created-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day-PIP2" name="date-created-day-PIP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day-envelope" name="date-created-day-envelope" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-month-PIP2" name="date-created-month-PIP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-month-envelope" name="date-created-month-envelope" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-year-PIP2" name="date-created-year-PIP2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-year-envelope" name="date-created-year-envelope" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
             </div>
         
@@ -339,23 +337,19 @@
           </fieldset>
         </div>
 
-
-
         <button class="govuk-button linear-next-document-button" data-module="govuk-button">Save and continue</button>
 
       </form>
+<br>
+<br>
+      <div class="govuk-grid-row">
+     
+        <div class="govuk-grid-column-full">
+          <iframe class="document" src="/public/pdfs/UR-file1/NHS_envelope.pdf" title="PIP2 document"></iframe>
+        </div>
 
-        <p class="govuk-body">
-          <a href="claimant-documents-buttons-edit.html" class="govuk-link govuk-link--no-visited-state">Return to document list</a>
-        </p>
-      <br>
-      <br>
-
-        <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <iframe class="document" src="/public/pdfs/UR-file1/PIP2-questionnaire_2015-09-21_98C_Redacted.pdf" title="PIP2 document"></iframe>
-      </div>
-    </form>
     </div>
+      </div>
   </div>
+
 {% endblock %}

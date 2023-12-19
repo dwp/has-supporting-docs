@@ -30,7 +30,7 @@
             </th>
 
             <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">
-              <button type="button" data-index="2">Date DWP recieved</button>
+              <button type="button" data-index="2">Date DWP received</button>
             </th>
            
             <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">
@@ -80,8 +80,13 @@
           </tr>
 
 
-          <tr class="govuk-table__row filter-table-row">     
-            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-FurtherEvidence1.html">Further evidence</a></td>        
+          <tr class="govuk-table__row filter-table-row">    
+            {% if data['name6'] %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-FurtherEvidence1.html">{{ data["name6"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-FurtherEvidence1.html">Further evidence</a></td>
+            {% endif %}  
+                   
             <!-- <td class="govuk-table__cell">PIP</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-FE1"]}} &nbsp;  {{ data["date-created-month-FE1"]}} &nbsp; {{ data["date-created-year-FE1"]}}</td>
@@ -106,9 +111,9 @@
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-env"]}} &nbsp;  {{ data["date-created-month-env"]}} &nbsp; {{ data["date-created-year-env"]}}</td>
             <td class="govuk-table__cell" data-sort-value="11">22 June 2020</td>
-             {% if data['unstwhite'] %}
+             {% if data['envelope'] %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>
-            {% elif data['unstwhiteRead'] %}
+            {% elif data['envelopeRead'] %}
             <td class="govuk-table__cell"></td>
             {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong></td>
@@ -154,8 +159,15 @@
             {% endif %}
           </tr>
 
-          <tr class="govuk-table__row filter-table-row">    
-            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-FurtherEvidence2.html">Further evidence</a></td>
+        
+            
+            <tr class="govuk-table__row filter-table-row">    
+              {% if data['name7'] %}
+              <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-FurtherEvidence2.html">{{ data["name7"]}} </a></td>
+              {% else %}
+              <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-FurtherEvidence2.html">Further evidence</a></td>
+              {% endif %}  
+
             <!-- <td class="govuk-table__cell">PIP</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-fe2"]}} &nbsp;  {{ data["date-created-month-fe2"]}} &nbsp; {{ data["date-created-year-fe2"]}}</td>
@@ -188,7 +200,7 @@
             <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-ESA851-duplicate.html">ESA85</a></td>             
             <!-- <td class="govuk-table__cell">UC</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
-              {{ data["date-created-day-ESA85"]}} &nbsp;  {{ data["date-created-month-ESA85"]}} &nbsp; {{ data["date-created-year-ESA85"]}}</td>
+              {{ data["date-created-day-ESA851"]}} &nbsp;  {{ data["date-created-month-ESA851"]}} &nbsp; {{ data["date-created-year-ESA851"]}}</td>
             <td class="govuk-table__cell" data-sort-value="7">20 March 2018</td>
              {% if data['ESA851'] %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>

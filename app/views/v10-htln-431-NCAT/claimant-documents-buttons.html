@@ -151,8 +151,12 @@
           </tr>
 
 
-          <tr class="govuk-table__row filter-table-row">     
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-FurtherEvidence1.html">Further evidence</a></td>        
+          <tr class="govuk-table__row filter-table-row">    
+            {% if data['name6'] %}
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-FurtherEvidence1.html">{{ data["name6"]}} </a></td>    
+            {% else %}
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-FurtherEvidence1.html">Further evidence</a></td>    
+            {% endif %}  
             <td class="govuk-table__cell">PIP</td>
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-FE1"]}} &nbsp;  {{ data["date-created-month-FE1"]}} &nbsp; {{ data["date-created-year-FE1"]}}</td>
@@ -226,7 +230,11 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">    
+            {% if data['name7'] %}
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-FurtherEvidence2.html">{{ data["name7"]}}</a></td>
+            {% else %}
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-FurtherEvidence2.html">Further evidence</a></td>
+            {% endif %}  
             <td class="govuk-table__cell">PIP</td>
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-fe2"]}} &nbsp;  {{ data["date-created-month-fe2"]}} &nbsp; {{ data["date-created-year-fe2"]}}</td>
@@ -259,7 +267,7 @@
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ESA851-duplicate.html">ESA85</a></td>             
             <td class="govuk-table__cell">UC</td>
             <td class="govuk-table__cell" data-sort-value="date">
-              {{ data["date-created-day-ESA85"]}} &nbsp;  {{ data["date-created-month-ESA85"]}} &nbsp; {{ data["date-created-year-ESA85"]}}</td>
+              {{ data["date-created-day-ESA851"]}} &nbsp;  {{ data["date-created-month-ESA851"]}} &nbsp; {{ data["date-created-year-ESA851"]}}</td>
             <td class="govuk-table__cell" data-sort-value="7">20 March 2018</td>
              {% if data['ESA851'] %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong><br></td>

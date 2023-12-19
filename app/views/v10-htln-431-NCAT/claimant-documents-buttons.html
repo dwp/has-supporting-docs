@@ -294,7 +294,13 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AP1.html">PA4 report</a></td>
+            {% if data['nameAP1'] %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-AP1.html">{{ data["nameAP1"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-AP1.html">PA4 report</a></td>
+            {% endif %}  
+
+
             <td class="govuk-table__cell">PIP</td>
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-AP1"]}} &nbsp;  {{ data["date-created-month-AP1"]}} &nbsp; {{ data["date-created-year-AP1"]}}</td>

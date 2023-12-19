@@ -29,7 +29,7 @@
         <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
        
         {% if data['name'] %}
-        <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
+        <h1 class="govuk-heading-l">{{ data["name"]}} </h1>
         {% else %}
         <h1 class="govuk-heading-l">Award review AR1 </h1>
               {% endif %}
@@ -41,7 +41,7 @@
           <label class="govuk-label govuk-label--s" for="sort">
              Change document name
           </label>
-          <select class="govuk-select" id="name1" name="name1">
+          <select class="govuk-select" id="nameAR2a" name="nameAR2">
             <option value="Select">Select</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
@@ -300,6 +300,10 @@
           </select>
         </div>
 
+      
+        
+
+
        
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="date-created-hint">
@@ -315,21 +319,21 @@
                   <label class="govuk-label govuk-date-input__label" for="date-created-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day" name="date-created-dayAR2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-dayAR2a" name="date-created-dayAR2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-monthAR2" name="date-created-monthAR2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-monthAR2a" name="date-created-monthAR2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-yearAR2" name="date-created-yearAR2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-yearAR2a" name="date-created-yearAR2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
             </div>
         
@@ -340,6 +344,24 @@
         
           </fieldset>
         </div>
+
+<!-- 
+        {{ govukCheckboxes({
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "Problem with document",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "Hide",
+              text: "Hide document"
+            }
+          ]
+        }) }} -->
 
 
         <button class="govuk-button linear-next-document-button" data-module="govuk-button">Save and continue</button>

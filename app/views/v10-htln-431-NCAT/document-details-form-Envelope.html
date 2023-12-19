@@ -28,7 +28,7 @@
         <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
        
         {% if data['name'] %}
-        <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
+        <h1 class="govuk-heading-l">{{ data["name"]}} </h1>
         {% else %}
         <h1 class="govuk-heading-l">WHITE MAIL UNSTRUCTURED </h1>
               {% endif %}
@@ -37,8 +37,9 @@
           <label class="govuk-label govuk-label--s" for="sort">
              Change document name
           </label>
-          <select class="govuk-select" id="name5" name="name5">
+          <select class="govuk-select" id="name5a" name="name5">
             <option value="WHITE MAIL UNSTRUCTURED">Select</option>
+            <option value="Document not relevant">Document not relevant</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
             <option value="Cardiology document">Cardiology document</option>
@@ -311,21 +312,21 @@
                   <label class="govuk-label govuk-date-input__label" for="date-created-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day-envelope" name="date-created-day-envelope" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-day-enva" name="date-created-day-env" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-month-envelope" name="date-created-month-envelope" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-month-enva" name="date-created-month-env" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-year-envelope" name="date-created-year-envelope" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-year-enva" name="date-created-year-env" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
             </div>
         

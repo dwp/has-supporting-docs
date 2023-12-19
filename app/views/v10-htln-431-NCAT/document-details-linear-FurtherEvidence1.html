@@ -26,21 +26,21 @@
         <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents</span>
         <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
        
-        {% if data['name'] %}
-        <h1 class="govuk-heading-l">Edit {{ data["name"]}} </h1>
+        {% if data['name6'] %}
+        <h1 class="govuk-heading-l">{{ data["name6"]}} </h1>
         {% else %}
         <h1 class="govuk-heading-l">Further evidence</h1>
               {% endif %}
    
-
+              <input type="hidden" name="fe1Read" value="true" />
              
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="sort">
              Change document name
           </label>
-          <select class="govuk-select" id="name1" name="name1">
-            <option value="Select">Select</option>
+          <select class="govuk-select" id="name6" name="name6">
+            <option value="Further evidence">Select</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
             <option value="Cardiology document">Cardiology document</option>

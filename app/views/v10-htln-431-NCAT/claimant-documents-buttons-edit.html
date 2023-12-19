@@ -182,7 +182,12 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">    
-            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-ESA85.html">ESA85</a></td>             
+            {% if data['name8'] %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-ESA85.html">{{ data["name8"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-ESA85.html">ESA85</a></td>
+            {% endif %}   
+                     
             <!-- <td class="govuk-table__cell">UC</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-ESA85"]}} &nbsp;  {{ data["date-created-month-ESA85"]}} &nbsp; {{ data["date-created-year-ESA85"]}}</td>
@@ -196,8 +201,12 @@
             {% endif %}
           </tr>
 
-          <tr class="govuk-table__row filter-table-row">    
-            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-ESA851-duplicate.html">ESA85</a></td>             
+          <tr class="govuk-table__row filter-table-row">  
+            {% if data['name9'] %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-ESA851-duplicate.html">{{ data["name9"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="document-details-linear-ESA851-duplicate.html">ESA85</a></td>
+            {% endif %}    
             <!-- <td class="govuk-table__cell">UC</td> -->
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-ESA851"]}} &nbsp;  {{ data["date-created-month-ESA851"]}} &nbsp; {{ data["date-created-year-ESA851"]}}</td>

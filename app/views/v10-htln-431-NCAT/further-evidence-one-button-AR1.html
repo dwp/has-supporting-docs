@@ -43,7 +43,11 @@
     <div class="govuk-grid-column-two-thirds">
       <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents (filters applied)</span>
       <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
-      <h1 class="govuk-heading-l">Award review AR1</h1>
+      {% if data['nameAR1'] %}
+      <h1 class="govuk-heading-l">{{ data["nameAR1"]}} </h1>
+      {% else %}
+      <h1 class="govuk-heading-l">Award review AR1 </h1>
+            {% endif %}
    
 
   <dl class="govuk-summary-list govuk-summary-list--no-border">

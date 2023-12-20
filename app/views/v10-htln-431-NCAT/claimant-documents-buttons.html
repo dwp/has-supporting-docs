@@ -115,8 +115,8 @@
        
 
           <tr class="govuk-table__row filter-table-row">     
-            {% if data['name'] %}
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AR2.html">{{ data["name"]}} </a></td>
+            {% if data['nameAR2'] %}
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AR2.html">{{ data["nameAR2"]}} </a></td>
             {% else %}
             <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AR2.html">Award review AR1</a></td>       
             {% endif %}
@@ -134,8 +134,13 @@
             {% endif %}
           </tr>
 
-          <tr class="govuk-table__row filter-table-row">     
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ARcoverletter.html">Award review AR1 covering letter</a></td>     
+          <tr class="govuk-table__row filter-table-row">  
+            {% if data['nameARcover'] %}
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ARcoverletter.html">{{ data["nameARcover"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ARcoverletter.html">Award review AR1 covering letter</a></td>       
+            {% endif %}
+            
             <td class="govuk-table__cell">PIP</td>  
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-dayARcover"]}} &nbsp;  {{ data["date-created-monthARcover"]}} &nbsp; {{ data["date-created-yearARcover"]}}
@@ -286,8 +291,12 @@
             {% endif %}
           </tr>
 
-          <tr class="govuk-table__row filter-table-row">    
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-ESA50.html">ESA50</a></td>  
+          <tr class="govuk-table__row filter-table-row"> 
+            {% if data['nameESA'] %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-ESA50.html">{{ data["nameESA"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-ESA50.html">ESA50</a></td>
+            {% endif %} 
             <td class="govuk-table__cell">UC</td>
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-ESA50"]}} &nbsp;  {{ data["date-created-month-ESA50"]}} &nbsp; {{ data["date-created-year-ESA50"]}}</td>
@@ -307,8 +316,6 @@
             {% else %}
             <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-AP1.html">PA4 report</a></td>
             {% endif %}  
-
-
             <td class="govuk-table__cell">PIP</td>
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-AP1"]}} &nbsp;  {{ data["date-created-month-AP1"]}} &nbsp; {{ data["date-created-year-AP1"]}}</td>
@@ -324,7 +331,11 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AR1.html">Award review AR1</a></td>
+            {% if data['nameAR1'] %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-AR1.html">{{ data["nameAR1"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-AR1.html">Award review AR1</a></td>
+            {% endif %}  
             <td class="govuk-table__cell">PIP</td>
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-AR1"]}} &nbsp;  {{ data["date-created-month-AR1"]}} &nbsp; {{ data["date-created-year-AR1"]}}</td>
@@ -339,7 +350,11 @@
           </tr>
 
           <tr class="govuk-table__row filter-table-row">
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-AP2.html">PA4 report</a></td>
+            {% if data['nameAP2'] %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-AP2.html">{{ data["nameAP2"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-AP2.html">PA4 report</a></td>
+            {% endif %}  
             <td class="govuk-table__cell">PIP</td>
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-AP2"]}} &nbsp;  {{ data["date-created-month-AP2"]}} &nbsp; {{ data["date-created-year-AP2"]}}</td>
@@ -353,8 +368,12 @@
             {% endif %}
           </tr>
 
-          <tr class="govuk-table__row filter-table-row">      
-            <td class="govuk-table__cell"><a class="selectDocumentLink" href="further-evidence-one-button-pip2.html">PIP 2 questionnaire</a></td>
+          <tr class="govuk-table__row filter-table-row"> 
+            {% if data['namePIP2'] %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-pip2.html">{{ data["namePIP2"]}} </a></td>
+            {% else %}
+            <td class="govuk-table__cell"><a class="govuk-link" href="further-evidence-one-button-pip2.html">PIP 2 questionnaire</a></td>
+            {% endif %}  
             <td class="govuk-table__cell">PIP</td>
             <td class="govuk-table__cell" data-sort-value="date">
               {{ data["date-created-day-PIP2"]}} &nbsp;  {{ data["date-created-month-PIP2"]}} &nbsp; {{ data["date-created-year-PIP2"]}}</td>

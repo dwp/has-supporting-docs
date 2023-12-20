@@ -23,8 +23,8 @@
 
       <form class="form" action="further-evidence-one-button-pip2" method="post">
 
-        {% if data['name'] %}
-        <h1 class="govuk-heading-l">{{ data["name"]}} </h1>
+        {% if data['namePIP2'] %}
+        <h1 class="govuk-heading-l">{{ data["namePIP2"]}} </h1>
         {% else %}
         <h1 class="govuk-heading-l">PIP2 Questionnaire</h1>
               {% endif %}
@@ -38,7 +38,6 @@
           </label>
           <select class="govuk-select" id="namePIP2a" name="namePIP2">
             <option value="PIP2 Questionnaire">Select</option>
-            <option value="Document not relevant">Document not relevant</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
             <option value="Cardiology document">Cardiology document</option>

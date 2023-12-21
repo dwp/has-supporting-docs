@@ -1,0 +1,1006 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Document review
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="further-evidence-one-button-AR2.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="further-evidence-one-button-AR2" method="post">
+
+        <h1 class="govuk-heading-l">
+          Add a document label
+        </h1>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                What is the document?
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--conditional govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="appeal" name="what-is-the-document" type="radio" value="appeal" data-aria-controls="conditional-appeal">
+                <label class="govuk-label govuk-radios__label" for="appeal">
+                  Appeal
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-appeal">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimant" name="where-is-the-document-from" type="radio" value="claimant">
+                        <label class="govuk-label govuk-radios__label" for="claimant">
+                          Claimant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home" name="where-is-the-document-from" type="radio" value="care-home">
+                        <label class="govuk-label govuk-radios__label" for="care-home">
+                          Care home
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="carer" name="where-is-the-document-from" type="radio" value="carer">
+                        <label class="govuk-label govuk-radios__label" for="carer">
+                          Carer
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="friends-family" name="where-is-the-document-from" type="radio" value="friends-family">
+                        <label class="govuk-label govuk-radios__label" for="friends-family">
+                          Friends and family
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            <div class="govuk-radios govuk-radios--conditional govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="appointment" name="what-is-the-document" type="radio" value="appointment" data-aria-controls="conditional-appointment">
+                <label class="govuk-label govuk-radios__label" for="appointment">
+                  Appointment
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-appointment">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="cardiology" name="where-is-the-document-from" type="radio" value="cardiology">
+                        <label class="govuk-label govuk-radios__label" for="cardiology">
+                          Cardiology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home" name="where-is-the-document-from" type="radio" value="care-home">
+                        <label class="govuk-label govuk-radios__label" for="care-home">
+                          Care home
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="carer" name="where-is-the-document-from" type="radio" value="carer">
+                        <label class="govuk-label govuk-radios__label" for="carer">
+                          Carer
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="consultant" name="where-is-the-document-from" type="radio" value="consultant">
+                        <label class="govuk-label govuk-radios__label" for="consultant">
+                          Consultant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="dermatology" name="where-is-the-document-from" type="radio" value="dermatology">
+                        <label class="govuk-label govuk-radios__label" for="dermatology">
+                          Dermatology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="dwp" name="where-is-the-document-from" type="radio" value="dwp">
+                        <label class="govuk-label govuk-radios__label" for="dwp">
+                          DWP
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="gp" name="where-is-the-document-from" type="radio" value="gp">
+                        <label class="govuk-label govuk-radios__label" for="gp">
+                          GP
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="haematology" name="where-is-the-document-from" type="radio" value="haematology">
+                        <label class="govuk-label govuk-radios__label" for="haematology">
+                          Haematology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="home-office" name="where-is-the-document-from" type="radio" value="home-office">
+                        <label class="govuk-label govuk-radios__label" for="home-office">
+                          Home Office
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="nephrology" name="where-is-the-document-from" type="radio" value="nephrology">
+                        <label class="govuk-label govuk-radios__label" for="nephrology">
+                          Nephrology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="neurology" name="where-is-the-document-from" type="radio" value="neurology">
+                        <label class="govuk-label govuk-radios__label" for="neurology">
+                          Neurology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hospital" name="where-is-the-document-from" type="radio" value="hospital">
+                        <label class="govuk-label govuk-radios__label" for="hospital">
+                          Hospital
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="nurse" name="where-is-the-document-from" type="radio" value="nurse">
+                        <label class="govuk-label govuk-radios__label" for="nurse">
+                          Nurse
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oncology" name="where-is-the-document-from" type="radio" value="oncology">
+                        <label class="govuk-label govuk-radios__label" for="oncology">
+                          Oncology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="orthopaedic" name="where-is-the-document-from" type="radio" value="orthopaedic">
+                        <label class="govuk-label govuk-radios__label" for="orthopaedic">
+                          Orthopaedic
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pharmacy" name="where-is-the-document-from" type="radio" value="pharmacy">
+                        <label class="govuk-label govuk-radios__label" for="pharmacy">
+                          Pharmacy
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="physiotherapy" name="where-is-the-document-from" type="radio" value="physiotherapy">
+                        <label class="govuk-label govuk-radios__label" for="physiotherapy">
+                          Physiotherapy
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="radiology" name="where-is-the-document-from" type="radio" value="radiology">
+                        <label class="govuk-label govuk-radios__label" for="radiology">
+                          Radiology
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="care-plan" name="what-is-the-document" type="radio" value="care-plan" data-aria-controls="conditional-care-plan">
+                <label class="govuk-label govuk-radios__label" for="care-plan">
+                  Care plan
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-care-plan">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home" name="where-is-the-document-from" type="radio" value="care-home">
+                        <label class="govuk-label govuk-radios__label" for="care-home">
+                          Care home
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="carer" name="where-is-the-document-from" type="radio" value="carer">
+                        <label class="govuk-label govuk-radios__label" for="carer">
+                          Carer
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="community-psychiatric-nurse" name="where-is-the-document-from" type="radio" value="community-psychiatric-nurse">
+                        <label class="govuk-label govuk-radios__label" for="community-psychiatric-nurse">
+                          Community psychiatric nurse
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="consultant" name="where-is-the-document-from" type="radio" value="consultant">
+                        <label class="govuk-label govuk-radios__label" for="consultant">
+                          Consultant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="gp" name="where-is-the-document-from" type="radio" value="gp">
+                        <label class="govuk-label govuk-radios__label" for="gp">
+                          GP
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hospital" name="where-is-the-document-from" type="radio" value="hospital">
+                        <label class="govuk-label govuk-radios__label" for="hospital">
+                          Hospital
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="certificate" name="what-is-the-document" type="radio" value="certificate" data-aria-controls="conditional-visual-impairment">
+                <label class="govuk-label govuk-radios__label" for="certificate">
+                  Certificate of visual imparement
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-visual-impairment">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="consultant" name="where-is-the-document-from" type="radio" value="consultant">
+                        <label class="govuk-label govuk-radios__label" for="consultant">
+                          Consultant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="gp" name="where-is-the-document-from" type="radio" value="gp">
+                        <label class="govuk-label govuk-radios__label" for="gp">
+                          GP
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hospital" name="where-is-the-document-from" type="radio" value="hospital">
+                        <label class="govuk-label govuk-radios__label" for="hospital">
+                          Hospital
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="optician" name="where-is-the-document-from" type="radio" value="optician">
+                        <label class="govuk-label govuk-radios__label" for="optician">
+                          Optician
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="childcare-information" name="what-is-the-document" type="radio" value="childcare-information" data-aria-controls="conditional-childcare">
+                <label class="govuk-label govuk-radios__label" for="childcare-information">
+                  Childcare information
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-childcare">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimant" name="where-is-the-document-from" type="radio" value="claimant">
+                        <label class="govuk-label govuk-radios__label" for="claimant">
+                          Claimant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="carer" name="where-is-the-document-from" type="radio" value="carer">
+                        <label class="govuk-label govuk-radios__label" for="carer">
+                          Carer
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="friends-family" name="where-is-the-document-from" type="radio" value="friends-family">
+                        <label class="govuk-label govuk-radios__label" for="friends-family">
+                          Friends and family
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="data-print" name="what-is-the-document" type="radio" value="data-print" data-aria-controls="conditional-data-print">
+                <label class="govuk-label govuk-radios__label" for="data-print">
+                  Data print
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-data-print">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="cardiology" name="where-is-the-document-from" type="radio" value="cardiology">
+                        <label class="govuk-label govuk-radios__label" for="cardiology">
+                          Cardiology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="clinic" name="where-is-the-document-from" type="radio" value="clinic">
+                        <label class="govuk-label govuk-radios__label" for="clinic">
+                          Clinic
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="consultant" name="where-is-the-document-from" type="radio" value="consultant">
+                        <label class="govuk-label govuk-radios__label" for="consultant">
+                          Consultant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="dermatology" name="where-is-the-document-from" type="radio" value="dermatology">
+                        <label class="govuk-label govuk-radios__label" for="dermatology">
+                          Dermatology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="gp" name="where-is-the-document-from" type="radio" value="gp">
+                        <label class="govuk-label govuk-radios__label" for="gp">
+                          GP
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="haematology" name="where-is-the-document-from" type="radio" value="haematology">
+                        <label class="govuk-label govuk-radios__label" for="haematology">
+                          Haematology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hospital" name="where-is-the-document-from" type="radio" value="hospital">
+                        <label class="govuk-label govuk-radios__label" for="hospital">
+                          Hospital
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="nephrology" name="where-is-the-document-from" type="radio" value="nephrology">
+                        <label class="govuk-label govuk-radios__label" for="nephrology">
+                          Nephrology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="nurse" name="where-is-the-document-from" type="radio" value="nurse">
+                        <label class="govuk-label govuk-radios__label" for="nurse">
+                          Nurse
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oncology" name="where-is-the-document-from" type="radio" value="oncology">
+                        <label class="govuk-label govuk-radios__label" for="oncology">
+                          Oncology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="orthopaedic" name="where-is-the-document-from" type="radio" value="orthopaedic">
+                        <label class="govuk-label govuk-radios__label" for="orthopaedic">
+                          Orthopaedic
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pharmacy" name="where-is-the-document-from" type="radio" value="pharmacy">
+                        <label class="govuk-label govuk-radios__label" for="pharmacy">
+                          Pharmacy
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="physician" name="where-is-the-document-from" type="radio" value="physician">
+                        <label class="govuk-label govuk-radios__label" for="physician">
+                          Physician
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="physiotherapy" name="where-is-the-document-from" type="radio" value="physiotherapy">
+                        <label class="govuk-label govuk-radios__label" for="physiotherapy">
+                          Physiotherapy
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="radiology" name="where-is-the-document-from" type="radio" value="radiology">
+                        <label class="govuk-label govuk-radios__label" for="radiology">
+                          Radiology
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="death-certificate" name="what-is-the-document" type="radio" value="death-certificate" data-aria-controls="conditional-death-certificate">
+                <label class="govuk-label govuk-radios__label" for="death-certificate">
+                  Death certificate
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-death-certificate">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="gp" name="where-is-the-document-from" type="radio" value="gp">
+                        <label class="govuk-label govuk-radios__label" for="gp">
+                          GP
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hospital" name="where-is-the-document-from" type="radio" value="hospital">
+                        <label class="govuk-label govuk-radios__label" for="hospital">
+                          Hospital
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="document" name="what-is-the-document" type="radio" value="document" data-aria-controls="conditional-document">
+                <label class="govuk-label govuk-radios__label" for="document">
+                  Document
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-document">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="cardiology" name="where-is-the-document-from" type="radio" value="cardiology">
+                        <label class="govuk-label govuk-radios__label" for="cardiology">
+                          Cardiology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home" name="where-is-the-document-from" type="radio" value="care-home">
+                        <label class="govuk-label govuk-radios__label" for="care-home">
+                          Care home
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="carer" name="where-is-the-document-from" type="radio" value="carer">
+                        <label class="govuk-label govuk-radios__label" for="carer">
+                          Carer
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimant" name="where-is-the-document-from" type="radio" value="claimant">
+                        <label class="govuk-label govuk-radios__label" for="claimant">
+                          Claimant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="clinic" name="where-is-the-document-from" type="radio" value="clinic">
+                        <label class="govuk-label govuk-radios__label" for="clinic">
+                          Clinic
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="community-psychiatric-nurse" name="where-is-the-document-from" type="radio" value="community-psychiatric-nurse">
+                        <label class="govuk-label govuk-radios__label" for="community-psychiatric-nurse">
+                          Community psychiatric nurse
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="consultant" name="where-is-the-document-from" type="radio" value="consultant">
+                        <label class="govuk-label govuk-radios__label" for="consultant">
+                          Consultant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="dermatology" name="where-is-the-document-from" type="radio" value="dermatology">
+                        <label class="govuk-label govuk-radios__label" for="dermatology">
+                          Dermatology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="friends-family" name="where-is-the-document-from" type="radio" value="friends-family">
+                        <label class="govuk-label govuk-radios__label" for="friends-family">
+                          Friends and family
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="gp" name="where-is-the-document-from" type="radio" value="gp">
+                        <label class="govuk-label govuk-radios__label" for="gp">
+                          GP
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="haematology" name="where-is-the-document-from" type="radio" value="haematology">
+                        <label class="govuk-label govuk-radios__label" for="haematology">
+                          Haematology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="home-office" name="where-is-the-document-from" type="radio" value="home-office">
+                        <label class="govuk-label govuk-radios__label" for="home-office">
+                          Home Office
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hospital" name="where-is-the-document-from" type="radio" value="hospital">
+                        <label class="govuk-label govuk-radios__label" for="hospital">
+                          Hospital
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="nephrology" name="where-is-the-document-from" type="radio" value="nephrology">
+                        <label class="govuk-label govuk-radios__label" for="nephrology">
+                          Nephrology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="neurology" name="where-is-the-document-from" type="radio" value="neurology">
+                        <label class="govuk-label govuk-radios__label" for="neurology">
+                          Neurology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="nurse" name="where-is-the-document-from" type="radio" value="nurse">
+                        <label class="govuk-label govuk-radios__label" for="nurse">
+                          Nurse
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oncology" name="where-is-the-document-from" type="radio" value="oncology">
+                        <label class="govuk-label govuk-radios__label" for="oncology">
+                          Oncology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="optician" name="where-is-the-document-from" type="radio" value="optician">
+                        <label class="govuk-label govuk-radios__label" for="optician">
+                          Optician
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="orthopaedic" name="where-is-the-document-from" type="radio" value="orthopaedic">
+                        <label class="govuk-label govuk-radios__label" for="orthopaedic">
+                          Orthopaedic
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pharmacy" name="where-is-the-document-from" type="radio" value="pharmacy">
+                        <label class="govuk-label govuk-radios__label" for="pharmacy">
+                          Pharmacy
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="physician" name="where-is-the-document-from" type="radio" value="physician">
+                        <label class="govuk-label govuk-radios__label" for="physician">
+                          Physician
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="physiotherapy" name="where-is-the-document-from" type="radio" value="physiotherapy">
+                        <label class="govuk-label govuk-radios__label" for="physiotherapy">
+                          Physiotherapy
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="radiology" name="where-is-the-document-from" type="radio" value="radiology">
+                        <label class="govuk-label govuk-radios__label" for="radiology">
+                          Radiology
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="expenses-receipt" name="what-is-the-document" type="radio" value="expenses-receipt" data-aria-controls="conditional-expenses">
+                <label class="govuk-label govuk-radios__label" for="expenses-receipt">
+                  Expenses receipt
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-expenses">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimant" name="where-is-the-document-from" type="radio" value="claimant">
+                        <label class="govuk-label govuk-radios__label" for="claimant">
+                          Claimant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home" name="where-is-the-document-from" type="radio" value="care-home">
+                        <label class="govuk-label govuk-radios__label" for="care-home">
+                          Care home
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="carer" name="where-is-the-document-from" type="radio" value="carer">
+                        <label class="govuk-label govuk-radios__label" for="carer">
+                          Carer
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="friends-family" name="where-is-the-document-from" type="radio" value="friends-family">
+                        <label class="govuk-label govuk-radios__label" for="friends-family">
+                          Friends and family
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="gender-recognition-certificate" name="what-is-the-document" type="radio" value="gender-recognition-certificate" data-aria-controls="conditional-gender">
+                <label class="govuk-label govuk-radios__label" for="gender-recognition-certificate">
+                  Gender recognition certificate
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-gender">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="consultant" name="where-is-the-document-from" type="radio" value="consultant">
+                        <label class="govuk-label govuk-radios__label" for="consultant">
+                          Consultant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="gp" name="where-is-the-document-from" type="radio" value="gp">
+                        <label class="govuk-label govuk-radios__label" for="gp">
+                          GP
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hospital" name="where-is-the-document-from" type="radio" value="hospital">
+                        <label class="govuk-label govuk-radios__label" for="hospital">
+                          Hospital
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="general-info" name="what-is-the-document" type="radio" value="general-info" data-aria-controls="conditional-general">
+                <label class="govuk-label govuk-radios__label" for="general-info">
+                  General info
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-general">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimant" name="where-is-the-document-from" type="radio" value="claimant">
+                        <label class="govuk-label govuk-radios__label" for="claimant">
+                          Claimant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home" name="where-is-the-document-from" type="radio" value="care-home">
+                        <label class="govuk-label govuk-radios__label" for="care-home">
+                          Care home
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="carer" name="where-is-the-document-from" type="radio" value="carer">
+                        <label class="govuk-label govuk-radios__label" for="carer">
+                          Carer
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="friends-family" name="where-is-the-document-from" type="radio" value="friends-family">
+                        <label class="govuk-label govuk-radios__label" for="friends-family">
+                          Friends and family
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letter" name="what-is-the-document" type="radio" value="letter" data-aria-controls="conditional-letter">
+                <label class="govuk-label govuk-radios__label" for="letter">
+                  Letter
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-letter">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h3 class="govuk-fieldset__heading">
+                        Where is the document from?
+                      </h3>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="cardiology" name="where-is-the-document-from" type="radio" value="cardiology">
+                        <label class="govuk-label govuk-radios__label" for="cardiology">
+                          Cardiology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home" name="where-is-the-document-from" type="radio" value="care-home">
+                        <label class="govuk-label govuk-radios__label" for="care-home">
+                          Care home
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="carer" name="where-is-the-document-from" type="radio" value="carer">
+                        <label class="govuk-label govuk-radios__label" for="carer">
+                          Carer
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimant" name="where-is-the-document-from" type="radio" value="claimant">
+                        <label class="govuk-label govuk-radios__label" for="claimant">
+                          Claimant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="clinic" name="where-is-the-document-from" type="radio" value="clinic">
+                        <label class="govuk-label govuk-radios__label" for="clinic">
+                          Clinic
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="community-psychiatric-nurse" name="where-is-the-document-from" type="radio" value="community-psychiatric-nurse">
+                        <label class="govuk-label govuk-radios__label" for="community-psychiatric-nurse">
+                          Community psychiatric nurse
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="consultant" name="where-is-the-document-from" type="radio" value="consultant">
+                        <label class="govuk-label govuk-radios__label" for="consultant">
+                          Consultant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="dermatology" name="where-is-the-document-from" type="radio" value="dermatology">
+                        <label class="govuk-label govuk-radios__label" for="dermatology">
+                          Dermatology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="friends-family" name="where-is-the-document-from" type="radio" value="friends-family">
+                        <label class="govuk-label govuk-radios__label" for="friends-family">
+                          Friends and family
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="gp" name="where-is-the-document-from" type="radio" value="gp">
+                        <label class="govuk-label govuk-radios__label" for="gp">
+                          GP
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="haematology" name="where-is-the-document-from" type="radio" value="haematology">
+                        <label class="govuk-label govuk-radios__label" for="haematology">
+                          Haematology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="home-office" name="where-is-the-document-from" type="radio" value="home-office">
+                        <label class="govuk-label govuk-radios__label" for="home-office">
+                          Home Office
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hospital" name="where-is-the-document-from" type="radio" value="hospital">
+                        <label class="govuk-label govuk-radios__label" for="hospital">
+                          Hospital
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="nephrology" name="where-is-the-document-from" type="radio" value="nephrology">
+                        <label class="govuk-label govuk-radios__label" for="nephrology">
+                          Nephrology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="neurology" name="where-is-the-document-from" type="radio" value="neurology">
+                        <label class="govuk-label govuk-radios__label" for="neurology">
+                          Neurology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="nurse" name="where-is-the-document-from" type="radio" value="nurse">
+                        <label class="govuk-label govuk-radios__label" for="nurse">
+                          Nurse
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oncology" name="where-is-the-document-from" type="radio" value="oncology">
+                        <label class="govuk-label govuk-radios__label" for="oncology">
+                          Oncology
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="optician" name="where-is-the-document-from" type="radio" value="optician">
+                        <label class="govuk-label govuk-radios__label" for="optician">
+                          Optician
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="orthopaedic" name="where-is-the-document-from" type="radio" value="orthopaedic">
+                        <label class="govuk-label govuk-radios__label" for="orthopaedic">
+                          Orthopaedic
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pharmacy" name="where-is-the-document-from" type="radio" value="pharmacy">
+                        <label class="govuk-label govuk-radios__label" for="pharmacy">
+                          Pharmacy
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="physician" name="where-is-the-document-from" type="radio" value="physician">
+                        <label class="govuk-label govuk-radios__label" for="physician">
+                          Physician
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="physiotherapy" name="where-is-the-document-from" type="radio" value="physiotherapy">
+                        <label class="govuk-label govuk-radios__label" for="physiotherapy">
+                          Physiotherapy
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="radiology" name="where-is-the-document-from" type="radio" value="radiology">
+                        <label class="govuk-label govuk-radios__label" for="radiology">
+                          Radiology
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="medical-evidence-not-relevant" name="what-is-the-document" type="radio" value="medical-evidence-not-relevant">
+                <label class="govuk-label govuk-radios__label" for="medical-evidence-not-relevant">
+                  Medical evidence not relevant to the claim
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="medical-history" name="what-is-the-document" type="radio" value="medical-history">
+                <label class="govuk-label govuk-radios__label" for="medical-history">
+                  Medical history
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="medical-printout" name="what-is-the-document" type="radio" value="medical-printout">
+                <label class="govuk-label govuk-radios__label" for="medical-printout">
+                  Medical printout
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="medical-record" name="what-is-the-document" type="radio" value="medical-record">
+                <label class="govuk-label govuk-radios__label" for="medical-record">
+                  Medical record
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="overview" name="what-is-the-document" type="radio" value="overview">
+                <label class="govuk-label govuk-radios__label" for="overview">
+                  Overview
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="photographic-evidence" name="what-is-the-document" type="radio" value="photographic-evidence">
+                <label class="govuk-label govuk-radios__label" for="photographic-evidence">
+                  Photographic evidence
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="prescription" name="what-is-the-document" type="radio" value="prescription">
+                <label class="govuk-label govuk-radios__label" for="prescription">
+                  Prescription
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="report" name="what-is-the-document" type="radio" value="report">
+                <label class="govuk-label govuk-radios__label" for="report">
+                  Report
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="tenancy-agreement" name="what-is-the-document" type="radio" value="tenancy-agreement">
+                <label class="govuk-label govuk-radios__label" for="tenancy-agreement">
+                  Tenancy agreement
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="test-results" name="what-is-the-document" type="radio" value="test-results">
+                <label class="govuk-label govuk-radios__label" for="test-results">
+                  Test results
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="travel-expenses-claim-form" name="what-is-the-document" type="radio" value="travel-expenses-claim-form">
+                <label class="govuk-label govuk-radios__label" for="travel-expenses-claim-form">
+                  Travel expenses claim form
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="custom-label" name="what-is-the-document" type="radio" value="custom-label" data-aria-controls="conditional-custom">
+                <label class="govuk-label govuk-radios__label" for="custom-label">
+                  Add a custom label
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-custom">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="custom-label-text">
+                    Enter label text
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="custom-label-text" name="custom-label-text" spellcheck="true"></div>
+        
+              </div>
+            </div>
+        
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save changes</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+<!-- In your <head> -->
+  <link rel="stylesheet" href="/assets/location-autocomplete.min.css" />
+ 
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+ 
+{% block main %}
+ 
+{% include "includes/assessment-status-neutral-pip.html" %}
+ 
+<div class="govuk-width-container">
+  {{ govukBackLink({
+    text: "Back",
+    href: "claimant-documents-buttons-edit"
+  }) }}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <select id="location-autocomplete">
+        <option value="territory:AE-AZ">Abu Dhabi</option>
+        <option value="country:AF">Afghanistan</option>
+        …
+      </select>
+
+<br>
+<br>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- At the end of your <body> -->
+
+
+{% endblock %}
+
+
+<script type="text/javascript" src="/assets/location-autocomplete.min.js"></script>
+<script type="text/javascript">
+  openregisterLocationPicker({
+    selectElement: document.getElementById('location-autocomplete'),
+    url: '/assets/location-autocomplete-graph.json'
+  })
+</script>
+

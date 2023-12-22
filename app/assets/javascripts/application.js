@@ -151,4 +151,5 @@ async function autosave(el) {
   document.querySelectorAll('.govuk-link.govuk-pagination__link, .linear-next-document-button').forEach((el) => el.addEventListener('click', updateCurrentDocNumber));
 });
 
+
 window.$ = $

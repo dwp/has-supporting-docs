@@ -5,6 +5,14 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
+const versions = [
+    'version-x'
+]
+
+
+console.log('Setting up main router. Locating sub routers');
+versions.forEach((version) => require(`${__dirname}/views/${version}/routes/routes.js`));
+
 
 // Add your routes here
 router.post('/autosave', function (req, res) {

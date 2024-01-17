@@ -1,7 +1,7 @@
 {#
-    For guidance on how to use layouts see:
-    https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-    #}
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+  #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
@@ -19,30 +19,38 @@
 
 {% block header %}
 
-    {{ dwpHeader({
-    name: "Health Assessment Service",
-    serviceHref: '/',
-    container:true
-    }) }}
-    
-    {% endblock %}
+  {{ dwpHeader({
+  name: "Health Assessment Service",
+  serviceHref: '/',
+  container:true
+  }) }}
+  
+  {% endblock %}
 
 
-    {% block footer %}
-    {{ dwpFooter({
-        meta: {
-            items: [
-              {
-                href: "/manage-prototype",
-                text: "Manage your prototype"
-              },
-              {
-                href: "/manage-prototype/clear-data",
-                text: "Clear data"
-              }
-            ]
-          }
-        }) }} 
+  {% block footer %}
+  {{ dwpFooter({
+      meta: {
+          items: [
+            {
+              href: "/manage-prototype",
+              text: "Manage your prototype"
+            },
+            {
+              href: "/manage-prototype/clear-data",
+              text: "Clear data"
+            },
+            {
+              href: "/" + currentVersionPath + "/reset-documents",
+              text: "Reset documents"
+            }
+          ]
+        }
+      }) }} 
 
-        {% endblock %}
-        
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+{% endblock %}
+      

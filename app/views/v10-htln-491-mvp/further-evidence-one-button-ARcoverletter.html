@@ -55,6 +55,18 @@
 
 
   <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+    {% if data['nameARcover'] %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        DRS document name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Award review AR1 covering letter 
+      </dd>
+    </div>
+    {% endif %}
+
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Date of document
@@ -85,6 +97,15 @@
         PIP
       </dd>
     </div>
+    {% if data["comment-ARcover"] %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Comment
+      </dt>
+      <dd class="govuk-summary-list__value">{{ data["comment-ARcover"] }}
+      </dd>
+    </div>
+    {% endif %}
    
   </dl>
       
@@ -100,7 +121,7 @@
           <a href="document-details-form-ARcover.html" class="govuk-link" rel="noreferrer noopener"> Update document details</a>
         </p>
         <p class="govuk-body">
-          <a href="/v10-htln-431-NCAT-v3/document-activity.html" class="govuk-link" rel="noreferrer noopener"> View document activity</a>
+          <a href="/v10-htln-491-mvp/document-activity.html" class="govuk-link" rel="noreferrer noopener"> View document activity</a>
         </p>
         <p class="govuk-body">
           <a href="/public/pdfs/UR-file1/Award-Review-AR1-Covering-Letter_2021-09-10_98C_Redacted.pdf" class="govuk-link" target="_blank"> Open PDF document in a new tab</a>

@@ -10,12 +10,24 @@
 {% include currentVersionPath + "/partials/key-details.html" %}
  
 <div class="govuk-width-container">
-<a href="claimant-details.html" class="govuk-back-link">Back</a>
+  {% if query.ncat %}
+  {{ govukBackLink({ text: "Back", href: "/" + currentVersionPath + "/document-list" }) }}
+{% else %}
+  {{ govukBackLink({ text: "Back", href: "claimant-details.html" }) }}
+{% endif %}
+
+<!-- <a href="claimant-details.html" class="govuk-back-link">Back</a> -->
 <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
     <div class="govuk-grid-row">
 
-      {% if data.userRole === "HCP" %}
+      {% if not query.ncat %}
         <div class="govuk-grid-column-one-quarter">
+            <h2 class="govuk-heading-m govuk-!-Marchgin-bottom-5">Manage</h2>
+            <ul class="govuk-list">
+                <li>
+                    <a class="govuk-link" href="/{{ currentVersionPath }}/document-list?ncat=true">Update document details</a>
+                </li>
+            </ul>
             {% include currentVersionPath + "/partials/filters.html" %}
         </div>
       {% endif %}
@@ -30,7 +42,7 @@
             <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">
               <button type="button" data-index="0">Name</button>
             </th>
-            {% if data.userRole === "HCP" %}
+            {% if not query.ncat %}
               <th scope="col" class="govuk-table__header column-width-10" aria-sort="none">
                 <button type="button" data-index="2">Benefit type</button>
               </th>
@@ -50,8 +62,8 @@
             {% for doc in documents %}
                 {% if doc.isActive %}
                     <tr class="govuk-table__row filter-table-row">     
-                        <td class="govuk-table__cell"><a href="{% if data.userRole === 'HCP' %}view{% else %}update{% endif %}-document/{{ doc.id }}">{{ doc.name }}</a></td>
-                        {% if data.userRole === "HCP" %}
+                      <td class="govuk-table__cell"><a href="{% if not query.ncat %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}">{{ doc.name }}</a></td>
+                       {% if not query.ncat %}
                           <td class="govuk-table__cell ">{{ doc.benefitType }}</td>
                         {% endif %}
                         <td class="govuk-table__cell" data-sort-value="date">{{ doc.dateOfDocument }}</td>

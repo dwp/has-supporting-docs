@@ -26,12 +26,19 @@
 
         <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents</span>
         <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
-       
-        {% if data['name'] %}
-        <h1 class="govuk-heading-l">{{ data["name"]}} </h1>
+      
+        {% if data['name5'] %}
+        <h1 class="govuk-heading-l">{{ data["name5"]}} </h1>
         {% else %}
         <h1 class="govuk-heading-l">WHITE MAIL UNSTRUCTURED </h1>
               {% endif %}
+
+              <!-- <input type="hidden" name="envelopeRead" value="true" /> -->
+
+            </div>
+          </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="sort">
@@ -331,16 +338,48 @@
         
           </fieldset>
         </div>
-              </div>
-          
-        
-          </fieldset>
+            
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="more-detail">
+              Comment on this document
+            </label>
+          </h1>
+          <div id="more-detail-hint" class="govuk-hint">
+          <textarea class="govuk-textarea" id="envelopeComment" name="envelopeComment" rows="4" aria-describedby="more-detail-hint"></textarea>
         </div>
+        </div>
+
+        <!-- <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">
+              Document not relavant
+              </h2>
+            </legend>
+            <div id="waste-hint" class="govuk-hint">
+              Examples Duplicate, admin letter, envelopes,
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+                  Archive document
+                </label>
+              </div>
+             
+            </div>
+          </fieldset>
+        </div> -->
+       
 
         <button class="govuk-button linear-next-document-button" data-module="govuk-button">Save and continue</button>
 
       </form>
-<br>
+
+                </div>
+              </div>
 <br>
       <div class="govuk-grid-row">
      

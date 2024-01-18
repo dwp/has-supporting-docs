@@ -53,6 +53,18 @@
             {% endif %}
 
   <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+    {% if data['name8'] %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        DRS document name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        ESA85
+      </dd>
+    </div>
+    {% endif %}
+
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Date of document
@@ -83,6 +95,16 @@
         UC
       </dd>
     </div>
+
+    {% if data["comment-esa85"] %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Comment
+      </dt>
+      <dd class="govuk-summary-list__value">{{ data["comment-esa85"] }}
+      </dd>
+    </div>
+    {% endif %}
    
   </dl>
       
@@ -98,7 +120,7 @@
           <a href="document-details-form-ESA85" class="govuk-link" rel="noreferrer noopener">Update document details</a>
         </p>
         <p class="govuk-body">
-          <a href="/v10-htln-431-NCAT-v3/document-activity.html" class="govuk-link" rel="noreferrer noopener"> View document activity</a>
+          <a href="/v10-htln-491-mvp/document-activity.html" class="govuk-link" rel="noreferrer noopener"> View document activity</a>
         </p>
   
         <p class="govuk-body">

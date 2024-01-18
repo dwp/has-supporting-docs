@@ -58,6 +58,7 @@ router.post(`/${currentVersionPath}/update-document/:id`, (req, res, next) => {
     docToUpdate.dateDay = req.body.dateOfDocumentDay;
     docToUpdate.dateMonth = req.body.dateOfDocumentMonth;
     docToUpdate.dateYear = req.body.dateOfDocumentYear;
+    docToUpdate.comment = req.body.comment;
     docToUpdate.dateOfDocument = `${req.body.dateOfDocumentDay} ${months[req.body.dateOfDocumentMonth - 1]} ${req.body.dateOfDocumentYear}`;
     res.locals.documents = documents;
     res.locals.document = res.locals.documents.find((doc) => doc.id === req.params.id);
@@ -65,13 +66,13 @@ router.post(`/${currentVersionPath}/update-document/:id`, (req, res, next) => {
     res.locals.selectedDocument = filteredDocs.findIndex((doc) => doc.id === req.params.id) + 1;
     res.locals.previousDocumentId = filteredDocs[res.locals.selectedDocument - 2]?.id;
     res.locals.nextDocumentId = filteredDocs[res.locals.selectedDocument]?.id;
-    if (res.locals?.data?.userRole === 'HCP') {
+    if (!req.query.ncat) {
         return res.redirect(`/${currentVersionPath}/view-document/${req.params.id}`);
     } else {
         if (res.locals.nextDocumentId) {
-            return res.redirect(`/${currentVersionPath}/update-document/${res.locals.nextDocumentId}`);
+            return res.redirect(`/${currentVersionPath}/update-document/${res.locals.nextDocumentId}?ncat=true`);
         } else {
-            return res.redirect(`/${currentVersionPath}/document-list`);
+            return res.redirect(`/${currentVersionPath}/document-list/ncat=true`);
         }
     }
 });

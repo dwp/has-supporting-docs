@@ -19,11 +19,13 @@
                 <h1 class="govuk-heading-l">{{ document.name }}</h1>
                     <dl class="govuk-summary-list govuk-summary-list--no-border">
                        
+                        {% if data['documentName'] %}
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">DRS document name</dt>
-                            <dd class="govuk-summary-list__value">{{ document.name }}</dd>
+                            <dd class="govuk-summary-list__value">{{ document.drsName }}</dd>
                             <dd class="govuk-summary-list__actions"></dd>
                         </div>
+                        {% endif %}
                        
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Date of document</dt>
@@ -39,10 +41,12 @@
                             <dt class="govuk-summary-list__key">Benefit type</dt>
                             <dd class="govuk-summary-list__value">{{ document.benefitType }}</dd>
                         </div>
+                        {% if document.comment %}
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Comment</dt>
-                            <dd class="govuk-summary-list__value">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+                            <dd class="govuk-summary-list__value">{{ document.comment }}</dd>
                         </div>
+                        {% endif %}
                     </dl>
                 </div>
 

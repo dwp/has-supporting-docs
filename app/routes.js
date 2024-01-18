@@ -13,6 +13,11 @@ const versions = [
 console.log('Setting up main router. Locating sub routers');
 versions.forEach((version) => require(`${__dirname}/views/${version}/routes/routes.js`));
 
+router.all('*', (req, res, next) => {
+    res.locals.params = req.params;
+    res.locals.query = req.query;
+    return next();
+});
 
 // Add your routes here
 router.post('/autosave', function (req, res) {

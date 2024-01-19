@@ -2,7 +2,6 @@
     {
         "id": "17384777-d0a5-4914-8a76-430977c3ecb5",
         "name": "Award review AR1 covering letter",
-        "drsName": "Award review AR1 covering letter",
         "benefitType": "PIP",
         "dateOfDocument": "27-05-2021",
         "dateDay": "27",
@@ -12,12 +11,12 @@
         "pathToDocument": "/public/pdfs/UR-file1/Award-Review-AR1-Covering-Letter_2021-09-10_98C_Redacted.pdf",
         "important": true,
         "read": false,
-        "isActive": true
+        "isActive": true,
+        "reviewed": false
     },
     {
         "id": "d2ff1706-65aa-4915-8411-ec49eb8f1414",
         "name": "Further evidence",
-        "drsName": "Further evidence",
         "benefitType": "PIP",
         "dateOfDocument": "3 Sept 2021",
         "dateDay": "03",

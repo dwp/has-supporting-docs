@@ -33,8 +33,16 @@
       {% endif %}
  
         <div class="govuk-grid-column-three-quarters">
+          {% if query.ncat %}
+          <h1 class="govuk-heading-l">Update document details</h2>
+        {% else %}
         <h1 class="govuk-heading-l">Claimant documents</h2>
-        <p class="govuk-body-s" id="last-updated">Last updated from DRS at {{ lastUpdatedTime }}</p>
+        {% endif %}
+        
+
+
+
+        
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         <table class="govuk-table" data-module="moj-sortable-table" aria-describedby="last-updated">
         <thead class="govuk-table__head">
@@ -68,12 +76,19 @@
                         {% endif %}
                         <td class="govuk-table__cell" data-sort-value="date">{{ doc.dateOfDocument }}</td>
                         <td class="govuk-table__cell" data-sort-value="14">10 Sept 2021</td>
+                        {% if not query.ncat %}
                         {% if doc.important %}
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
                         {% elif doc.read %}
                         <td class="govuk-table__cell"></td>
                         {% else %}
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong></td>
+                        {% endif %}
+                        {% endif %}
+                        {% if query.ncat %}
+                       
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Not started</strong></td>
+                        
                         {% endif %}
                     </tr>
                 {% endif %}

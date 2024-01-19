@@ -15,7 +15,10 @@
 <div class="govuk-width-container">
 
 
-<a href="claimant-details.html" class="govuk-back-link">Back</a>
+  {{ govukBackLink({
+    text: "Back",
+    href: "index"
+  }) }}
 
 <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
  

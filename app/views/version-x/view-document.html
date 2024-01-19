@@ -19,7 +19,7 @@
                 <h1 class="govuk-heading-l">{{ document.name }}</h1>
                     <dl class="govuk-summary-list govuk-summary-list--no-border">
                        
-                        {% if data['documentName'] %}
+                        {% if document.drsName %}
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">DRS document name</dt>
                             <dd class="govuk-summary-list__value">{{ document.drsName }}</dd>
@@ -36,7 +36,7 @@
                             <dt class="govuk-summary-list__key">Date DWP received</dt>
                             <dd class="govuk-summary-list__value">{{ document.dateDwpReceived}}</dd>
                         </div>
-                       
+                        
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Benefit type</dt>
                             <dd class="govuk-summary-list__value">{{ document.benefitType }}</dd>

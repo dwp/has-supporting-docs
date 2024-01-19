@@ -54,7 +54,10 @@ router.get(`/${currentVersionPath}/update-document/:id`, (req, res, next) => {
 
 router.post(`/${currentVersionPath}/update-document/:id`, (req, res, next) => {
     const docToUpdate = documents.find((doc) => doc.id === req.params.id);
-    docToUpdate.name = req.body.documentName;
+    if (req.body.documentName) {
+        docToUpdate.drsName = docToUpdate?.drsName || docToUpdate?.name?.slice(0);
+        docToUpdate.name = req.body.documentName;
+    }  
     docToUpdate.dateDay = req.body.dateOfDocumentDay;
     docToUpdate.dateMonth = req.body.dateOfDocumentMonth;
     docToUpdate.dateYear = req.body.dateOfDocumentYear;

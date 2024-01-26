@@ -10,41 +10,52 @@
 {% include "includes/assessment-status-neutral-pip.html" %}
  
 <div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
   {{ govukBackLink({
     text: "Back",
     href: "claimant-documents-buttons-edit"
   }) }}
 
- 
 
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Date of document must be a real date",
+        href: "#date-created-dayAR2a"
+      }
+    ]
+  }) }}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  
 
-      <form class="form" action="document-details-linear-FurtherEvidence1" method="post">
+  
 
+      <form class="form" action="document-details-linear-ARcover" method="post">
+
+    
         <span id="docAmountSpan" class="govuk-caption-l">{{ data.selectedDocument }} of {{ data.totalDocuments }} documents</span>
         <!-- <span class="govuk-caption-l">1 of 13 documents (filters applied)</span> -->
        
-        {% if data['nameARcover'] %}
-        <h1 class="govuk-heading-l">{{ data["nameARcover"]}} </h1>
+        {% if data['nameAR2'] %}
+        <h1 class="govuk-heading-l">{{ data["nameAR2"]}} </h1>
         {% else %}
-        <h1 class="govuk-heading-l">Award review AR1 covering letter </h1>
+        <h1 class="govuk-heading-l">Award review AR1 </h1>
               {% endif %}
-
-              <!-- <input type="hidden" name="AwardCoverRead" value="true" /> -->
-
-            </div>
-          </div>
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-half">
+   
+      </div>
+  </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+              <!-- <input type="hidden" name="AwardReview2Read" value="true" /> -->
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="sort">
              Change document name (optional)
           </label>
-          <select class="govuk-select" id="nameARcovera" name="nameARcover">
-            <option value="Award review AR1 covering letter">Select</option>
+          <select class="govuk-select" id="nameAR2a" name="nameAR2">
+            <option value="Award review AR1">Select</option>
             <option value="Cardiology appointment">Cardiology appointment</option>
             <option value="Cardiology data print">Cardiology data print</option>
             <option value="Cardiology document">Cardiology document</option>
@@ -302,43 +313,47 @@
           </select>
         </div>
 
+      
+        
 
-        <div class="govuk-form-group">
+
+       
+        <div class="govuk-form-group govuk-form-group--error">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="date-created-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               <h1 class="govuk-fieldset__heading">
                 Add date of document (optional)
               </h1>
             </legend>
-           
+            <p id="passport-issued-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Date of document must be a real date
+            </p>
             <div class="govuk-date-input" id="document-created-date">
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-dayARcovera" name="date-created-dayARcover" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="date-created-dayAR2a" name="date-created-dayAR2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-created-monthARcovera" name="date-created-monthARcover" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="date-created-monthAR2a" name="date-created-monthAR2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="date-created-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-created-yearARcovera" name="date-created-yearARcover" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="date-created-yearAR2a" name="date-created-yearAR2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
             </div>
-        
           </fieldset>
         </div>
              
-        
 
         <div class="govuk-form-group">
           <h1 class="govuk-label-wrapper">
@@ -347,50 +362,30 @@
             </label>
           </h1>
           <div id="more-detail-hint" class="govuk-hint">
-          <textarea class="govuk-textarea" id="comment-ARcover" name="comment-ARcover" rows="4" aria-describedby="more-detail-hint"></textarea>
+            <textarea class="govuk-textarea" id="comment-AR2" name="comment-AR2" rows="4" aria-describedby="more-detail-hint"></textarea>
+          </div>
         </div>
-        </div>
-       
-
-        <!-- <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              <h2 class="govuk-fieldset__heading">
-              Document not relavant
-              </h2>
-            </legend>
-            <div id="waste-hint" class="govuk-hint">
-              Examples Duplicate, admin letter, envelopes,
-            </div>
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                <label class="govuk-label govuk-checkboxes__label" for="waste">
-                  Archive document
-                </label>
-              </div>
-             
-            </div>
-          </fieldset>
-        </div> -->
         
-
+        
         <button class="govuk-button linear-next-document-button" data-module="govuk-button">Save and continue</button>
-
       </form>
     </div>
-  </div>
 
-   
-    <br>
-      <div class="govuk-grid-row">
+        <!-- <p class="govuk-body">
+          <a href="" class="govuk-link govuk-link--no-visited-state">Next document</a>
+        </p> -->
+      
+      </div>
+
+      <br>
+      
      
-        <div class="govuk-grid-column-full">
-          <iframe class="document" src="/public/pdfs/UR-file1/Award-Review-AR1-Covering-Letter_2021-09-10_98C_Redacted.pdf" title="PIP2 document"></iframe>
-        </div>
 
-    </div>
-    
+      <div class="govuk-grid-row">
+       <div class="govuk-grid-column-full">
+        <iframe class="document" src="/public/pdfs/UR-file1/Award-Review-AR1_2021-09-10_98C_Redacted.pdf" title="PIP2 document"></iframe>
+       </div>
+      </div>
+ 
 </div>
-
 {% endblock %}

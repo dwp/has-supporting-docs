@@ -23,6 +23,7 @@ router.all(`/${currentVersionPath}*`, (req, res, next) => {
     res.locals.documentNames = documentNames;
     res.locals.totalDocuments = res.locals.documents.filter((x) => x.isActive).length;
     res.locals.importantCount = res.locals.documents.filter((x) => x.isActive && x.important).length;
+    res.locals.archivedCount = res.locals.documents.filter((x) => x.isActive && x.archived).length;
     res.locals.unreadCount = res.locals.totalDocuments - res.locals.documents.filter((x) => x.isActive && x.read).length;
     res.locals.lastUpdatedTime = new Date().toLocaleString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
     return next();
@@ -86,6 +87,9 @@ router.post(`/${currentVersionPath}/document-list`, (req, res, next) => {
         if (req.body.documentFilters?.includes('IMPORTANT')) {
             document.isActive = document.important;
         }
+        if (req.body.documentFilters?.includes('ARCHIVED')) {
+            document.isActive = document.archived;
+        }
         if (req.body.documentFilters?.includes('UNREAD')) {
             document.isActive = !document.read;
         }
@@ -100,6 +104,7 @@ router.get(`/${currentVersionPath}/clear-filters`, (req, res, next) => {
     res.locals.documents = documents;
     res.locals.totalDocuments = res.locals.documents.filter((x) => x.isActive).length;
     res.locals.importantCount = res.locals.documents.filter((x) => x.important).length;
+    res.locals.archivedCount = res.locals.documents.filter((x) => x.archived).length;
     res.locals.unreadCount = res.locals.totalDocuments - res.locals.documents.filter((x) => x.read).length;
     return res.render(`${currentVersionPath}/document-list`);
 });

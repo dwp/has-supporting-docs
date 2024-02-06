@@ -399,6 +399,7 @@ element.style {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   font-size: 1rem;
+  color: #000;
   line-height: 1.25;
   display: inline-block;
   max-width: 160px;
@@ -408,4 +409,5 @@ element.style {
   text-decoration: none;
   overflow-wrap: break-word;
   text-transform: none;
+  
 }

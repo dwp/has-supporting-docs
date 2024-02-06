@@ -19,7 +19,8 @@ const pathsWithAutoSave = [
   'v9-htln-416',
   'v10-htln-431',
   'v10-htln-431-NCAT',
-  'v10-htln-491-mvp'
+  'v10-htln-491-mvp',
+  'v10-htln-503-mvp-v2'
 ]
 const isAutoSavePath = pathsWithAutoSave.some((el) => currentUrl.includes(el));
 console.log(`Current url is ${currentUrl}. Is Auto save path? ${isAutoSavePath}`);
@@ -58,6 +59,24 @@ async function autosave(el) {
     .catch((error) => console.error('Error:', error));
 }
 
+
+// // document filters
+// function countDocumentTypes() {
+//   const importantDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'IMPORTANT').length;
+//   document.querySelectorAll('#importantCount1').forEach((element) => element.innerText = importantDocsAmount);
+
+//   const unreadDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'UNREAD').length;
+//   document.querySelectorAll('#unreadCount1').forEach((element) => element.innerText = unreadDocsAmount);
+
+//   const archivedDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'ARCHIVED').length;
+//   document.querySelectorAll('#archivedCount1').forEach((element) => element.innerText = archivedDocsAmount);
+// }
+
+
+
+
+
+
 // document filters
   function countDocumentTypes() {
     const importantDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'IMPORTANT').length;
@@ -65,6 +84,9 @@ async function autosave(el) {
   
     const unreadDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'UNREAD').length;
     document.querySelectorAll('#unreadCount').forEach((element) => element.innerText = unreadDocsAmount);
+
+    const archivedDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'ARCHIVED').length;
+    document.querySelectorAll('#archivedCount').forEach((element) => element.innerText = archivedDocsAmount);
   }
 
   function clearFilters(evt) {

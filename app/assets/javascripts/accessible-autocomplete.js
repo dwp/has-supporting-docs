@@ -8,7 +8,25 @@ document.querySelectorAll('.progressive-autocomplete').forEach((el) => {
   });
 });
 
-async function autosaveImportant(e) {
+// async function autosaveImportant(e) {
+//   console.log(e.target);
+//   const [ version, id ] = e.target.value.split('_');
+//   console.log(version, id);
+//     return fetch(`/${version}/autosave`, {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json'},
+//       body: JSON.stringify({ id }),
+//     })
+//       .then((response) => response.json())
+//       .then((data) => console.log('Success:', data))
+//       .catch((error) => console.error('Error:', error));
+// }
+
+// document.querySelectorAll('#importantCheckbox').forEach((el) => el.addEventListener('change', autosaveImportant));
+
+
+
+async function autosaveArchived(e) {
   console.log(e.target);
   const [ version, id ] = e.target.value.split('_');
   console.log(version, id);
@@ -21,5 +39,4 @@ async function autosaveImportant(e) {
       .then((data) => console.log('Success:', data))
       .catch((error) => console.error('Error:', error));
 }
-
-document.querySelectorAll('#importantCheckbox').forEach((el) => el.addEventListener('change', autosaveImportant));
+document.querySelectorAll('#archivedCheckbox').forEach((el) => el.addEventListener('change', autosaveArchived));

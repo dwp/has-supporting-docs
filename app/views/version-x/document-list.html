@@ -10,27 +10,25 @@
 {% include currentVersionPath + "/partials/key-details.html" %}
  
 <div class="govuk-width-container">
-  {% if query.ncat %}
-  {{ govukBackLink({ text: "Back", href: "/" + currentVersionPath + "/document-list" }) }}
-{% else %}
+ 
   {{ govukBackLink({ text: "Back", href: "claimant-details.html" }) }}
-{% endif %}
+
 
 <!-- <a href="claimant-details.html" class="govuk-back-link">Back</a> -->
 <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
     <div class="govuk-grid-row">
 
-      {% if not query.ncat %}
+     
         <div class="govuk-grid-column-one-quarter">
             <h2 class="govuk-heading-m govuk-!-Marchgin-bottom-5">Manage</h2>
             <ul class="govuk-list">
                 <li>
-                    <a class="govuk-link" href="/{{ currentVersionPath }}/document-list?ncat=true">Update document details</a>
+                    <a class="govuk-link" href="document-list-NCAT.html">Update document details</a>
                 </li>
             </ul>
             {% include currentVersionPath + "/partials/filters.html" %}
         </div>
-      {% endif %}
+    
  
         <div class="govuk-grid-column-three-quarters">
           {% if query.ncat %}
@@ -79,6 +77,8 @@
                         {% if not query.ncat %}
                         {% if doc.important %}
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
+                        {% elif doc.archived %}
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Archived</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
                         {% elif doc.read %}
                         <td class="govuk-table__cell"></td>
                         {% else %}

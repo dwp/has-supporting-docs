@@ -78,27 +78,23 @@
                     <textarea class="govuk-textarea" id="more-detail" name="comment" rows="4" aria-describedby="more-detail-hint">{{ document.comment }}</textarea>
                   </div>
 
-                  <!-- <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        <h2 class="govuk-fieldset__heading">
-                        Document not relavant
-                        </h2>
-                      </legend>
-                      <div id="waste-hint" class="govuk-hint">
-                        Examples Duplicate, admin letter, envelopes,
-                      </div>
-                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                          <label class="govuk-label govuk-checkboxes__label" for="waste">
-                            Archive document
-                          </label>
-                        </div>
-                       
-                      </div>
-                    </fieldset>
-                  </div> -->
+                  
+
+
+              {{ govukCheckboxes({
+                name: "archivedCheckbox",
+                
+                items: [
+                  
+                  {
+                    value: doc.archived,
+                    text: "Mark document as archived",
+                    checked: document.archived
+                  }
+                ]
+              }) }}
+
+             
                   <br>
 
 

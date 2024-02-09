@@ -19,6 +19,7 @@
 
 
 
+
 <!-- <a href="claimant-details.html" class="govuk-back-link">Back</a> -->
 <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
     <div class="govuk-grid-row">
@@ -97,7 +98,7 @@
                         {% elif not doc.read %} 
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Not started</strong></td>
                         {% else %}
-                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell">Reviewed</td>
                         {% endif %}
                         {% endif %}  
                   </tr>

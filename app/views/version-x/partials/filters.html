@@ -11,9 +11,16 @@
     values: data.documentFilters,
     items: [{ value: "IMPORTANT", html: "Important (<span>" + importantCount + "</span>)"},
             { value: "UNREAD", html: "Unread (<span>" + unreadCount + "</span>)"},
-            { value: "ARCHIVED", html: "Archived (<span>" + archivedCount + "</span>)"}]
+            { value: "ARCHIVED", html: "Show archived (<span>" + archivedCount + "</span>)"}
+            ]
             
     }) }}
+
+
+
+
+
+
     {{ govukButton({
       text: "Apply filters"
     }) }}

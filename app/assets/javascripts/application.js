@@ -61,16 +61,16 @@ async function autosave(el) {
 
 
 // // document filters
-// function countDocumentTypes() {
-//   const importantDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'IMPORTANT').length;
-//   document.querySelectorAll('#importantCount1').forEach((element) => element.innerText = importantDocsAmount);
+function countDocumentTypes() {
+  const importantDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'IMPORTANT').length;
+  document.querySelectorAll('#importantCount1').forEach((element) => element.innerText = importantDocsAmount);
 
-//   const unreadDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'UNREAD').length;
-//   document.querySelectorAll('#unreadCount1').forEach((element) => element.innerText = unreadDocsAmount);
+  const unreadDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'UNREAD').length;
+  document.querySelectorAll('#unreadCount1').forEach((element) => element.innerText = unreadDocsAmount);
 
-//   const archivedDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'ARCHIVED').length;
-//   document.querySelectorAll('#archivedCount1').forEach((element) => element.innerText = archivedDocsAmount);
-// }
+  const archivedDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'ARCHIVED').length;
+  document.querySelectorAll('#archivedCount1').forEach((element) => element.innerText = archivedDocsAmount);
+}
 
 
 
@@ -78,16 +78,16 @@ async function autosave(el) {
 
 
 // document filters
-  function countDocumentTypes() {
-    const importantDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'IMPORTANT').length;
-    document.querySelectorAll('#importantCount').forEach((element) => element.innerText = importantDocsAmount);
+  // function countDocumentTypes() {
+  //   const importantDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'IMPORTANT').length;
+  //   document.querySelectorAll('#importantCount').forEach((element) => element.innerText = importantDocsAmount);
   
-    const unreadDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'UNREAD').length;
-    document.querySelectorAll('#unreadCount').forEach((element) => element.innerText = unreadDocsAmount);
+  //   const unreadDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'UNREAD').length;
+  //   document.querySelectorAll('#unreadCount').forEach((element) => element.innerText = unreadDocsAmount);
 
-    const archivedDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'ARCHIVED').length;
-    document.querySelectorAll('#archivedCount').forEach((element) => element.innerText = archivedDocsAmount);
-  }
+  //   const archivedDocsAmount = Array.from(document.querySelectorAll('strong')).filter((x) => x.innerText === 'ARCHIVED').length;
+  //   document.querySelectorAll('#archivedCount').forEach((element) => element.innerText = archivedDocsAmount);
+  // }
 
   function clearFilters(evt) {
     evt.preventDefault();

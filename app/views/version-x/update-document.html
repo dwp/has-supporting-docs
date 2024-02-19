@@ -19,6 +19,9 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
               
+
+
+
                   {% if query.ncat %}
                     <span id="docAmountSpan" class="govuk-caption-l">{{ selectedDocument }} of {{ totalDocuments }} documents</span>
                 {% endif %}
@@ -27,14 +30,30 @@
         </div>
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-one-half">
+
+                    <!-- <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        DRS document name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        ESA85 
+                      </dd>
+                    </div> -->
+
                 <div class="govuk-form-group">
-                <label class="govuk-label govuk-label--s" for="documentName">Change document name (optional)</label>
+                <!-- <label class="govuk-label govuk-label--s" for="documentName">Change document name (optional)</label> -->
+                <label class="govuk-label govuk-label--s" for="documentName">Change document name (optional)  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
+
                 <select class="govuk-select progressive-autocomplete" id="documentName" name="documentName">
                     {% for name in documentNames %}
                         <option value="{{ name }}" {% if name === document.name %}selected{% endif %}>{{ name }}</option>
                     {% endfor %}
                 </select>
+
                 </div>
+                <!-- <a href="#" class="govuk-link govuk-body">Use DRS name</a>
+                <br>
+                <br> -->
 
                 <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset" role="group" aria-describedby="date-created-hint">
@@ -78,17 +97,25 @@
                     <textarea class="govuk-textarea" id="more-detail" name="comment" rows="4" aria-describedby="more-detail-hint">{{ document.comment }}</textarea>
                   </div>
 
-                  
-
 
               {{ govukCheckboxes({
                 name: "archived",
+                fieldset: {
+                  legend: {
+                    text: " Document not relavant (optional)",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Examples Duplicate, admin letter, envelopes"
+                },
                 
                 items: [
                   
                   {
                     value: doc.archived,
-                    text: "Mark document as archived",
+                    text: "Archive document",
                     checked: document.archived
                   }
                 ]

@@ -13,6 +13,7 @@
         "read": false,
         "archived": false,
         "isActive": true,
+        "harmful": false,
         "reviewed": false
     },
     {
@@ -28,6 +29,7 @@
         "important": false,
         "read": false,
         "archived": false,
+        "harmful": true,
         "isActive": true
     },
     {

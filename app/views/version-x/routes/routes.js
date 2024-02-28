@@ -63,7 +63,10 @@ router.post(`/${currentVersionPath}/update-document/:id`, (req, res, next) => {
     docToUpdate.dateMonth = req.body.dateOfDocumentMonth;
     docToUpdate.dateYear = req.body.dateOfDocumentYear;
     docToUpdate.comment = req.body.comment;
-    docToUpdate.dateOfDocument = `${req.body.dateOfDocumentDay} ${months[req.body.dateOfDocumentMonth - 1]} ${req.body.dateOfDocumentYear}`;
+    if (months[req.body.dateOfDocumentMonth - 1]) {
+         docToUpdate.dateOfDocument = `${req.body.dateOfDocumentDay} ${months[req.body.dateOfDocumentMonth - 1]} ${req.body.dateOfDocumentYear}`;
+     }
+    docToUpdate.reviewed = true;
     docToUpdate.archived = Array.isArray(req.body.archived);
     res.locals.documents = documents;
     res.locals.document = res.locals.documents.find((doc) => doc.id === req.params.id);

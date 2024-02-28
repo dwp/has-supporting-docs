@@ -97,8 +97,10 @@
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Archived</strong></td>
                         {% elif not doc.read %} 
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Not started</strong></td>
-                        {% else %}
+                        {% elif doc.reviewed %}
                         <td class="govuk-table__cell">Reviewed</td>
+                        {% else %}
+                        <td class="govuk-table__cell"></td>
                         {% endif %}
                         {% endif %}  
                   </tr>

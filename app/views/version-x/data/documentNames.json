@@ -1,4 +1,5 @@
 [
+    "Admin document",
     "Award review AR1",
     "Award review AR1 covering letter",
     "Cardiology appointment",
@@ -89,6 +90,7 @@
     "Dermatology overview",
     "Dermatology report",
     "Dermatology test results",
+    "Duplicate document",
     "ESA50",
     "ESA85",
     "Friends and family appeal",
@@ -155,6 +157,7 @@
     "Hospital prescription",
     "Hospital report",
     "Hospital test results",
+    "Irrelevant document",
     "Mandatory reconsideration request",
     "Nephrology appointment",
     "Nephrology data print",

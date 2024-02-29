@@ -16,6 +16,9 @@
         {% else %}
             {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
         {% endif %}
+
+
+       
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
               
@@ -28,6 +31,7 @@
                 <h1 class="govuk-heading-l">{{ document.name }} </h1>
             </div>
         </div>
+      
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-one-half">
 
@@ -85,7 +89,8 @@
                     </fieldset>
                 </div>
 
-               
+                
+                
 
                   <div class="govuk-form-group">
                     <h1 class="govuk-label-wrapper">
@@ -94,32 +99,29 @@
                       </label>
                     </h1>
                     <div id="more-detail-hint" class="govuk-hint">
-                    <textarea class="govuk-textarea" id="more-detail" name="comment" rows="4" aria-describedby="more-detail-hint">{{ document.comment }}</textarea>
+                    <textarea class="govuk-textarea" id="more-detail" name="comment" rows="1" aria-describedby="more-detail-hint">{{ document.comment }}</textarea>
                   </div>
 
 
-              {{ govukCheckboxes({
-                name: "archived",
-                fieldset: {
-                  legend: {
-                    text: "Archive this document (optional)",
-                    isPageHeading: false,
-                    classes: "govuk-fieldset__legend--s"
-                  }
-                },
-                hint: {
-                  text: "For example, a duplicate, envelope or admin letter"
-                },
-                
-                items: [
-                  
-                  {
-                    value: doc.archived,
-                    text: "Archive document",
-                    checked: document.archived
-                  }
-                ]
-              }) }}
+                  {{ govukCheckboxes({
+                    name: "archived",
+                    fieldset: {
+                      legend: {
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--s"
+                      }
+                    },
+                   
+                    
+                    items: [
+                      
+                      {
+                        value: doc.archived,
+                        text: "Mark document as irrelevant",
+                        checked: document.archived
+                      }
+                    ]
+                  }) }}
 
              
                   <br>
@@ -127,12 +129,9 @@
 
                 <button class="govuk-button" data-module="govuk-button">Save and continue</button>
             </div>
+                  </div>
         </form>   
     </div>
-
-    <br>
-    <br>
-
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <iframe class="document" src="{{ document.pathToDocument }}" title="{{ document.name }}"></iframe>

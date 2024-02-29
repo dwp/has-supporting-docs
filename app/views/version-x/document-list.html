@@ -86,7 +86,7 @@
                         {% if doc.important %}
                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
                         {% elif doc.archived %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Archived</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Irrelevant</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
                         {% elif doc.read %}
                         <td class="govuk-table__cell"></td>
                         {% elif not doc.read %}
@@ -94,7 +94,7 @@
                         {% endif %}
                       {% else %}
                         {% if doc.archived %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Archived</strong></td>
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Irrelevant</strong></td>
                         {% elif not doc.read %} 
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Not started</strong></td>
                         {% elif doc.reviewed %}

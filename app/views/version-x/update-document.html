@@ -48,11 +48,18 @@
                 <!-- <label class="govuk-label govuk-label--s" for="documentName">Change document name (optional)</label> -->
                 <label class="govuk-label govuk-label--s" for="documentName">Change document name (optional)  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
 
-                <select class="govuk-select progressive-autocomplete" id="documentName" name="documentName">
+                <select class="govuk-select" id="documentName" name="documentName">
                     {% for name in documentNames %}
                         <option value="{{ name }}" {% if name === document.name %}selected{% endif %}>{{ name }}</option>
                     {% endfor %}
                 </select>
+
+                <!-- Autocomplete? -->
+                <!-- <select class="govuk-select progressive-autocomplete" id="documentName" name="documentName">
+                  {% for name in documentNames %}
+                      <option value="{{ name }}" {% if name === document.name %}selected{% endif %}>{{ name }}</option>
+                  {% endfor %}
+              </select> -->
 
                 </div>
                 <!-- <a href="#" class="govuk-link govuk-body">Use DRS name</a>

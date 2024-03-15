@@ -48,18 +48,18 @@
                 <!-- <label class="govuk-label govuk-label--s" for="documentName">Change document name (optional)</label> -->
                 <label class="govuk-label govuk-label--s" for="documentName">Change document name (optional)  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
 
-                <select class="govuk-select" id="documentName" name="documentName">
+                <!-- <select class="govuk-select" id="documentName" name="documentName">
                     {% for name in documentNames %}
                         <option value="{{ name }}" {% if name === document.name %}selected{% endif %}>{{ name }}</option>
                     {% endfor %}
-                </select>
+                </select> -->
 
                 <!-- Autocomplete? -->
-                <!-- <select class="govuk-select progressive-autocomplete" id="documentName" name="documentName">
+                <select class="govuk-select progressive-autocomplete" id="documentName" name="documentName">
                   {% for name in documentNames %}
                       <option value="{{ name }}" {% if name === document.name %}selected{% endif %}>{{ name }}</option>
                   {% endfor %}
-              </select> -->
+              </select>
 
                 </div>
                 <!-- <a href="#" class="govuk-link govuk-body">Use DRS name</a>
@@ -109,8 +109,9 @@
                     <textarea class="govuk-textarea" id="more-detail" name="comment" rows="1" aria-describedby="more-detail-hint">{{ document.comment }}</textarea>
                   </div>
 
+               
 
-                  {{ govukCheckboxes({
+                  <!-- {{ govukCheckboxes({
                     name: "archived",
                     fieldset: {
                       legend: {
@@ -128,8 +129,28 @@
                         checked: document.archived
                       }
                     ]
-                  }) }}
-
+                  }) }} -->
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h2 class="govuk-fieldset__heading">
+                        Document not relavant
+                        </h2>
+                      </legend>
+                      <div id="waste-hint" class="govuk-hint">
+                        Examples Duplicate, admin letter, envelopes,
+                      </div>
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="env-hidea" name="env-hide" type="checkbox" value="carcasses">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste">
+                            Archive document
+                          </label>
+                        </div>
+                       
+                      </div>
+                    </fieldset>
+                  </div>
              
                   <br>
 

@@ -1,0 +1,294 @@
+{% extends "layouts/main.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+
+
+{% include "includes/assessment-status-neutral-pip.html" %}
+
+
+<div class="govuk-width-container">
+
+
+<a href="claimant-documents-buttons.html" class="govuk-back-link">Back</a>
+
+<main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+ 
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Document review</h1>
+
+      <strong class="govuk-tag govuk-tag--blue">
+        Reviewed
+      </strong>
+      <span class="govuk-body-s">This document was reviewed on 21 Aug 2021</span>
+
+      <details class="govuk-details govuk-!-margin-bottom-1 govuk-!-margin-top-4" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            View document activity
+          </span>
+        </summary>
+
+        <div class="dwp-timeline">
+          <!-- <h1 class="govuk-heading-m">Appointments</h1> -->
+          <ol class="dwp-timeline__events">
+         
+          <li class="dwp-timeline__events--entry">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Marked as reviewed by Gabriel Brennan</h2>
+            <p class="govuk-caption-m govuk-!-margin-bottom-1"></p>
+            <p class="govuk-caption-m">21 Aug 2021 at 1:44pm</p>
+        </li>
+          </ol>
+          </div> 
+
+      
+      </details>
+    </div>
+
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h1 class="govuk-heading-m">Manage   </h1>
+    
+          <p class="govuk-body">
+            <a href="/public/pdfs/2PIP2-questionnaire_2015-09-21_98C_Redacted.pdf" class="govuk-link" rel="noreferrer noopener" target="_blank"> Open PDF document in a new tab</a>
+          </p>
+         
+  </aside>
+  
+  
+      </div>
+    </div>
+
+
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  
+
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+      <iframe class="document" src="/public/pdfs/2PIP2-questionnaire_2015-09-21_98C_Redacted.pdf" title="PIP2 document"></iframe>
+    </div>
+  </div>  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Document type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Further evidence
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date DWP received
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  10 Jan 2022
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Benefit type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  PIP
+                </dd>
+              </div>
+            </dl>
+
+            <div class="govuk-accordion govuk-!-margin-bottom-9" data-module="govuk-accordion" id="accordion-default">
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      Add a document label
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+                  <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-2">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Document label
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Hospital appointment
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a href="further-evidence-one-button-label-removed.html" class="govuk-link">Remove</a>
+                      </dd>
+                    </div>
+                  </dl>
+  
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      Add a date of document
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                  
+                  <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-2">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Date of document
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        15 May 2021
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a href="further-evidence-single-date-removed.html" class="govuk-link">Remove</a>
+                      </dd>
+                    </div>
+                  </dl>
+
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                      Comment on this document
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                  <div class="govuk-form-group">
+
+                    <div class="dwp-comment">
+        
+                      <div class="dwp-comment_header">
+                        <h2 class="dwp-comment_name">Gabriel Brennan</h2>
+                  
+                        <p class="dwp-comment_time">on 21 Nov 2021 at 3:15pm</p>
+                        
+                      </div>
+                  
+                      <div class="dwp-comment_content">
+                        <p>This document confirms the claimants hospital appointment and confirmed diagnosis of breast cancer.</p>
+                      </div>
+
+                      <div style="text-align: right;">
+
+                        <a class="govuk-link govuk-!-font-size-19" href="#">Remove</a>
+
+                      </div>
+                  
+                    </div>
+                  
+                  </div> 
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="govuk-form-group">
+        
+              <fieldset class="govuk-fieldset">
+      
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Add this document to a claim
+                  </h2>
+                </legend>
+              
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="pip" name="claim" type="checkbox" value="PIP">
+                    <label class="govuk-label govuk-checkboxes__label" for="pip">
+                      <strong>PIP claim</strong> 12 Sep 2021
+                    </label>
+                  </div>
+      
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="uc" name="claim" type="checkbox" value="UC">
+                    <label class="govuk-label govuk-checkboxes__label" for="uc">
+                      <strong>UC claim</strong> 23 Jun 2021
+                    </label>
+                  </div>
+                </div>
+      
+              </fieldset>
+      
+            </div>
+      
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+            <div class="govuk-form-group govuk-!-margin-bottom-3">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Has this document been reviewed?
+                </h2>
+              </legend>
+      
+              <div class="govuk-hint">
+                Tick this to confirm this document has been looked at.
+              </div>
+            
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="reviewed" name="reviewed" value="reviewed" type="checkbox" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="reviewed">
+                    This document has been reviewed
+                  </label>
+                </div>
+              </div>
+        
+            </div>
+          
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Actions
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <form action="confirmation-one-button" method="post" novalidate>
+
+                  <button class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+                    Save all changes
+                  </button>
+              
+              </form>
+            </li>
+            <li><a href="claimant-documents-buttons-reviewed.html" class="govuk-link">Return to claimant documents</a></li>
+          </ul>
+
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+    
+
+</div>  
+
+
+{% endblock %}

@@ -43,8 +43,8 @@
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Harmful information</dt>
-                            <dd class="govuk-summary-list__value">{{ document.harmful }}</dd>
-                        </div>
+                            <dd class="govuk-summary-list__value">{% if document.harmful %}Harmful{% else %}Not harmful{% endif %}</dd>
+                        </div>    
                        
                         {% if document.comment %}
                         <div class="govuk-summary-list__row">

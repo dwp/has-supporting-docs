@@ -41,12 +41,11 @@
                             <dt class="govuk-summary-list__key">Benefit type</dt>
                             <dd class="govuk-summary-list__value">{{ document.benefitType }}</dd>
                         </div>
-                        {% if document.harmful %}
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Harmful information</dt>
-                            <dd class="govuk-summary-list__value">Harmful</dd>
+                            <dd class="govuk-summary-list__value">{{ document.harmful }}</dd>
                         </div>
-                        {% endif %}
+                       
                         {% if document.comment %}
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Comment</dt>

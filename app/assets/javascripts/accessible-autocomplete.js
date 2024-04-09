@@ -4,7 +4,9 @@
 document.querySelectorAll('.progressive-autocomplete').forEach((el) => {
   accessibleAutocomplete.enhanceSelectElement({
     selectElement: el,
-    defaultValue: 'Select'
+    defaultValue: '',
+    showAllValues: true,
+    confirmOnBlur: false,
   });
 });
 

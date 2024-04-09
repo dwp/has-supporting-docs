@@ -44,7 +44,7 @@
                 <select class="govuk-select progressive-autocomplete" id="documentName" name="documentName">
                   <option value="{{ document.drsName }}">{{ document.drsName }}</option>
                        {% for name in documentNames %}
-                            <option value="{{ name }}" {% if name === document.name %}selected{% endif %}>{{ name }}</option>
+                            <option value="{{ name }}" {% if name === document.name %}{% endif %}>{{ name }}</option>
                        {% endfor %}
              </select>
               </div>

@@ -86,9 +86,12 @@
           {% for doc in docsForList %}
               {% if doc.isActive %}
                   <tr class="govuk-table__row filter-table-row">     
-                    <td class="govuk-table__cell"><a href="{% if not query.ncat %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}">{{ doc.name }}</a></td>
+                    <td class="govuk-table__cell"><a href="{% if not query.ncat %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}{% if query.irrelevant %}?irrelevant=true{% endif %}">{{ doc.name }}</a></td>
+                   
+                    <!-- <td class="govuk-table__cell"><a href="{% if not query.ncat %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}">{{ doc.name }}</a></td> -->
                     <!-- <td class="govuk-table__cell"><a href="{% if not query.ncat and not query.irrelevant %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}{% if query.irrelevant %}?irrelevant=true{% endif %}">{{ doc.name }}</a></td> -->
-                     {% if not query.ncat %}
+
+                    {% if not query.ncat %}
                         <td class="govuk-table__cell ">{{ doc.benefitType }}</td>
                     {% endif %}
                       <td class="govuk-table__cell" data-sort-value="date">{{ doc.dateOfDocument }}</td>

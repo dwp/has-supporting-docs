@@ -28,3 +28,24 @@ document.querySelectorAll('#importantCheckbox').forEach((el) => el.addEventListe
 
 
 
+async function autosaveArchived(e) {
+  console.log(e.target);
+  const [ version, id ] = e.target.value.split('_');
+  console.log(version, id);
+    return fetch(`/${version}/autosave`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({ id }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log('Success:', data))
+      .catch((error) => console.error('Error:', error));
+}
+
+document.querySelectorAll('#archivedCheckbox').forEach((el) => el.addEventListener('change', autosaveArchived));
+
+
+
+
+
+

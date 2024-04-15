@@ -10,12 +10,21 @@
 <div class="govuk-width-container full-width-container1280">
 
     <form action="claimant-documents-buttons" method="post" novalidate>
+       
+        {% if not query.irrelevant %}
     <a href="/{{ currentVersionPath }}/document-list.html" class="govuk-back-link">Back</a>
+    {% else %}
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    {% endif %}
+
+
         <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
  
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
+                    {% if not query.irrelevant %}
                 <span id="docAmountSpan" class="govuk-caption-l">{{ selectedDocument }} of {{ totalDocuments }} documents (filters applied)</span>
+                {% endif %}
                 <h1 class="govuk-heading-l">{{ document.name }}</h1>
                     <dl class="govuk-summary-list govuk-summary-list--no-border">
                        
@@ -74,14 +83,10 @@
   
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">  
-                    {% if query.irrelevant %}?irrelevant=true
+                    {% if query.irrelevant %}
+
                     {{ govukCheckboxes({
                         name: "archived",
-                        fieldset: {
-                          legend: {
-                            isPageHeading: false,
-                            classes: "govuk-fieldset__legend--s"
-                          } },
                         items: [{
                             value: doc.archived, text: "Mark document as irrelevant", checked: document.archived
                           }]
@@ -96,7 +101,9 @@
                     {% endif %}
 
                 </div>
-                <div class="govuk-grid-column-one-half">  
+                {% if not query.irrelevant %}
+               
+                    <div class="govuk-grid-column-one-half">  
                     <ul class="govuk-list nav-right">
                         <li>
                             <nav class="govuk-pagination" role="navigation" aria-label="results">
@@ -119,8 +126,10 @@
                             </nav>
                         </li>
                     </ul>
+                   
                 </div>
             </div>
+            {% endif %}
 
             <div class="govuk-grid-row govuk-!-margin-bottom-6">
                 <div class="govuk-grid-column-full">

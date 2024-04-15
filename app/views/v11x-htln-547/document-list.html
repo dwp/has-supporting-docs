@@ -11,7 +11,7 @@
  
 <div class="govuk-width-container">
  
-  {% if not query.ncat %}
+  {% if not query.ncat and not query.irrelevant %}
   {{ govukBackLink({ text: "Back", href: "claimant-details.html" }) }}
   {% else %}
   {{ govukBackLink({ text: "Back", href: "document-list.html" }) }}
@@ -25,13 +25,16 @@
     <div class="govuk-grid-row">
 
      
-      {% if not query.ncat %}
+      {% if not query.ncat and not query.irrelevant %}
         <div class="govuk-grid-column-one-quarter">
             <h2 class="govuk-heading-m govuk-!-Marchgin-bottom-5">Manage</h2>
             <ul class="govuk-list">
                 <li>
                     <a class="govuk-link" href="document-list?ncat=true">Update document details</a>
                 </li>
+                <li>
+                  <a class="govuk-link" href="document-list?irrelevant=true">View irrelevant documents</a>
+              </li>
             </ul>
             {% include currentVersionPath + "/partials/filters.html" %}
         </div>
@@ -73,10 +76,15 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          {% for doc in documents %}
+          {% if query.irrelevant %}
+          {% set docsForList = irrelevantDocuments %}
+          {% else %}
+          {% set docsForList = documents %}
+          {% endif %}
+          {% for doc in docsForList %}
               {% if doc.isActive %}
                   <tr class="govuk-table__row filter-table-row">     
-                    <td class="govuk-table__cell"><a href="{% if not query.ncat %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}">{{ doc.name }}</a></td>
+                    <td class="govuk-table__cell"><a href="{% if not query.ncat and not query.irrelevant %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}{% if query.irrelevant %}?irrelevant=true{% endif %}">{{ doc.name }}</a></td>
                      {% if not query.ncat %}
                         <td class="govuk-table__cell ">{{ doc.benefitType }}</td>
                     {% endif %}

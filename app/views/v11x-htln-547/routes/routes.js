@@ -19,7 +19,8 @@ router.get(`/${currentVersionPath}/reset-documents`, (req, res, next) => {
 
 router.all(`/${currentVersionPath}*`, (req, res, next) => {
     res.locals.currentVersionPath = currentVersionPath;
-    res.locals.documents = documents;
+    res.locals.documents = documents.filter((doc) => !doc.archived);
+    res.locals.irrelevantDocuments = documents.filter((doc) => doc.archived);
     res.locals.documentNames = documentNames;
     res.locals.totalDocuments = res.locals.documents.filter((x) => x.isActive).length;
     res.locals.importantCount = res.locals.documents.filter((x) => x.isActive && x.important).length;
@@ -74,13 +75,15 @@ router.post(`/${currentVersionPath}/update-document/:id`, (req, res, next) => {
     res.locals.selectedDocument = filteredDocs.findIndex((doc) => doc.id === req.params.id) + 1;
     res.locals.previousDocumentId = filteredDocs[res.locals.selectedDocument - 2]?.id;
     res.locals.nextDocumentId = filteredDocs[res.locals.selectedDocument]?.id;
-    if (!req.query.ncat) {
+    if (req.query.irrelevant) {
+        return res.redirect(`/${currentVersionPath}/document-list?irrelevant=true`);
+    } else if (!req.query.ncat) {
         return res.redirect(`/${currentVersionPath}/view-document/${req.params.id}`);
     } else {
         if (res.locals.nextDocumentId) {
             return res.redirect(`/${currentVersionPath}/update-document/${res.locals.nextDocumentId}?ncat=true`);
         } else {
-            return res.redirect(`/${currentVersionPath}/document-list/ncat=true`);
+            return res.redirect(`/${currentVersionPath}/document-list?ncat=true`);
         }
     }
 });

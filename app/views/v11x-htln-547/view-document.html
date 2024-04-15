@@ -74,12 +74,26 @@
   
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">  
+                    {% if query.irrelevant %}?irrelevant=true
+                    {{ govukCheckboxes({
+                        name: "archived",
+                        fieldset: {
+                          legend: {
+                            isPageHeading: false,
+                            classes: "govuk-fieldset__legend--s"
+                          } },
+                        items: [{
+                            value: doc.archived, text: "Mark document as irrelevant", checked: document.archived
+                          }]
+                      }) }}
+                    {% else %}
                     {{ govukCheckboxes({
                         name: "importantCheckbox",
                         items: [{ 
                             value: currentVersionPath + "_" + document.id, text: "Mark document as important", checked: document.important
                         }]
                     }) }}
+                    {% endif %}
 
                 </div>
                 <div class="govuk-grid-column-one-half">  

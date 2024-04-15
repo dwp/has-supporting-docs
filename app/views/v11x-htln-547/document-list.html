@@ -44,6 +44,8 @@
         <div class="govuk-grid-column-three-quarters">
           {% if query.ncat %}
           <h1 class="govuk-heading-l">Update document details</h2>
+            {% elif query.irrelevant %}
+            <h1 class="govuk-heading-l">Irrelevant documents</h2>
         {% else %}
         <h1 class="govuk-heading-l">Claimant documents</h2>
         {% endif %}
@@ -84,7 +86,8 @@
           {% for doc in docsForList %}
               {% if doc.isActive %}
                   <tr class="govuk-table__row filter-table-row">     
-                    <td class="govuk-table__cell"><a href="{% if not query.ncat and not query.irrelevant %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}{% if query.irrelevant %}?irrelevant=true{% endif %}">{{ doc.name }}</a></td>
+                    <td class="govuk-table__cell"><a href="{% if not query.ncat %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}">{{ doc.name }}</a></td>
+                    <!-- <td class="govuk-table__cell"><a href="{% if not query.ncat and not query.irrelevant %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}{% if query.irrelevant %}?irrelevant=true{% endif %}">{{ doc.name }}</a></td> -->
                      {% if not query.ncat %}
                         <td class="govuk-table__cell ">{{ doc.benefitType }}</td>
                     {% endif %}
@@ -94,7 +97,7 @@
                         {% if doc.important %}
                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
                         {% elif doc.archived %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Irrelevant</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
+                        <td class="govuk-table__cell">{% if not doc.read %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
                         {% elif doc.read %}
                         <td class="govuk-table__cell"></td>
                         {% elif not doc.read %}
@@ -102,7 +105,7 @@
                         {% endif %}
                       {% else %}
                         {% if doc.archived %}
-                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Irrelevant</strong></td>
+                        <td class="govuk-table__cell"></td>
                         {% elif not doc.read %} 
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Not started</strong></td>
                         {% elif doc.reviewed %}

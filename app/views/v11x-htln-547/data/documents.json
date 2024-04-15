@@ -28,7 +28,8 @@
         "pathToDocument": "/public/pdfs/UR-file1/Award-Review-AR1-Covering-Letter_2021-09-10_98C_Redacted.pdf",
         "important": false,
         "read": false,
-        "archived": false,
+        "comment": "Cover letter",
+        "archived": true,
         "isActive": true,
         "harmful": false,
         "reviewed": false
@@ -60,13 +61,14 @@
         "dateDwpReceived": "22 June 2020",
         "pathToDocument": "/public/pdfs/UR-file1/NHS_envelope.pdf",
         "important": false,
+        "comment": "Envelope",
         "read": false,
-        "archived": false,
+        "archived": true,
         "isActive": true
     },
     {
         "id": "61a99ff9-9da4-4624-9aca-2b61f3a28a8b",
-        "name": "WHITE MAIL UNSTRUCTURED",
+        "name": "GP letter",
         "benefitType": "PIP",
         "dateOfDocument": "8 Feb 2019",
         "dateDay": "08",
@@ -81,7 +83,7 @@
     },
     {
         "id": "416a78e2-3ab3-4f36-a3ba-0db935f1a520",
-        "name": "WHITE MAIL UNSTRUCTURED",
+        "name": "GP letter",
         "benefitType": "PIP",
         "dateOfDocument": "19 Jan 2019",
         "dateDay": "19",
@@ -135,7 +137,8 @@
         "dateDwpReceived": "20 Mar 2018",
         "pathToDocument": "/public/pdfs/UR-file1/ESA85_2021-11-06_98C_Redacted.pdf",
         "important": false,
-        "archived": false,
+        "comment": "Duplicate",
+        "archived": true,
         "read": false,
         "isActive": true
     },

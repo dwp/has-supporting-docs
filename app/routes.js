@@ -7,7 +7,8 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 const versions = [
     'version-x',
-    'v11x-htln-547'
+    'v11x-htln-547',
+    'v11x-htln-547-editPage'
 ]
 
 

@@ -72,9 +72,16 @@
             <th scope="col" class="govuk-table__header column-width-15" aria-sort="descending">         
               <button type="button" data-index="3">Date DWP received</button>
             </th>
+            {% if query.irrelevant %}
+            <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">
+              <button type="button" data-index="3">Reason</button>
+            </th>
+            {% else %}
+
             <th scope="col" class="govuk-table__header column-width-20" aria-sort="none">
               <button type="button" data-index="3">Document status</button>
             </th>
+            {% endif %}
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -100,7 +107,7 @@
                         {% if doc.important %}
                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
                         {% elif doc.archived %}
-                        <td class="govuk-table__cell">{% if not doc.read %}<strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>
+                        <td class="govuk-table__cell">{{ doc.comment }}</td>
                         {% elif doc.read %}
                         <td class="govuk-table__cell"></td>
                         {% elif not doc.read %}

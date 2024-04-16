@@ -54,12 +54,13 @@
                             <dt class="govuk-summary-list__key">Harmful information</dt>
                             <dd class="govuk-summary-list__value">{% if document.harmful %}Harmful{% else %}Not harmful{% endif %}</dd>
                         </div>    
-                       
+                        {% if not query.irrelevant %}
                         {% if document.comment %}
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Comment</dt>
                             <dd class="govuk-summary-list__value">{{ document.comment }}</dd>
                         </div>
+                        {% endif %}
                         {% endif %}
                     </dl>
                 </div>
@@ -83,22 +84,39 @@
   
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">  
-                    {% if query.irrelevant %}
+            {% if query.irrelevant %}
+            {% set irrelvantCommentHtml %}
+
+                    {{ govukInput({
+                      name: "comment",
+                      classes: "govuk-!-width-two-thirds",
+                      label: {
+                        text: "Reason"
+                    },
+                        value: data['comment']
+                    }) }}
+                    {% endset -%}
 
                     {{ govukCheckboxes({
                         name: "archived",
                         items: [{
-                            value: doc.archived, text: "Mark document as irrelevant", checked: document.archived
-                          }]
+                            value:  currentVersionPath + "_" + document.id, text: "Mark document as irrelevant", checked: document.archived,
+                            text: "Mark document as irrelevant",
+                            conditional: {
+                                html: irrelvantCommentHtml
+                              }
+                        }]
                       }) }}
-                    {% else %}
+
+         {% else %}
                     {{ govukCheckboxes({
                         name: "importantCheckbox",
                         items: [{ 
                             value: currentVersionPath + "_" + document.id, text: "Mark document as important", checked: document.important
+                       
                         }]
                     }) }}
-                    {% endif %}
+        {% endif %}
 
                 </div>
                 {% if not query.irrelevant %}

@@ -120,7 +120,11 @@ router.get(`/${currentVersionPath}/clear-filters`, (req, res, next) => {
 router.post(`/${currentVersionPath}/autosave`, function (req, res) {
     try {
         const docToUpdate = documents.find((doc) => doc.id === req.body.id);
-        docToUpdate.important = true;
+        if (req.body.type === 'archived') {
+            docToUpdate.archived = req.body.isChecked;
+        } else {
+            docToUpdate.important = req.body.isChecked;;
+        }
         res.locals.documents = documents;
         return res.status(200).json({});
     } catch (error) {

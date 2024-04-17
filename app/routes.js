@@ -8,7 +8,8 @@ const router = govukPrototypeKit.requests.setupRouter()
 const versions = [
     'version-x',
     'v11x-htln-547',
-    'v11x-htln-547-editPage'
+    'v11x-htln-547-editPage',
+    'v11x-htln-547-reviewed'
 ]
 
 

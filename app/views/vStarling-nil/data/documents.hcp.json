@@ -29,7 +29,7 @@
         "important": false,
         "read": false,
         "archived": false,
-        "harmful": true,
+        "harmful": false,
         "isActive": true
     },
     {

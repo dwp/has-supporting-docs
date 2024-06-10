@@ -11,7 +11,9 @@ const versions = [
     'v11x-htln-547-editPage',
     'v11x-htln-547-reviewed',
     'vStarling-nil',
-    'vStarling-award'
+    'vStarling-award',
+    'v10x-htln-491-mvp',
+    'v10x-htln-491-mvp-leftNav'
 ]
 
 

@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+{% set bodyAttributes = { id: "assess" } %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block main %}
+
+{% include currentVersionPath + "/partials/key-details.html" %}
+
+<div class="govuk-width-container {{ containerClasses }}">
+  <a href="index" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+    <div class="govuk-grid-row">
+      {% include currentVersionPath + "/partials/personal-details.html" %}
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">What you can do next</h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list">
+              <li>
+                <a href="has-general/event.html" class="govuk-link">Update status</a>
+              </li>
+              <li>
+                <a href="has-general/IR-landingPage-playback.html" class="govuk-link">HCP review</a>
+              </li>
+              <!-- <li>
+                <a href="has-general/pip-assessments-spec/assessment-type.html" class="govuk-link">Start assessment</a>
+              </li>         -->
+              <li>
+                <a href="document-list.html" class="govuk-link">View claimant documents</a>
+              </li>
+              <!-- <li>
+                <a href="document-list?ncat=true" class="govuk-link">Update claimant documents</a>
+              </li> -->
+              <li>
+                <a href="has-general/timeline-0-3-5/" class="govuk-link">View timeline</a>
+              </li>
+              <li>
+                <a href="has-general/timeline-0-3-5/referral.html" class="govuk-link">Add entry to timeline</a>
+              </li>
+              <li>
+                <a href="#" class="govuk-link">Move to another caseload</a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

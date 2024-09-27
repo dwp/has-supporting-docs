@@ -11,7 +11,6 @@
  
 <div class="govuk-width-container">
  
- 
   {% if not query.ncat and not query.irrelevant %}
   {{ govukBackLink({ text: "Back", href: "claimant-details.html" }) }}
   {% else %}
@@ -26,24 +25,10 @@
     <div class="govuk-grid-row">
 
      
-      <!-- {% if not query.ncat and not query.irrelevant %} -->
-    
+      {% if not query.ncat and not query.irrelevant %}
+  
         
-        <div class="govuk-grid-column-one-quarter">
-          
-            {% include currentVersionPath + "/partials/filters.html" %}
-        </div>
-        {% endif %}
-    
- 
-        <div class="govuk-grid-column-three-quarters">
-          {% if query.ncat %}
-          <h1 class="govuk-heading-l">Update document details</h2>
-            {% elif query.irrelevant %}
-            <h1 class="govuk-heading-l">Irrelevant documents</h2>
-        {% else %}
-        <h1 class="govuk-heading-l">Claimant documents</h2>
-
+         <div class="govuk-grid-column-one-quarter">
           <h2 class="govuk-heading-m govuk-!-Marchgin-bottom-5">Manage</h2>
           <ul class="govuk-list">
               <li>
@@ -51,6 +36,21 @@
               </li>
             
           </ul>
+          
+            {% include currentVersionPath + "/partials/filters.html" %}
+        </div>
+         {% endif %}
+    
+ 
+        <div class="govuk-grid-column-three-quarters">
+          {% if query.ncat %}
+          <h1 class="govuk-heading-l">Update document details</h2>
+            <!-- {% elif query.irrelevant %}
+            <h1 class="govuk-heading-l">Irrelevant documents</h2> -->
+        {% else %}
+        <h1 class="govuk-heading-l">Claimant documents</h2>
+
+         
 
 
 

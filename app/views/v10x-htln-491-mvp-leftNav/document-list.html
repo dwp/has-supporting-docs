@@ -11,7 +11,6 @@
  
 <div class="govuk-width-container">
  
- 
   {% if not query.ncat and not query.irrelevant %}
   {{ govukBackLink({ text: "Back", href: "claimant-details.html" }) }}
   {% else %}
@@ -26,11 +25,17 @@
     <div class="govuk-grid-row">
 
      
-      <!-- {% if not query.ncat and not query.irrelevant %} -->
-    
-        
+      {% if not query.ncat and not query.irrelevant %}
         <div class="govuk-grid-column-one-quarter">
-          
+            <h2 class="govuk-heading-m govuk-!-Marchgin-bottom-5">Manage</h2>
+            <ul class="govuk-list">
+                <li>
+                    <a class="govuk-link" href="document-list?ncat=true">Update document details</a>
+                </li>
+                <!-- <li>
+                  <a class="govuk-link" href="document-list?irrelevant=true">View irrelevant documents</a>
+              </li> -->
+            </ul>
             {% include currentVersionPath + "/partials/filters.html" %}
         </div>
         {% endif %}
@@ -43,20 +48,9 @@
             <h1 class="govuk-heading-l">Irrelevant documents</h2>
         {% else %}
         <h1 class="govuk-heading-l">Claimant documents</h2>
-
-          <h2 class="govuk-heading-m govuk-!-Marchgin-bottom-5">Manage</h2>
-          <ul class="govuk-list">
-              <li>
-                  <a class="govuk-link" href="document-list?ncat=true">Update document details</a>
-              </li>
-            
-          </ul>
-
-
-
         {% endif %}
         
-      
+
 
 
         
@@ -117,7 +111,7 @@
                         {% elif doc.read %}
                         <td class="govuk-table__cell"></td>
                         {% elif not doc.read %}
-                          <td class="govuk-table__cell"></td>
+                          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unread</strong></td>
                         {% endif %}
                       {% else %}
                         {% if doc.archived %}

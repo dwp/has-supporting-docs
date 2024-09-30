@@ -50,9 +50,9 @@
         <h1 class="govuk-heading-l">Claimant documents</h2>
         {% endif %}
         
-
-
-
+        {% if not query.ncat %}
+        <p class="govuk-body-s" id="last-updated">Last updated from DRS on 16 Sep 2024 at 2:08am</p>
+        {% endif %}
         
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         <table class="govuk-table" data-module="moj-sortable-table" aria-describedby="last-updated">

@@ -15,7 +15,7 @@ const versions = [
     'v10x-htln-491-mvp',
     'v10x-htln-491-mvp-leftNav',
    'v10x-htln-491-mvp-admin',
-   'v11x-htln-547a',
+   'v11x-htln-744-new-admin&hcpView',
 ]
 
 

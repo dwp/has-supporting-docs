@@ -12,7 +12,6 @@ const versions = [
     'v11x-htln-547-reviewed',
     'vStarling-nil',
     'vStarling-award',
-    'v10x-htln-491-mvp',
     'v10x-htln-491-mvp-leftNav',
    'v10x-htln-491-mvp-admin',
    'v11x-htln-744-new-admin&hcpView',

@@ -23,7 +23,9 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     {% if not query.irrelevant %}
-                <span id="docAmountSpan" class="govuk-caption-l">{{ selectedDocument }} of {{ totalDocuments }} documents (filters applied)</span>
+                <span id="docAmountSpan" class="govuk-caption-l">{{ selectedDocument }} of {{ totalDocuments }} documents</span>
+
+                <!-- <span id="docAmountSpan" class="govuk-caption-l">{{ selectedDocument }} of {{ totalDocuments }} documents (filters applied)</span> -->
                 {% endif %}
                 <h1 class="govuk-heading-l">{{ document.name }}</h1>
                     <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -73,7 +75,7 @@
                         <a href="/{{ currentVersionPath }}/update-document/{{ document.id }}" class="govuk-link" rel="noreferrer noopener">Update document details</a>
                         </p>
                         <p class="govuk-body">
-                            <a href="/version-x/document-activity.html" class="govuk-link" rel="noreferrer noopener">View document activity</a>
+                            <a href="/v11x-htln-744-new-admin&hcpView/document-activity.html" class="govuk-link" rel="noreferrer noopener">View document activity</a>
                             </p>
                         <p class="govuk-body">
                         <a href="{{ document.pathToDocument }}" class="govuk-link" rel="noreferrer noopener" target="_blank">Open PDF document in a new tab</a>

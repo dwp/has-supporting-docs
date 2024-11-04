@@ -35,3 +35,43 @@ router.post('/autosave', function (req, res) {
     req.session.data.lastSaved = new Date().toLocaleString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
     res.status(200).json({});
 });
+
+
+// HCP review add another
+
+router.post('/v11x-htln-974-HCPReviewPrompts/has-general/IR-landingPage-playback*', (req, res, next) => {    
+    let errors = {
+        errorList: []
+    }
+    for (let i = 0; i <= 10; i++) {
+
+        if(req.body["hcpreviewpip" + i] === undefined && req.body["ir-outcomes" + i] === undefined) {
+            continue;
+        }
+
+
+
+if (!req.body["ir-outcomes" + i]) {
+    errors.errorList.push({
+        text: "Select an outcome",
+        href: "#ir-outcomes" + i
+    });
+    errors["ir-outcomes" + i] = "Select an outcome"
+}
+if (errors.errorList.length > 0) {
+    break;
+}
+}
+if (errors.errorList.length > 0) {
+res.locals.errors = errors;
+return res.render('v11x-htln-974-HCPReviewPrompts/has-general/IR-landingPage-playback');
+}
+if(req.body.submit === 'Continue') {
+return res.redirect('/v11x-htln-974-HCPReviewPrompts/has-general/IR-landingPage-playback.html');
+
+} else if (req.body.submit === 'Add another entry') {
+return res.redirect('/v11x-htln-974-HCPReviewPrompts/has-general/IR-landingPage-playback?viewmode=add')
+} else {
+return next();
+}
+});

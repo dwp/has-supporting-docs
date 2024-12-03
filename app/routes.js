@@ -16,6 +16,7 @@ const versions = [
    'v10x-htln-491-mvp-admin',
    'v11x-htln-744-new-admin&hcpView',
    'v11x-htln-974-HCPReviewPrompts',
+   'v888'
 ]
 
 

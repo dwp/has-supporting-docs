@@ -92,8 +92,8 @@
           {% endif %}
           {% for doc in docsForList %}
               {% if doc.isActive %}
-                  <tr class="govuk-table__row filter-table-row" role="row" aria-label="{{ doc.name }} {{ doc.dateOfDocument }}">     
-                    <td class="govuk-table__cell"><a href="{% if not query.ncat %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}{% if query.irrelevant %}?irrelevant=true{% endif %}">{{ doc.name }}</a></td>
+                  <tr class="govuk-table__row filter-table-row" role="row">
+                    <td class="govuk-table__cell"><a href="{% if not query.ncat %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}{% if query.irrelevant %}?irrelevant=true{% endif %}">{{ doc.name }} <span class="govuk-visually-hidden">,{% if doc.dateOfDocument %} {{ doc.dateOfDocument }}{% else %} {{ doc.dateDwpReceived }}{% endif %}</span></a></td>
                    
                     <!-- <td class="govuk-table__cell"><a href="{% if not query.ncat %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}">{{ doc.name }}</a></td> -->
                     <!-- <td class="govuk-table__cell"><a href="{% if not query.ncat and not query.irrelevant %}view{% else %}update{% endif %}-document/{{ doc.id }}{% if query.ncat %}?ncat=true{% endif %}{% if query.irrelevant %}?irrelevant=true{% endif %}">{{ doc.name }}</a></td> -->
@@ -102,7 +102,7 @@
                         <td class="govuk-table__cell ">{{ doc.benefitType }}</td>
                     {% endif %}
                       <td class="govuk-table__cell" data-sort-value="date">{{ doc.dateOfDocument }}</td>
-                      <td class="govuk-table__cell" data-sort-value="14">10 Sept 2021</td>
+                      <td class="govuk-table__cell" data-sort-value="14">{{ doc.dateDwpReceived }}</td>
                       {% if not query.ncat %}
                         {% if doc.important %}
                           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Important</strong>{% if not doc.read %}<br /><strong class="govuk-tag govuk-tag--blue second-tag">Unread</strong>{% endif %}</td>

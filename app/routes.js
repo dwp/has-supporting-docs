@@ -16,7 +16,11 @@ const versions = [
    'v10x-htln-491-mvp-admin',
    'v11x-htln-744-new-admin&hcpView',
    'v11x-htln-974-HCPReviewPrompts',
-   'v888'
+   'v888',
+   'v12-htln-1108-accesLabelsOnly',
+   'v12-htln-1108-accesLabelswithNumber',
+   '/v12-htln-1108-accesNumberOnly'
+
 ]
 
 
